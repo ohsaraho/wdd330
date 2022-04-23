@@ -30,6 +30,10 @@
     * {
         font-family: "Comfortaa", Lato, sans-serif;
         margin: 0px;
+        box-sizing: border-box;
+        max-width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     h1 {
@@ -46,6 +50,8 @@
         border-radius: 5px;
         padding: 8px;
         font-size: 12pt;
+        max-width: 300px;
+        width: 100%;
     }
 
     section {
@@ -61,27 +67,49 @@
         margin: 5px;
     }
 
-
+    .textarea_div {
+        margin: 20px 20px 20px 50px;
+    }
     textarea {
-        width: 800px;
+        width: 100%;
         height: 250px;
         background-color: lightyellow;
-        margin: 20px 20px 20px 50px;
         border-radius: 5px;
         padding: 10px;
         font-size: 14pt;
     }
+
+    .display_story_div {
+        margin: 20px 20px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .title_top {
+            display: block;
+        }
+        .story_name_input {
+            margin: 20px 10px 10px 50px;
+        }
+    }
 </style>
 <body>
     <h1>Story Editor</h1>
-    <label>Story Name:</label>
-    <input id="name_input"></input>
+    <div class="story_name_input">
+        <label>
+        <span class="title_top">Story Name:</span>
+        <input id="name_input">
+        </label>
+    </div>
     <section>
         <button onclick="loadStory()">Find and Edit It</button>
         <button onclick="saveStory()">Save It</button>
         <button onclick="displayStory()">Display It</button>
     </section>
-    <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
-    <section id="story_display"></section>
+    <div class="textarea_div">
+        <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+    </div>
+    <div class="display_story_div">
+        <section id="story_display"></section>
+    </div>
 </body>
 </html>

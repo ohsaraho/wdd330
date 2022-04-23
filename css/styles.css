@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
     background-color: #D7EAE1;
 }
 
@@ -17,7 +18,7 @@
 
 .main_index ol {
     font-family: "Rubik", serif;
-    padding: 10px 50px;
+    padding: 10px 0px 10px 50px;
     margin: 10px 20px 10px 20px;
 }
 
@@ -53,12 +54,12 @@
 
 .week1 ul {
     font-family: "Rubik", serif;
-    padding: 5px 50px;
     margin: 5px 20px 5px 30px;
+    padding: 5px 0px 5px 50px;
 }
 
 .week1 ul li {
-    font-size: 14pt;
+    font-size: 16pt;
     padding: 5px 0px;
 }
 
@@ -69,3 +70,26 @@
 .week1 a:hover {
     color: #356087;
 }
+
+@media only screen and (max-width: 600px) {
+    .main_index h1 { 
+        font-size: 20pt;
+    }
+    
+    .main_index ol li {
+        font-size: 14pt;
+        
+    }
+
+    .week1 h1 {
+        font-size: 20pt;
+    }
+    
+    .week1 h2 {
+        font-size: 18pt;
+    }
+    
+    .week1 ul li {
+        font-size: 14pt;
+    }
+  }
