@@ -15,7 +15,26 @@
     color: white;
 }
 
+.main_index ol {
+    font-family: "Rubik", serif;
+    padding: 10px 50px;
+    margin: 10px 20px 10px 20px;
+}
 
+.main_index ol li {
+    font-size: 16pt;
+    
+}
+
+.main_index ol li a {
+    color: #2E4861;
+}
+
+.main_index ol li a:hover {
+    color: #356087;
+}
+
+/*----- Week 1 -----*/
 .week1 h1 {
     font-family: "Comfortaa", Lato, sans-serif;
     background-color: #3F785E;
@@ -40,23 +59,13 @@
 
 .week1 ul li {
     font-size: 14pt;
+    padding: 5px 0px;
 }
 
-.main_index ol {
-    font-family: "Rubik", serif;
-    padding: 10px 50px;
-    margin: 10px 20px 10px 20px;
-}
-
-.main_index ol li {
-    font-size: 16pt;
-    
-}
-
-.main_index ol li a {
+.week1 a {
     color: #2E4861;
 }
 
-.main_index ol li a:hover {
+.week1 a:hover {
     color: #356087;
 }

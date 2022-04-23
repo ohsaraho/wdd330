@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Story Writer</title>
+    <meta name="description" content="Story editor where you can write in the textarea, then display, edit and save the text">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
+
+</head>
+<script>
+        function displayStory() {
+            var storyHTML = document.getElementById("story_editor").value;
+            document.getElementById("story_display").innerHTML = storyHTML;
+        }
+
+        function saveStory() {
+            var storyName = document.getElementById("name_input").value;
+            var storyHTML = document.getElementById("story_editor").value;
+            localStorage.setItem(storyName, storyHTML);
+        }
+
+        function loadStory() {
+            var storyName = document.getElementById("name_input").value;
+            var storyHTML = localStorage.getItem(storyName);
+            document.getElementById("story_editor").value = storyHTML;
+        }
+</script>
+<style>
+    * {
+        font-family: "Comfortaa", Lato, sans-serif;
+        margin: 0px;
+    }
+
+    h1 {
+        margin: 20px 20px;
+    }
+    
+    label {
+        margin: 20px 10px 10px 50px;
+        font-size: 14pt;
+    }
+
+    #name_input {
+        margin: 20px 20px 10px 0px;
+        border-radius: 5px;
+        padding: 8px;
+        font-size: 12pt;
+    }
+
+    section {
+        margin: 20px 20px 10px 50px;
+        
+    }
+
+    button {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 12pt;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+
+    textarea {
+        width: 800px;
+        height: 250px;
+        background-color: lightyellow;
+        margin: 20px 20px 20px 50px;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14pt;
+    }
+</style>
+<body>
+    <h1>Story Editor</h1>
+    <label>Story Name:</label>
+    <input id="name_input"></input>
+    <section>
+        <button onclick="loadStory()">Find and Edit It</button>
+        <button onclick="saveStory()">Save It</button>
+        <button onclick="displayStory()">Display It</button>
+    </section>
+    <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+    <section id="story_display"></section>
+</body>
+</html>
