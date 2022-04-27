@@ -71,6 +71,49 @@
     color: #356087;
 }
 
+/*----- Week 2 -----*/
+.week2 h1 {
+    font-family: "Comfortaa", Lato, sans-serif;
+    background-color: #3F785E;
+    font-size: 30pt;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.week2 h2 {
+    font-family: "Comfortaa", Lato, sans-serif;
+    font-size: 20pt;
+    margin: 10px 10px 10px 50px;
+}
+
+.week2 h3 {
+    font-family: "Comfortaa", Lato, sans-serif;
+    font-size: 15pt;
+    margin: 10px 10px 10px 50px;
+    text-decoration: underline;
+}
+
+.week2 ul {
+    font-family: "Rubik", serif;
+    margin: 5px 20px 5px 30px;
+    padding: 5px 0px 5px 50px;
+}
+
+.week2 ul li {
+    font-size: 16pt;
+    padding: 5px 0px;
+}
+
+.week2 a {
+    color: #2E4861;
+}
+
+.week2 a:hover {
+    color: #356087;
+}
+
 @media only screen and (max-width: 600px) {
     .main_index h1 { 
         font-size: 20pt;
@@ -90,6 +133,22 @@
     }
     
     .week1 ul li {
+        font-size: 14pt;
+    }
+
+    .week2 h1 {
+        font-size: 20pt;
+    }
+    
+    .week2 h2 {
+        font-size: 18pt;
+    }
+
+    .week2 h3 {
+        font-size: 14pt;
+    }
+    
+    .week2 ul li {
         font-size: 14pt;
     }
   }

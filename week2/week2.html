@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 2 Notes</title>
+    <meta name="description" content="Week 2 Notes on the readings">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+    <main class="week2">
+        <h1>Week 2</h1>
+        <h2>Notes</h2>
+        <ul>
+            <li>Automatic Semicolon Insertion (ASI) is used by JavaScript interpreters which places semicolons at the end of each line for you. <br> Although that can cause errors, so it's best to put a semi-colon and each statement on a new line.</li>
+            <li>Blocks which is a series of statements within curly brackets do not need to be terminated by a semicolon.</li>
+        </ul>
+        <h3>Variables</h3>
+        <ul>
+            <li>Variables must be declared before they can be used.</li>
+            <li>JavaScript keywords to declare variables are: <strong>const</strong> and <strong>let</strong></li>
+            <li><strong>const</strong> is used when the variable will not be changed to another value.</li>
+            <li><strong>let</strong> is used if the variable might change later in the program.</li>
+            <li>The "=" operator is used to assign a value to a variable or constant (const)</li>
+            <li>When using "const" you can't reassign the value if it is primitive data type like a string <br> but if it is a non-primitive data type like an object then it can change <br> This is known as mutating the object. For example: <br> const name = { value: 'Sam' }; <br> name.value = 'Heather';</li>
+            <li>const can not be reassigned to another object though. For example: <br> const name = { value: 'Sam' }; <br> Tried to reassign another object <br> name = { value: 'Heather' }; <br> It can't be changed.</li>
+            <li>Using <strong>const</strong> helps with making your program more predictable because the value can't change. </li>
+        </ul>
+        <h3>Scope</h3>
+        <ul>
+            <li>const and let are block scoped which means their value only exist within the block they were declared in.</li>
+            <li>"var" worked alot like how "let" works but "var" does not have block scope.</li>
+            <li><strong>global scope</strong> is any variable that is declared outside of a block which it means it can be accessible in the whole entire program. <br> This is not best practice because you can run into the same name with another global variable and could overwrite each other's values.</li>
+            <li>local scope are created within blocks. <br> Which means any variable declared inside that block is only accessible within that block</li>
+            <li></li>
+        </ul>
+        <h3>Template Literals</h3>
+        <ul>
+            <li><strong>Template Literals</strong> are special types of strings</li>
+            <li>They use the backtick character <strong>` `</strong>. For example: `Hello world!`;</li>
+            <li>An expression can be within the template literal and the value will be displayed. This is called interpolation. For example: <br> const name = `Sam`; <br> `Hello <strong>${</strong>name<strong>}</strong>!` <br> Output: 'Hello Sam!'</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h3>Converting</h3>
+        <ul>
+            <li>The best way to <strong>convert strings to numbers</strong> is by using the <strong>Number(' ');</strong> function. <br> If the string can't be converted into a number then "NaN" is returned as a result.</li>
+            <li>You can also multiply a numerical string by 1 which will convert into a number. This is called type coercion.</li>
+            <li>Another way is to put the plus sign "+" operator in front of the numerical string. For example: <br> const answer = +'5';</li>
+            <li>The best way to <strong>convert numbers to strings</strong> is by using the <strong>String(' '); function.</strong>
+            <li>You can also add an empty string which is type coercion. For example: <br> 3 +''; Returns: '3'</li>
+            <li>Another option is the <strong>toString()</strong> method. For example: <br> 10..toString(); Returns: '10'</li>
+            <li></li>
+        </ul>
+        <h2>Exercises</h2>
+        <ul>
+            <li><a href="codeExercise/"></a></li>
+        </ul>
+
+        
+    </main>
+</body>
+</html>
