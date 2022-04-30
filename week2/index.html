@@ -55,6 +55,39 @@
             <li>Another option is the <strong>toString()</strong> method. For example: <br> 10..toString(); Returns: '10'</li>
             <li></li>
         </ul>
+        <h3>Parsing Numbers</h3>
+        <ul>
+            <li>parseInt() can also be used to convert a string that is a (representaion) of a numerical value back into a number. For example: <br> parseInt('1010,2'); the result is: 10. Or parseInt('omg, 36'); the result is: 31912. parseInt('23',10); the result is: 23.</li>
+            <li>If the parseInt function starts with a number, it will ignore any letters that are after the numbers.</li>
+            <li>Also, if you use parseInt with decimal, it will remove anything that is after the decimal point.</li>
+            <li>parseFloat converts a string that has a number and a decimal point and converts into a floating point decimal number. For exmaple: <br> parseFloat('2.9',10); the result is: 2.9.</li>
+        </ul>
+        <h3>Array Methods</h3>
+        <ul>
+            <li>An array is a typeof 'object' and is an ordered list of values. You can create an array either an <strong>array literal</strong> like "const myArray = [];" or an <strong>array constructor</strong> function like "const myArray = new Array();". <br> but the best way to create an area is an <strong>array literal</strong></li>
+            <li>To remove the last item of an array, you can use the <strong>pop()</strong> method. For example: nameOfArray.pop(); It returns the last item of that array but it is no longer includes that item.</li>
+            <li>To remove the first item of an array, you can use the <strong>shift()</strong> method. It works in a similar way as the pop() method.</li>
+            <li>The <strong>push()</strong> method appends a new value you choose to the end of the array. For example: <br> nameOfArray.push('Flower'); It then returns a value which is the length of the array that includes that new value you just pushed.</li>
+            <li>The <strong>unshift()</strong> appends a new item to the start of the array. It works similarly to the push() method.</li>
+            <li>The <strong>concat()</strong> method is used to merge an array with another array which can be one or more arrays. For example: <br> nameOfArray.concat(['Sun','Garden', 'Rain']); then returns:['Grass', 'Water', 'Dirt', 'Sun', 'Garden', 'Rain']<br> The first 3 water, dirt and sun are from the original array but now the last three are merged in that original array.</li>
+            <li>Instead of the concat() method you could use the new <strong>spread operator</strong> which is three dots "..." that are placed in front of the array that can spread out the elements of the array and puts them together which then creates a new array. For example: <br> nameOfArray = [ ...nameOfArray, ...['Sun','Garden', 'Rain'] ]; <br> Returns: ['Grass', 'Water', 'Dirt', 'Sun', 'Garden', 'Rain']</li>
+            <li>The <strong>join()</strong> method turns the array into a string and then each item in the array is separated by commas. For example: <br> nameOfArray.join(); then returns: 'Grass, Water, Dirt, Sun, Garden, Rain' <br> You can choose a different separator other than a comma like an ampersand sign as follows: <br> nameOfArray.join(' & '); returns the same as above just instead of commas it is the ampersand sign.</li>
+            <li>The <strong>slice()</strong> method creates</li>
+            <li>The <strong>reverse()</strong> method is used to reverse the order of an array. For example: <br> nameOfArray.reverse(); then returns the array but in reverse.</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h3>Array Methods</h3>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
         <h2>Exercises</h2>
         <ul>
             <li><a href="codeExercise/total_sum.html">Adding Numbers</a></li>
