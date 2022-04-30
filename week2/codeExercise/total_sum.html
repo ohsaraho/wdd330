@@ -4,106 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Total Sum Input</title>
-    <meta name="description" content="">
+    <meta name="description" content="Adding numbers and displaying the result and input from user">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
 
-</head>
+
+<style>
+    * {
+    font-family: "Comfortaa", Lato, sans-serif;
+    margin: 0px;
+    box-sizing: border-box;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
     
+}
+    html {
+        background-color: #ebe2f4;
+    }
+
+    .input_area {
+        margin: 15px;
+    }
+        h1 {
+        background-color: #3c2a4f;
+        font-size: 30pt;
+        padding: 20px;
+        border-radius: 0px 0px 5px 5px;
+        color: white;
+    }
+
+    label {
+        margin: 20px 10px 10px 50px;
+        font-size: 14pt;
+    }
+    
+    .title_top {
+        margin: 0px 20px 10px 0px;
+    }
+
+    button {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 12pt;
+        cursor: pointer;
+        margin: 10px 5px;
+        background-color: #2ababe;
+        border: none;
+    }
+
+    #textInputNum {
+        border-radius: 5px;
+        padding: 8px;
+        font-size: 12pt;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    #inputNum {
+        border-radius: 5px;
+        padding: 8px;
+        font-size: 12pt;
+        max-width: 300px;
+        width: 100%;
+    }
+
+    #addNums1, #addNums2 {
+        border-radius: 5px;
+        padding: 8px;
+        font-size: 12pt;
+        max-width: 300px;
+        width: 100%;
+    }
+
+    #textNumResults, #sumResults, #addNumResults {
+        margin: 5px 20px 5px 80px;
+        font-size: 14pt;
+    }
+
+    @media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 20pt;
+    }
+    
+        .title_top {
+        display: block;
+    }
+    #addNums1, #addNums2 {
+       margin: 8px 0px;
+    }
+}
+</style>    
+</head>
 <body>
-<main>
     <h1>Week 2: Team Activity</h1>
-    <h2>Team Activity</h2>
-    <label>Enter something: 
-        <input id='textInputNum' type="text" placeholder="Type something here..."></input>
-    </label>
-    <button onclick="textInputResult()">Submit</button>
-    <div id="textNumResults">
+    <div class="input_area">
+        <label><span class="title_top">Enter something:</span> 
+            <input id='textInputNum' type="text" placeholder="Type something here...">
+        </label>
+        <button onclick="textInputResult()">Submit</button>
+        <div id="textNumResults">
 
-    </div>
-    <br>
-    <label>Enter a number:
-        <input id='inputNum' type="number">
-    </label>
-    <button onclick="totalNumResult()">Sum Total</button>
-    <div id="sumResults">
+        </div>
+        <br>
+        <label><span class="title_top">Enter a number:</span>
+            <input id='inputNum' type="number">
+        </label>
+        <button onclick="totalNumResult()">Sum Total</button>
+        <div id="sumResults">
 
-    </div>
-    <br>
-    <label>Enter two numbers:
-        <input id='addNums' type="number">
-    </label>
-    <button onclick="addTotal()">+</button>
-    <div id="addNumResults">
+        </div>
+        <br>
+        <label><span class="title_top">Enter two numbers:</span></label>
+            <input id='addNums1' type="number" placeholder="enter a number">
+            <input id='addNums2' type="number" placeholder="enter a number">
+        <button onclick="addTotal()">+</button>
+        <div id="addNumResults">
 
+        </div>
     </div>
     <script>
-        // function textInputResult() {
-        //     const textInput = document.querySelector('#textInputNum').value;
-        //     const outputInputNum = document.querySelector('#textNumResults');
-
-        //     outputInputNum.innerHTML = `You entered: ${textInput}`;
-        // }
-
-        // function totalNum() {
-        //     let sum = 0;
-        //     let inputNum = document.querySelector("#inputNum").value;
-        //     let num = parseInt(inputNum);
-        //     for (let i=1; i <= num; i++) {
-        //         sum += i;
-        //     }
-        // document.getElementById('sumResults').innerHTML = sum;
-        // }
-
-        // function totalNum(number) {
-        //     let sum = 0;
-        //     let inputNum = document.querySelector("#inputNum").value;
-        //     let num = parseInt(inputNum);
-        //     for (let i=1; i <= number; i++) {
-        //         sum += i;
-        //     } return sum;
-        // document.getElementById('sumResults').innerHTML = sum;
-        // }
-
         function textInputResult() {
             const textInput = document.querySelector('#textInputNum').value;
             const outputInput = document.querySelector('#textNumResults');
 
-            outputInput.innerHTML = `You entered: ${textInput}`;
+            outputInput.innerHTML = `<strong>You entered:</strong> ${textInput}`;
+        }
+
+        function totalSum(num) {
+            let sum = 0;
+            for (let i=1; i <= num; i++) {
+                sum += i;
+            } 
+            return sum;
         }
 
         function totalNumResult() {
             const numInput = document.querySelector("#inputNum").value;
             const outputInput = document.querySelector('#sumResults');
-            const number = parseInt(numInput);
-            // let inputIntSum = totalSum(inputInt);
-            if (number !== NaN) {
-                outputInput.innerHTML = 'Total Num: ' + totalSum(number);
+            const numInt = parseInt(numInput);
+            if (numInt !== NaN) {
+                outputInput.innerHTML = '<strong>Total Num:</strong> ' + totalSum(numInt);
             }
-
         }
 
-        // function totalNum() {
-        //     let sum = 0;
-        //     let inputNum = document.querySelector("#inputNum").value;
-        //     let num = parseInt(inputNum);
-        //     for (let i=1; i <= num; i++) {
-        //         sum += i;
-        //     }
-        // document.getElementById('sumResults').innerHTML = sum;
-        // }
+        function addTotal() {
+            const nums1 = document.querySelector('#addNums1').value;
+            const nums2 = document.querySelector('#addNums2').value;
+            const outputInput = document.querySelector('#addNumResults');
 
-        function totalSum(number) {
-            let sum = 0;
-            // let inputNum = document.querySelector("#inputNum").value;
-            // let num = parseInt(inputNum);
-            for (let i=1; i <= number; i++) {
-                sum += i;
-            } 
-            return sum;
-        // document.getElementById('sumResults').innerHTML = sum;
+            const numFloat1 = parseFloat(nums1);
+            const numFloat2 = parseFloat(nums2);
+
+            if ((numFloat1 != NaN) && (numFloat2 != NaN)) {
+                const sumTotal = numFloat1 + numFloat2;
+                outputInput.innerHTML = `<strong>Total Sum:</strong> ${sumTotal}`;
+            }
         }
     </script>
-    
-</main>
 </body>
 </html>

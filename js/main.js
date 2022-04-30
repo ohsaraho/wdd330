@@ -2,7 +2,12 @@ const links = [
     {
       label: "Week01",
       url: "week1/index.html"
+    },
+    {
+      label: "Week02",
+      url: "week2/index.html"
     }
+    
   ]
 
 function loadIndex() {
