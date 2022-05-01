@@ -1,4 +1,4 @@
-* {
+body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -11,7 +11,8 @@
     font-size: 40pt;
     margin: 20px;
     padding: 20px;
-    background-color: #D3614A;
+    background-color: #3F785E;
+    /* background-color: #D3614A; */
     border-radius: 5px;
     color: white;
 }
@@ -35,6 +36,34 @@
     color: #356087;
 }
 
+footer {
+    font-family: "Comfortaa", Lato, sans-serif;
+    text-align: center;
+    margin: 20px;
+    font-size: 18pt;
+    color: white;
+    padding: 20px;
+    background-color: #498e6f;
+    border-radius: 5px;
+}
+
+/* .main_footer_div {
+    background-color: #D3614A;
+    border: 5px;
+}
+
+.note_footer_div {
+    background-color: #3F785E;
+    border: 5px;
+} */
+
+footer a {
+    color: white;  
+}
+
+footer a:hover {
+    color: #D3614A;  
+}
 /*----- Week 1 -----*/
 .week1 h1 {
     font-family: "Comfortaa", Lato, sans-serif;
@@ -63,11 +92,11 @@
     padding: 5px 0px;
 }
 
-.week1 a {
+.week1 .exercise_anchor {
     color: #2E4861;
 }
 
-.week1 a:hover {
+.week1 .exercise_anchor:hover {
     color: #356087;
 }
 
@@ -106,11 +135,11 @@
     padding: 5px 0px;
 }
 
-.week2 a {
+.week2 .exercise_anchor {
     color: #2E4861;
 }
 
-.week2 a:hover {
+.week2 .exercise_anchor:hover {
     color: #356087;
 }
 
@@ -122,6 +151,10 @@
     .main_index ol li {
         font-size: 14pt;
         
+    }
+
+    footer {
+        font-size: 14pt;
     }
 
     .week1 h1 {

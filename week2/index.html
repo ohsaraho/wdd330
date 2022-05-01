@@ -7,12 +7,14 @@
     <meta name="description" content="Week 2 Notes on the readings">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/copyright.js"></script>
 
 </head>
-<body>
-    <main class="week2">
+<body class="week2">
+    <main>
         <h1>Week 2</h1>
         <h2>Notes</h2>
+        <h2>Javascript: Novice to Ninja <br> Chapter 2: Programming Basics, Chapter 3: Arrays, Logic, and Loops, and Chapter 4: Functions</h2>
         <ul>
             <li>Automatic Semicolon Insertion (ASI) is used by JavaScript interpreters which places semicolons at the end of each line for you. <br> Although that can cause errors, so it's best to put a semi-colon and each statement on a new line.</li>
             <li>Blocks which is a series of statements within curly brackets do not need to be terminated by a semicolon.</li>
@@ -34,16 +36,12 @@
             <li>"var" worked alot like how "let" works but "var" does not have block scope.</li>
             <li><strong>global scope</strong> is any variable that is declared outside of a block which it means it can be accessible in the whole entire program. <br> This is not best practice because you can run into the same name with another global variable and could overwrite each other's values.</li>
             <li>local scope are created within blocks. <br> Which means any variable declared inside that block is only accessible within that block</li>
-            <li></li>
         </ul>
         <h3>Template Literals</h3>
         <ul>
             <li><strong>Template Literals</strong> are special types of strings</li>
             <li>They use the backtick character <strong>` `</strong>. For example: `Hello world!`;</li>
             <li>An expression can be within the template literal and the value will be displayed. This is called interpolation. For example: <br> const name = `Sam`; <br> `Hello <strong>${</strong>name<strong>}</strong>!` <br> Output: 'Hello Sam!'</li>
-            <li></li>
-            <li></li>
-            <li></li>
         </ul>
         <h3>Converting</h3>
         <ul>
@@ -53,7 +51,6 @@
             <li>The best way to <strong>convert numbers to strings</strong> is by using the <strong>String(' '); function.</strong>
             <li>You can also add an empty string which is type coercion. For example: <br> 3 +''; Returns: '3'</li>
             <li>Another option is the <strong>toString()</strong> method. For example: <br> 10..toString(); Returns: '10'</li>
-            <li></li>
         </ul>
         <h3>Parsing Numbers</h3>
         <ul>
@@ -74,26 +71,38 @@
             <li>The <strong>join()</strong> method turns the array into a string and then each item in the array is separated by commas. For example: <br> nameOfArray.join(); then returns: 'Grass, Water, Dirt, Sun, Garden, Rain' <br> You can choose a different separator other than a comma like an ampersand sign as follows: <br> nameOfArray.join(' & '); returns the same as above just instead of commas it is the ampersand sign.</li>
             <li>The <strong>slice()</strong> method creates</li>
             <li>The <strong>reverse()</strong> method is used to reverse the order of an array. For example: <br> nameOfArray.reverse(); then returns the array but in reverse.</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>You can also sort the order of an array by using the <strong>sort()</strong> method. For example: <br> nameOfArray.sort(); which sorts the array alphabetically. <br> Numbers also can be sorted alphabetically but by their first digit not numerically where 9 would come after 10.</li>
         </ul>
-        <h3>Array Methods</h3>
+        <h3>Functions</h3>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>To define a function literal you would use a <strong>function declaration</strong>. It starts with the <strong>function keyword</strong> then the function name, followed by paraentheses and curly brackets that will contain your code. For example: <br> <i>function</i> functionName() { console.log('Hello World!');}</li>
+            <li>Another way you can define a function literal is by creating a <strong>function expression</strong> which assigns an anonymous function to variable. For example: <br> const goodbye = function() {console.log('Goodbye World!');}; <br> You can also create a named function expression as well which would just have the name of the function and then paraentheses after the function keyword.</li>
+            <li>The semicolon at the end of the (function expression) finishes the statement but a normal function declaration ends in a block which you don't need semicolons at the end of blocks.</li>
+            <li><strong>Function() Constructors</strong> which the body of the function would be entered as a string. For Example: <br> const hello = new Function('console.log("Hello World!");'); <br> Although it is not recommended to declare functions this way.</li>
+            <li><strong>Arrow functions (arrow syntax)</strong> is a new way to declare functions which makes declaring functions more concise by using less wordy syntax.</li>
+            <li>Arrow functions are identified by the 'arrow' symbol "=>". Parameters come before the arrow and the main body of the function comes after the arrows.</li>
+            <li>Arrow functions are always anonymous so in order to refer back to them you have to assign them a variable.</li>
+            <li>Example of an arrow function: const add = (x,y) => x + y; <br> If the function doesn't require any parameters a pair of empty parentheses have to still go before the arrow.</li>
+            <li>Functions are first-class objects in JavaScript which means they behave the same way as every other object. So functions can also be given be used as a parameter to another function. This is known as a <strong>callback</strong>.</li>
+            <li>You can implement a callback by adding a callback as a parameter and then invoking in inside the body of the function.</li>
         </ul>
-        <h2>Exercises</h2>
+        <h2>Questions:</h2>
         <ul>
-            <li><a href="codeExercise/total_sum.html">Adding Numbers</a></li>
+            <li>What is the better go to loop in most situations: for loop or forEach loop? And Why?</li>
+            <li>What is the most common reason to use callbacks?</li>
+        </ul>
+        <h2>Team Activity</h2>
+        <ul>
+            <li><a class="exercise_anchor" href="codeExercise/total_sum.html">Adding Numbers</a></li>
         </ul>
 
         
     </main>
+    <footer>
+        &copy; <span id="copyrightyear"></span> | Sarah Osguthorpe | Utah | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a>
+        <!-- <div class="note_footer_div">
+            <p>&copy; <span id="copyrightyear"></span> Sarah Osguthorpe | Utah | <a class="footer_anchor" href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
+        </div> -->
+    </footer>
 </body>
 </html>
