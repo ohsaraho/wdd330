@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 3 Notes</title>
+    <meta name="description" content="Week 3 Notes on the readings">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/copyright.js"></script>
+
+</head>
+<body class="week3">
+    <main>
+        <h1>Week 3</h1>
+        <h2>Notes</h2>
+        <h2>Javascript: Novice to Ninja <br> Chapter 2: Programming Basics, Chapter 3: Arrays, Logic, and Loops, and Chapter 4: Functions</h2>
+        <h3>Object methods: "<strong>this</strong>"</h3>
+        <ul>
+            <li>Objects</li>
+            <li>A function is called a method when it is a property of an object. Such as: <br> let user = {name: "John", age: 30}; <br> user.sayHi = function() { <br>                alert("Hello!"); <br>
+            };<br> 
+            user.sayHi(); // Hello! <br> The method is sayHi and the object is user</li>
+            <li>The shorter syntax for methods within an object literal is usually thoe most preferred which looks like this: <br> user = { sayHi: function() { alert("Hello"); } }; <br> user = { sayHi() { // same as "sayHi: function(){...}" alert("Hello"); } }; <br> Which means you can leave out the keyword "function" and just put sayHi()</li>
+            <li>You can access the object through the method with the keyword "this".</li>
+            <li>The value of "this" is the object before the dot "." which is the one used to call the method. For example within the sayHi function you put: alert(this.name);</li>
+            <li>"<strong>This</strong>" can be used in any function even it is not a method of an object</li>
+            <li>Arrow functions though do not have their "own" <strong>this</strong></li>
+            <li></li>
+
+        </ul>
+        <h3>Javascript: Novice to Ninja <br> Chapter 5: Objects</h3>
+        <ul>
+            <li>In JavaScript an <strong>object</strong> is a self-contained set of related values and function. The act as a collection that is of named propertes mapped to any JavaScript value like strings, numbers, booleans, arrays and functions. <br> It is called a <strong>method</strong> if the property's value is a function.</li>
+            <li>An object is like a dictionary where you can look up a property name and then see a value.</li>
+            <li>Objects are usually used when wanting to keep related information and functionality in the same place together.</li>
+            <li>An <strong>object literal</strong> is an object that is created by wrapping all its properties and methods in curly braces {} <br> All objects can be changable at any time when the program is running which means that its properties and methods can be removed or changed and then if wanted new properties can be added to the object even if it was declard using a "const".</li>
+            <li>You can create an object literal like this: const spiderman = {};</li>
+            <li>You access the properties of an object by using the dot notation. Like so: superman.name <br> Outputs:
+                << 'Superman'<br> You can also access it by using bracket notation. Like so: superman['name'] <br> Outputs:
+                << 'Superman'</li>
+            <li>The dot notation is the most common way but the bracket notation does have a few advantages: like it is the only way to access nonstandard property and method names that aren't following the variable nameing rules. As well as it lets you evaluate an expression and use it as the property key. For example: <br> superman["real" + " " + "name"] // the property is built using string concatenation <br>
+                << "Clark Kent" <br> If you try to access a property that doesn't exist though, undefined will be returned. For example: <br> superman.city <br>
+                << undefined</li>
+            <li>When <strong>Calling Methods</strong> we also can use dot or bracket notation. Calling a method is the same when we invoke a function so parentheses need to be placed after the method name. For example: <br> superman.fly()<br><< 'Up, up and away!'<br>superman['fly']()<br><< 'Up, up and away!'</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h2>Questions:</h2>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+        <h2>Team Activity</h2>
+        <ul>
+            <li><a class="exercise_anchor" href="codeExercise/"></a></li>
+        </ul>
+
+        
+    </main>
+    <footer>
+        &copy; <span id="copyrightyear"></span> | Sarah Osguthorpe | Utah | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a>
+        <!-- <div class="note_footer_div">
+            <p>&copy; <span id="copyrightyear"></span> Sarah Osguthorpe | Utah | <a class="footer_anchor" href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
+        </div> -->
+    </footer>
+</body>
+</html>
