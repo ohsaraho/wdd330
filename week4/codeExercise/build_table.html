@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <title>Build a Table</title>
+<style>
+    div {
+        padding: 15px;
+    }
+
+    table, th, td {
+        border: 2px solid black;
+        padding: 10px;
+    }
+    
+</style>
+
+<h1>Mountains</h1>
+
+<div id="mountains"></div>
+
+<script>
+  const MOUNTAINS = [
+    {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+    {name: "Everest", height: 8848, place: "Nepal"},
+    {name: "Mount Fuji", height: 3776, place: "Japan"},
+    {name: "Vaalserberg", height: 323, place: "Netherlands"},
+    {name: "Denali", height: 6168, place: "United States"},
+    {name: "Popocatepetl", height: 5465, place: "Mexico"},
+    {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+  ];
+  // Builds table for Mountains data
+  function buildTable(MOUNTAINS) {
+      let table = document.createElement('table');
+      
+      // Object.keys() returns the array's keys of the object at the index 0
+      let data = Object.keys(MOUNTAINS[0]);
+      let headRowKeyName = document.createElement("tr");
+
+      // forEach loop to grab the three key names. Then appends it to the table
+      data.forEach(function(data) {
+          let headDataKey = document.createElement("th");
+          let text = document.createTextNode(data);
+          headDataKey.appendChild(text);
+          headRowKeyName.appendChild(headDataKey);
+          
+      });
+      table.appendChild(headRowKeyName);
+
+      // forEach loop to grab all the values from the object array
+      MOUNTAINS.forEach(function
+      (object) {
+        let dataRow = document.createElement("tr");
+        data.forEach(function(data) {
+            let dataCell = document.createElement("td"); 
+            dataCell.appendChild(document.createTextNode(object[data]));
+
+            if (typeof object[data] == 'number') {
+                dataCell.style.textAlign = 'right';
+            }
+
+            dataRow.appendChild(dataCell);
+        });
+        table.appendChild(dataRow);
+      });
+      return table;
+  }
+
+  // Writes the function buildTables to the document by the id mountains and appends it
+  document.querySelector('#mountains').appendChild(buildTable(MOUNTAINS));
+</script>
+</html>
