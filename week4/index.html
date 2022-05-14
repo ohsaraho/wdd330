@@ -29,26 +29,22 @@
             <li>The <strong>form.reset()</strong> method resets all the form controls back to their intitial values that were specified in the HTML.</li>
             <li>Also, a button that has the type attribute of reset can be used to reset the form without the need for additional scripting. But reset buttons are poor to use for usability since it is easy to click a button and then have all the users data that was typed in lost.</li>
             <li>The <strong>form.action</strong> property can be used to set the action attribute of a form, so that it would be sent to a different URL to be processed on the server. Written like this: <br>form.action = '/an/other.url'</li>
-            <li>The <strong>focus</strong> event happens when an element is focused on. When dealing with an input element this is when the cursor is placed inside the element. By either clicking or tapping or possibly navigating to it using the keyboard</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>The <strong>focus</strong> event happens when an element is focused on. When dealing with an input element this is when the cursor is placed inside the element. By either clicking or tapping or possibly navigating to it using the keyboard. <br>For exmaple: <br>const input = form.elements.searchInput;<br> input.addEventListener('focus', () => alert('focused'), false);</li>
+            <li>The <strong>blur</strong> event happens when the user moves the focus away from the form element. For example: <br>input.addEventListener('blur', () => alert('blurred'), false);</li>
+            <li>The <strong>change</strong> event happens when the user moves the focus away from the form element but after changing it. Which means if the user clicks in an input field but makes no changes and then clicks some where else, the change event won't activate, but the blur event will. <br>For example: <br>input.addEventListener('change', () => alert('changed'), false);</li>
         </ul>
-        <h3>Javascript: Novice to Ninja <br> Chapter 12: Object Oriented Programming</h3>
+        <h3>Javascript: Novice to Ninja <br> Chapter 15: Modern JavaScript Development</h3>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>A <strong>module</strong> is a self-contained piece of code that has functions and methods, that then can be used in other files and also by other modules. Which helps keep code more organized in separate, reuseable files that improves code maintainability.</li>
+            <li>Code in a module should have a single purpose and group together funcitons that have distinct functinoality. For example, the module could include functions that are used for Ajax, that then can be used in any project where Ajax is required.</li>
+            <li>Having code in modular helps to make it more loosely coupled and interchangeable, which means that you can easily swap one module for another without affecting other parts in a project.</li>
+            <li>Also, modules allow a public API to be exposed, when the implementation is hidden away within the module.</li>
+            <li><strong>Coupling of code</strong> refers to how certain element or modules of code are dependent upon each other. Which two pieces of code are referred to be tightly coupled if one depends on the other to run. This happends if a piece of code makes hard-coded reference another piece of code, that is needed to be used.</li>
+            <li>Here are some important points about modules that are good to keep in your mind:</li>
+            <li>All code that is in modules is always in strict "mode" even without the need for 'use strict' and there is no way to not be in strict mode.</li>
+            <li>Modules have there own global scope, which means any variables created in the top-level of a module can only be aceesed in that module.</li>
+            <li>The value of <strong>this</strong> within the top level of a module is <strong>undefined</strong>, rather than the global object.</li>
+            <li>You also can't use HTML-style comment within modules (but this isn't very common these days in any JavaScript program).</li>
         </ul>
         <h2>Questions:</h2>
         <ul>
