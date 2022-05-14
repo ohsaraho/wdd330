@@ -23,9 +23,13 @@
             <li>To avaoid the same names, the <strong>square bracket notation</strong> can be used. Which is required if the form's name attribute contains any invalid characters, like spaces or dashes. For example: <br>const form = document.forms['search'];</li>
             <li>The form object also has a method called <strong>elements</strong> which returns an HTML collection of all the elements that are contained in the form. For example: <br>const [input,button] = form.elements; (which contains two controls an input element and a button element.)</li>
             <li>You can also access the form controls by using the "name" attribute but it also is suggested to use the square bracket notation when using the name attribute. For example: <br>const input = form['searchInput']</li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Form objects have many useful properties and methods to interact with with the form.</li>
+            <li>The <strong>form.submit()</strong> method, submits the form automatically. But it will not trigger the form submit event which is covered later in the next section.</li>
+            <li>The form can also be submitted manually by the user by clicking a button or input element with the type attribute of submit or an input element with a type attribute of image.</li>
+            <li>The <strong>form.reset()</strong> method resets all the form controls back to their intitial values that were specified in the HTML.</li>
+            <li>Also, a button that has the type attribute of reset can be used to reset the form without the need for additional scripting. But reset buttons are poor to use for usability since it is easy to click a button and then have all the users data that was typed in lost.</li>
+            <li>The <strong>form.action</strong> property can be used to set the action attribute of a form, so that it would be sent to a different URL to be processed on the server. Written like this: <br>form.action = '/an/other.url'</li>
+            <li>The <strong>focus</strong> event happens when an element is focused on. When dealing with an input element this is when the cursor is placed inside the element. By either clicking or tapping or possibly navigating to it using the keyboard</li>
             <li></li>
             <li></li>
             <li></li>
@@ -37,18 +41,14 @@
         </ul>
         <h3>Javascript: Novice to Ninja <br> Chapter 12: Object Oriented Programming</h3>
         <ul>
-            <li>In JavaScript an <strong>object</strong> is a self-contained set of related values and function. The act as a collection that is of named propertes mapped to any JavaScript value like strings, numbers, booleans, arrays and functions. <br> It is called a <strong>method</strong> if the property's value is a function.</li>
-            <li>An object is like a dictionary where you can look up a property name and then see a value.</li>
-            <li>Objects are usually used when wanting to keep related information and functionality in the same place together.</li>
-            <li>An <strong>object literal</strong> is an object that is created by wrapping all its properties and methods in curly braces {} <br> All objects can be changable at any time when the program is running which means that its properties and methods can be removed or changed and then if wanted new properties can be added to the object even if it was declard using a "const".</li>
-            <li>You can create an object literal like this: const spiderman = {};</li>
-            <li>You access the properties of an object by using the dot notation. Like so: superman.name <br> Outputs:
-                << 'Superman'<br> You can also access it by using bracket notation. Like so: superman['name'] <br> Outputs:
-                << 'Superman'</li>
-            <li>The dot notation is the most common way but the bracket notation does have a few advantages: like it is the only way to access nonstandard property and method names that aren't following the variable nameing rules. As well as it lets you evaluate an expression and use it as the property key. For example: <br> superman["real" + " " + "name"] // the property is built using string concatenation <br>
-                << "Clark Kent" <br> If you try to access a property that doesn't exist though, undefined will be returned. For example: <br> superman.city <br>
-                << undefined</li>
-            <li>When <strong>Calling Methods</strong> we also can use dot or bracket notation. Calling a method is the same when we invoke a function so parentheses need to be placed after the method name. For example: <br> superman.fly()<br><< 'Up, up and away!'<br>superman['fly']()<br><< 'Up, up and away!'</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
         <h2>Questions:</h2>
         <ul>
@@ -57,11 +57,11 @@
         </ul>
         <h2>Exercises</h2>
         <ul>
-            <li><a class="exercise_anchor" href="codeExercise/">Build a Table</a></li>
+            <li><a class="exercise_anchor" href="codeExercise/quiz/index.html">Form Quiz</a></li>
         </ul>
         <h2>Team Activity</h2>
         <ul>
-            <li><a class="exercise_anchor" href="codeExercise/">Array Cardio</a></li>
+            <li><a class="exercise_anchor" href="codeExercise/tic-tac-toe.html">Tic Tac Toe</a></li>
         </ul>
 
         

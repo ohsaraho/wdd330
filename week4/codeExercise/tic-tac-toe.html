@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic Tac Toe</title>
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
+    
+</head>    
+    
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        background-color: rgb(38, 218, 218);
+    }
+    .divBoard {
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px;
+        justify-content: center;
+    }
+
+    .divBoard div {
+        border: 2px solid black ;
+        text-align: center;
+        font-size: 9em;
+        font-family: "Rubik", serif;
+    }
+
+    .divBoard div:nth-child(1), .divBoard div:nth-child(4), .divBoard div:nth-child(7)  {
+        border-left: 0;
+    }
+    .divBoard div:nth-child(1), .divBoard div:nth-child(2), .divBoard div:nth-child(3) {
+        border-top: 0;
+    }
+
+    .divBoard div:nth-child(3), .divBoard div:nth-child(6), .divBoard div:nth-child(9) {
+        border-right: 0;
+    }
+
+    .divBoard div:nth-child(7), .divBoard div:nth-child(8), .divBoard div:nth-child(9) {
+        border-bottom: 0;
+    }
+    
+    button {
+        padding: 10px;
+        font-family: "Comfortaa", Lato, sans-serif;
+        font-weight: 700;
+        border-radius: 7px;
+        cursor: pointer;
+        margin: 20px;
+        /* font-family: "Rubik", serif; */
+    }
+
+    /* .divBoard > div:nth-child(3n) {
+        border-right: 0;
+    }
+
+    .divBoard > div:nth-child(n + 7) {
+        border-bottom: 0;
+    } 
+
+    .divBoard > div:nth-child(1n) {
+        border-left: 0;
+    }
+
+    .divBoard > div:nth-child(n + 7) {
+        border-top: 0;
+    }  */
+</style>
+<body>
+    <h1 class="winnerMessage"></h1>
+    
+    <div class="divBoard">
+        <div id="0"></div>
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+        <div id="6"></div>
+        <div id="7"></div>
+        <div id="8"></div>
+    </div>
+    <button id="reset">Reset Game</button>
+</body>
+
+<script>
+    const divBoard = document.querySelector('.divBoard');
+    const resetButton = document.getElementById('reset');
+    const winnerMessage = document.querySelector('.winnerMessage');
+    const player1 = 'X';
+    const player2 = 'O';
+    let gameState = ["", "", "", "", "", "", "", "", ""];
+
+    let player = player1; 
+
+    function addLetter(event) {
+        // console.log(event.target);
+        event.target.innerHTML = player;
+        if (player == player1) {
+            player = player2;
+        } else {
+            player = player1;
+        }
+      }
+
+    function resetBoardGame() {
+        const children = Array.from(divBoard.children);
+
+        children.forEach( (child) => child.innerHTML = "");
+    }
+
+    // const winningConditions = [
+    //     [0, 1, 2],
+    //     [3, 4, 5],
+    //     [6, 7, 8],
+    //     [0, 3, 6],
+    //     [1, 4, 7],
+    //     [2, 5, 8],
+    //     [0, 4, 8],
+    //     [2, 4, 6]
+    // ];
+
+    // function playerWins() {
+
+    //     const childIndex = Array.from(divBoard.children);
+
+    //     childrenIndex.forEach( (child, index) => {
+        
+    //     });
+
+    //     winningConditions.forEach( (condition, index) => { 
+    //         if(player == player1 && (player1 == condition[0] || player1 == condition[1] || player1 == condition[3] || player1 == condition[4] || player1 == condition[5] || player1 == condition[6] || player1 == condition[7])) {
+    //             winnerMessage.innerText = `${player1} wins!`;
+    //             document.querySelector('.winnerMessage').innerText = `${player1} wins!`;
+    //             console.log('.winnerMessage');
+    //         }
+    //     });
+    // }
+        
+      divBoard.addEventListener('click', addLetter);
+      resetButton.addEventListener('click', resetBoardGame);
+    
+</script>
+</html>
