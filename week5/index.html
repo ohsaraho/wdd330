@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 5 Notes</title>
+    <meta name="description" content="Week 5 Notes on the readings">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/copyright.js"></script>
+
+</head>
+<body class="week3">
+    <main>
+        <h1>Week 5</h1>
+        <h2>Notes</h2>
+        <h3>JavaScript: Novice to Ninja <br> Chapter 10: Testing and Debugging</h3>
+        <ul>
+            <li></li>
+            <li><strong>Errors</strong> are caused when there is something that goes wrong in a program. Which the are caused by one of the following: <br>   <strong>System error</strong> - there’s a problem with the system or external devices with which the program is interacting. <br><strong>Programmer error</strong> - the program contains incorrect syntax or faulty logic; it could even be as simple as a typo. <br><strong>User error</strong> - the user has entered data incorrectly, which the program is unable to handle.</li>
+            <li>System errors is something we can't do a whole lot on it since it is not in our hands but try to work out any known problems that are caused by system errors.</li>
+            <li>Programmer errors are our responsibility which we must ensrue they are very few as much as possible and fixed quickly.</li>
+            <li>Also, you should limit user errors by attempting to predict any possible interactions that may throw an error, and make sure that they are delt with in a way that doesn't affect the user eperience negatively. </li>
+            <li><strong>Exception</strong> are errors that produce a return value, that then can be used by the program to deal with the error.<br>For example, if you try to call a method that doesn't exist it will result in a reference error that raises an exception. For example like when we try to call the mythical <strong>unicorn()</strong> function: <br> unicorn();<br> << ReferenceError: unicorn is not defined</li>
+            <li>Also, an exception can produce a <strong>stack trace</strong>. This is a sequence of functions or method calls that lead you to the point where the error occurred.</li>
+            <li>The stack trace also works backward from the point where the error occurred to then identify the original function or method that started the sequence. For example: <br>function three(){ unicorn(); }<br>
+                function two(){ three(); }<br>
+                function one(){ two(); }<br>
+                one();<br> << index.html:13 Uncaught ReferenceError: unicorn is not defined<br>
+                at three (index.html:13)<br>
+                at two (index.html:17)<br>
+                at one (index.html:21)<br>
+                at index.html:24`<br>In the example there are three functions: function one() that invokes funciton two(), which then invokes function three(). Then function three() invokes the unicorn() function which doesn't exist and causes an error. The stack trace works backward which you can see this error was caused by invoking the function one() in the first place.
+            </li>
+            <li><strong>Warnings</strong> can occur if there is an error in the code but isn't enough to cause the program to crash, which means the program will continue to run after a warning. It sounds good but it can cause problems since issue that produced the warning could possibly cause the program to continue running incorrectly. <br>For example, one mistake that could cause a warning is assigning a value to a variable that's undeclared:<br>pi = 3.142;<br>
+                << JavaScript Warning: assignment to undeclared variable<br>But not all browsers will display a warning for the code example above which means you may not see the warning.</li>
+            <li>Warnings and exceptions are shown differently in various environments. Some browsers could show a small icon in the corner of the browser window to indicate that an exception or warning has occurred. Other browsers require you to open up the console to see any warnings or exceptions.<br>When a runtime error occurs in the browser, the HTML will still appear when the JavaScript code will stop working in the background, which if a warning occurs, the JavaScript will continue to run (although it could possibly be incorrect)</li>
+            <li><strong>Strict Mode</strong> produces more exceptions and warnings and also prohibits the use of some deprecated features. This is because strict mode consdiers coding practices that were accepted previously as just being 'poor style' as actual errors.</li>
+            <li>Writing code in strict mode also can help in improving clarity and speed, since it follows conventions and will throw exceptions if any sloppy code practices are used.<br>Which if not using strict mode it is considered 'sloppy mode' since it is forgiving of sloppy programming practices.</li>
+            <li>Strict mode requires you to add it to the first line of your JavaScript file, like so: <br> 'use strict';</li>
+            <li>For example if you try to assign a value to a variable that is undeclared using strict mode, you will get an exception, instead of a warning: <br>'use strict';<br>e = 2.718;<br>
+                << ReferenceError: e is not defined</li>
+            <li>You can also set strict mode on in each function which it is the recommended way to invoke strict mode is to place all your code within a self-invoking function, like so: <br>(function() {<br>'use strict';<br><br>
+            
+                // All your code would go inside this function<br>
+            <br>
+            }());<br>This technique will make sure that only your code is forced in strict mode just in case others code is not written in strict mode.</li>
+            <li><strong>Linting tools</strong> like JS Lint, JS Hint, and ES Lint can be used to test the quality of JavaScript code, beyono just using strict mode. They are designed to highlight any sloppy programming practices or syntax errors, and will not like if certain style conventions are not followed, such as how code is indented.</li>
+            <li>Linting tools can be very unforgiving and use coding conventions that are opinionated, such as not using the "++" and "--" increment operators which is the case when using JS Lint. They are also useful for enforcing a programming <strong>style guide</strong></li>
+            <li>If your code passes a lint test it doesn't guarantee that your code is correct but means that it will be more consistent and likely to have less problems.</li>
+            <li>When an exception occurs the program will terminate with an error message which is good practice in development as it allows you to identify and fix errors. In production it will appear as if the program has crashed.<br>You can handle exceptions gracefully be catching the error. Any error can be hidden from user but still identified.</li>
+            <li>If you suspect a piece of code could result in an exception, we can wrap it in a <strong>try block</strong>. It will run the code inside the block like normal, but if an exception happens it will pass the error object that is thrown onto a <strong>catch block</strong> <br>Here's an example using the squareRoot() funciton:<br>function imaginarySquareRoot(number) {<br>   'use strict';<br>
+                try {<br>
+                    return String(squareRoot(number));<br>
+                } catch(error) {<br>
+                    return squareRoot(-number)+'i';<br>
+                }<br>
+            }<br>The code that is within the catch block will only fun if an exception is thrown inside the try block and the error object is automatically passed as a parameter to the catch block. That allows you to query the error name, message and stack properties, so you can deal with it appropriately.</li>
+            <li>A <strong>finally block</strong> can be added after a catch block which will always execute after the try and catch block, even if an exception doesn't occur or not.<br>This is useful when you want some code to run in both cases.</li>
+            <li>You can use this to modify the imaginarySquareRoot() function so that way it adds "+ or -" to the answer before returning it:<br>function imaginarySquareRoot(number) {<br>
+                'use strict';<br>
+                let answer;<br>
+                try {<br>
+                    answer = String(squareRoot(number));<br>
+                } catch(error) {<br>
+                    answer = squareRoot(-number)+"i";<br>
+                } finally {<br>
+                    return `+ or - ${answer}`;<br>
+                }<br>
+            }</li>
+        </ul>
+        <h2>Questions:</h2>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+        <h2>Exercises</h2>
+        <ul>
+            <li><a class="exercise_anchor" href="codeExercise/quiz/index.html">Form Quiz</a></li>
+        </ul>
+        <h2>Team Activity</h2>
+        <ul>
+            <li><a class="exercise_anchor" href="codeExercise/hiking_activity/index.html">Great Hikes</a></li>
+        </ul>
+
+        
+    </main>
+    <footer>
+        &copy; <span id="copyrightyear"></span> | Sarah Osguthorpe | Utah | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a>
+        <!-- <div class="note_footer_div">
+            <p>&copy; <span id="copyrightyear"></span> Sarah Osguthorpe | Utah | <a class="footer_anchor" href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
+        </div> -->
+    </footer>
+</body>
+</html>
