@@ -18,7 +18,7 @@ function addNewTodo(event) {
     // Resets the input field
     input.value = '';
 
-    // Add to the
+    // Add to the UI
     const todoItem = createTodoItem(todo);
 
     // Saves to localStorage
@@ -48,6 +48,7 @@ function createTodoItem(todo) {
     deleteButton.setAttribute('data-id', todo.id);
     deleteButton.innerText = 'X';
     deleteButton.onclick = deleteTodoList;
+    deleteButton.classList.add('delete-button');
 
     todoDiv.appendChild(completeButton);
     todoDiv.appendChild(todoContent);
@@ -68,7 +69,7 @@ function loadTodos() {
     const todoList = ls.getTodoList();
 
     // Debugging
-    // console.log(todoList);
+    console.log(todoList);
 
     todoList.forEach(todo => {
         const item = createTodoItem(todo);
@@ -77,5 +78,5 @@ function loadTodos() {
 }
 
 function deleteTodoList(event) {
-
+    document.querySelector('#todos').removeChild(event);
 }

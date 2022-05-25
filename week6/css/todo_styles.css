@@ -1,5 +1,97 @@
-div.divContainer {
-    max-width: 1080px;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.divContainer {
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgb(57, 180, 180);
+    font-family: "Rubik", serif;
+}
+
+.divContainer h1 {
+    font-family: "Comfortaa", Lato, sans-serif;
+    text-align: center;
+    padding: 18px 0px;
+    /* font-family: "Rubik", serif; */
+}
+
+.divContainer2 {
+    margin: 15px;
+}
+
+.todosWrapper {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* html {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.addTodoWrapper {
+    padding: 40px 0px;
+    width: 100%;
+}
+
+#todoInput {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 8px;
+    font-size: 15px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#addButton {
+    width: 100%;
+    max-width: 50px;
+    font-size: 25px;
+    vertical-align: middle;
+    background-color: rgb(96, 141, 28);
+    border-radius: 5px;
+}
+#addButton:hover {
+    background-color: rgb(97, 150, 16);
+    cursor: pointer;
+}
+
+.todo {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    padding: 8px;
+}
+
+.complete-button {
+    max-width: 40px;
+}
+
+.complete-button:hover {
+    cursor: pointer;
+}
+
+.delete-button {
+    max-width: 40px;
+    padding: 5px 0px;
+    color: white;
+    text-align: center;
+    background-color: rgb(168, 38, 38);
+    border-radius: 5px;
+    grid-column: 3;
+}
+
+.delete-button:hover {
+    background-color: rgb(147, 44, 44);
+    cursor: pointer;
+}
+
+.todo-content {
+    text-align: left;
+    padding: 10px;
 }
