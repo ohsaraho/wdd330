@@ -1,14 +1,18 @@
-import utilities from './utilities.js';
+import utils from './utilities.js';
 import ls from './ls.js';
 
 // On click handler for button
 document.querySelector('#addButton').onclick = addNewTodo;
+document.querySelector('#allFilter').onclick = applyFilter;
+document.querySelector('#activeFilter').onclick = applyFilter;
+document.querySelector('#completedFilter').onclick = applyFilter;
+
 // Gets the input
 const input = document.querySelector('#todoInput');
 // add input on enter 
 input.addEventListener('keypress', event => {
-    if(event.keyCode == '13') addNewTodo;
-})
+    if(event.keyCode == 13) addNewTodo;
+});
 
 loadTodos();
 
@@ -19,7 +23,8 @@ function addNewTodo(event) {
     input.value = '';
 
     // Add to the UI
-    const todoItem = createTodoItem(todo);
+    createTodoItem(todo);
+    // const todoItem = createTodoItem(todo);
 
     // Saves to localStorage
     ls.saveTodoList(todo);
@@ -78,5 +83,60 @@ function loadTodos() {
 }
 
 function deleteTodoList(event) {
-    document.querySelector('#todos').removeChild(event);
+    // document.querySelector('#todos').remove(event.id);
+    // let todo = localStorage.getItem("todo");
+    // todoArray = JSON.parse(todo);
+    // ls.deleteTodoList(event);
+    // const todoList = ls.getTodoList();
+
+    // todoList.splice(event, 1);
+
+    // ls.deleteTodoList(event);
+
+    // const todoList = ls.getTodoList();
+
+    // const deleteItem = todoList.splice(event);
+
+    // ls.deleteTodoList(deleteItem);
+
+    // loadTodos();
+
+    // localStorage.removeItem(event.id);
+
+    // document.querySelector('#todos').innerHTML = event.id;
+
+
+    // const todoList = ls.getTodoList();
+
+    // todoList.splice(event, 1);
+
+    // ls.deleteTodoList(todoList);
+    
+
+    // let todoListString = localStorage.getItem('todoList');
+    // let todoList = JSON.parse(todoListString);
+    // todoList.splice(event, 1);
+    // localStorage.setItem('todoList', JSON.stringify(todoList));
+    ls.deleteTodoList(event);
+    loadTodos();
+
+    // ls.deleteTodoList(todoList);
+
+    // ls.deleteTodoList(event);
+
+}
+
+function applyFilter(e) {
+
+    // Clear the list
+    document.querySelector('#todos').innerHTML = '';
+
+    // Declare the variables
+    let filteredTodos = [];
+    const allTodos = ls.getTodoList();
+
+    // Check filter to apply
+    if (e.currentTarget.id == 'activeFilter') {
+        filteredTodos = utils.activeFilter(allTodos);
+    }
 }
