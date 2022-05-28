@@ -7,6 +7,8 @@ document.querySelector('#allFilter').onclick = applyFilter;
 document.querySelector('#activeFilter').onclick = applyFilter;
 document.querySelector('#completedFilter').onclick = applyFilter;
 
+document.innerText = activeButton();
+
 
 // Gets the input
 const input = document.querySelector('#todoInput');
@@ -93,8 +95,11 @@ function loadTodos() {
         const item = createTodoItem(todo);
         addToList(item);
         document.querySelector('#countTodos').innerHTML = `${todoList.length} tasks left`;
-        // if (todoList.length == '') {
-        //     document.querySelector('#countTodos').innerHTML = `0 tasks left`;
+        // if (todoList.length >= 0) {
+            
+        //     document.querySelector('#countTodos').innerHTML = `${todoList.length} tasks left`;
+        // } else if (!todoList.length) {
+        //     document.querySelector('#countTodos').innerHTML = '0 tasks left';
         // }
         // if (e.currentTarget.id == 'activeFilter') {
         //     document.querySelector('#countTodos').innerHTML = todoList.length;
@@ -207,11 +212,24 @@ function applyFilter(e) {
         addToList(item);
         if (e.currentTarget.id == 'activeFilter') {
             document.querySelector('#countTodos').innerHTML = `${filteredTodos.length} active tasks`;
-        } else if (e.currentTarget.id == 'allFilter') {
+        } 
+        else if (e.currentTarget.id == 'allFilter') {
             document.querySelector('#countTodos').innerHTML = `${filteredTodos.length} tasks left`;
-        } else if (e.currentTarget.id == 'completedFilter') {
+        }
+         else if (e.currentTarget.id == 'completedFilter') {
             document.querySelector('#countTodos').innerHTML = `${filteredTodos.length} completed tasks`;
         }
+    });
+}
+
+function activeButton() {
+    let buttons = document.querySelectorAll('.filterButton');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
 }
 
