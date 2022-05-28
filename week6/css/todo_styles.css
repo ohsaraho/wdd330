@@ -102,3 +102,7 @@
     text-align: left;
     padding: 10px;
 }
+
+.todo-content-strike {
+    text-decoration: line-through;
+}
