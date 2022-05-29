@@ -23,17 +23,13 @@ function deleteTodoList(id) {
     // let todoList = JSON.parse(todoListString);
     // todoList.splice(event, 1);
     // localStorage.setItem(TODO_LIST, JSON.stringify(todoList));
-    // const todoList = getTodoList();
-    // let updateList = todoList.filter( todo => todo.id != id);
-    // updateList.splice(id, 1);
-    // localStorage.setItem(TODO_LIST, JSON.stringify(updateList));
+    
     // debugger
     const todoList = getTodoList();
     let updateList = todoList.filter( todo => todo.id != id);
-    // updateList.splice(id, 1);
+
     localStorage.setItem(TODO_LIST, JSON.stringify(updateList));
-    // loadTodos();
-    console.log(updateList);
+    // console.log(updateList);
 }
 
 export default {

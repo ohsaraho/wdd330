@@ -16,7 +16,7 @@ const input = document.querySelector('#todoInput');
 input.addEventListener('keypress', e => {
     if (e.keyCode == '13') addNewTodo();
 });
-
+// todosCompleted();
 loadTodos();
 
 function addNewTodo(event) {
@@ -46,10 +46,6 @@ function createTodoItem(todo) {
     completeButton.setAttribute('data-id', todo.id);
     completeButton.onclick = completedList;
     completeButton.classList.add('complete-button');
-    // if(todo.completed) {
-    //     completeButton.innerText = '✔';
-    //     todoContent.innerHTML = `<del>${todo.content}</del>`;
-    // }
 
     // ToDo content
     const todoContent = document.createElement('div');
@@ -89,82 +85,27 @@ function loadTodos() {
     const todoList = ls.getTodoList();
 
     // Debugging
-    console.log(todoList);
+    // console.log(todoList);
 
     todoList.forEach(todo => {
         const item = createTodoItem(todo);
         addToList(item);
-        document.querySelector('#countTodos').innerHTML = `${todoList.length} tasks left`;
-        // if (todoList.length >= 0) {
-            
-        //     document.querySelector('#countTodos').innerHTML = `${todoList.length} tasks left`;
-        // } else if (!todoList.length) {
-        //     document.querySelector('#countTodos').innerHTML = '0 tasks left';
-        // }
-        // if (e.currentTarget.id == 'activeFilter') {
-        //     document.querySelector('#countTodos').innerHTML = todoList.length;
-        // } else if (e.currentTarget.id == 'allFilter') {
-        //     document.querySelector('#countTodos').innerHTML = todoList.length;
-        // } else if (e.currentTarget.id == 'completedFilter') {
-        //     document.querySelector('#countTodos').innerHTML = todoList.length;
-        // }
+        todosCompleted();        
         
     })
 }
 
 function deleteTodoList(event) {
-    // document.querySelector('#todos').remove(event.id);
-    // let todo = localStorage.getItem("todo");
-    // todoArray = JSON.parse(todo);
-    // ls.deleteTodoList(event);
-    // const todoList = ls.getTodoList();
 
-    // todoList.splice(event, 1);
-
-    // ls.deleteTodoList(event);
-
-    // const todoList = ls.getTodoList();
-
-    // const deleteItem = todoList.splice(event);
-
-    // ls.deleteTodoList(deleteItem);
-
-    // loadTodos();
-
-    // localStorage.removeItem(event.id);
-
-    // document.querySelector('#todos').innerHTML = event.id;
-
-
-    // const todoList = ls.getTodoList();
-
-    // todoList.splice(event, 1);
-
-    // ls.deleteTodoList(todoList);
-    
-
-    // let todoListString = localStorage.getItem('todoList');
-    // let todoList = JSON.parse(todoListString);
-    // todoList.splice(event, 1);
-    // localStorage.setItem('todoList', JSON.stringify(todoList));
     const todoId = event.currentTarget.getAttribute('data-id');
     // debugger
     ls.deleteTodoList(todoId);
+    todosCompleted();
     loadTodos();
-
-    // ls.deleteTodoList(todoList);
-
-    // ls.deleteTodoList(event);
 
 }
 
 function completedList(e) {
-
-
-    
-    //  todo.completed = true; 
-    //     completeButton.innerText = '✔';
-    //     todoContent.innerHTML = `<del>${todo.content}</del>`;
 
     const id = e.currentTarget.getAttribute('data-id');
     const getList = ls.getTodoList();
@@ -173,20 +114,6 @@ function completedList(e) {
 
     localStorage.setItem('todoList', JSON.stringify(getList));
     loadTodos();
-    // debugger
-    // if (listComplete == true)
-
-    // let complete = listComplete.completed = true;
-
-    // localStorage.setItem(TODO_LIST, JSON.stringify(complete));
-    // loadTodos();
-    // const getList = ls.getTodoList();
-    // const listComplete = getList.find( todo => todo.id == id);
-
-    // let complete = listComplete.completed = true;
-
-    // localStorage.setItem(TODO_LIST, JSON.stringify(complete));
-    // loadTodos();
 }
 
 function applyFilter(e) {
@@ -210,15 +137,16 @@ function applyFilter(e) {
     filteredTodos.forEach( todo =>{
         const item = createTodoItem(todo);
         addToList(item);
-        if (e.currentTarget.id == 'activeFilter') {
-            document.querySelector('#countTodos').innerHTML = `${filteredTodos.length} active tasks`;
-        } 
-        else if (e.currentTarget.id == 'allFilter') {
-            document.querySelector('#countTodos').innerHTML = `${filteredTodos.length} tasks left`;
-        }
-         else if (e.currentTarget.id == 'completedFilter') {
-            document.querySelector('#countTodos').innerHTML = `${filteredTodos.length} completed tasks`;
-        }
+        // if (e.currentTarget.id == 'activeFilter') {
+        //     document.querySelector('#countTodos').innerHTML = `${filteredTodos.length} active tasks`;
+        // } 
+        // else if (e.currentTarget.id == 'allFilter') {
+        //     let counting = todosUncompleted()
+        //     document.querySelector('#countTodos').innerHTML = `${counting} tasks left`;
+        // }
+        //  else if (e.currentTarget.id == 'completedFilter') {
+        //     document.querySelector('#countTodos').innerHTML = `${filteredTodos.length} completed tasks`;
+        // }
     });
 }
 
@@ -229,7 +157,38 @@ function activeButton() {
         button.addEventListener('click', function () {
             buttons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
+            
+            // if (loadTodos() == true) {
+            //     document.querySelector('active filterButton').classList.add('active');
+            // } else {
+            //     this.classList.add('active');
+            // }
         });
     });
+}
+
+function todosCompleted() {
+        // let numremaining = todosUncompleted();
+        // document.querySelector('#countTodos').innerHTML = `<span>${numremaining} task${numremaining > 1 ? 's' : ""} remaining</span>`;
+        let todosRemaining = todosUncompleted();
+        if (todosRemaining > 1 || todosRemaining == 0) {
+            document.querySelector('#countTodos').innerHTML = `${todosRemaining} tasks left`;
+        } 
+        else if (todosRemaining == 1) {
+            document.querySelector('#countTodos').innerHTML = `${todosRemaining} task left`;
+        }
+    
+}
+
+function todosUncompleted() {
+    let count = 0;
+    const todoList = ls.getTodoList();
+    todoList.forEach(c => {
+        count += c.completed ? 0 : 1
+    });
+    // debugger
+    // console.log(count);
+    return count;
+    
 }
 
