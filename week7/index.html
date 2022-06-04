@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week 5 Notes</title>
-    <meta name="description" content="Week 5 Notes on the readings">
+    <title>Week 7 Notes</title>
+    <meta name="description" content="Week 7 Notes on the readings">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <script defer src="../js/copyright.js"></script>
@@ -76,18 +76,34 @@
             
             party();<br>
             << 'Been there, got the T-Shirt'</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            
+        </ul>
+        <h3>JavaScript: Novice to Ninja <br> Chapter 11: Further Functions</h3>
+        <ul>
+            <li>The Fetch API provides a global <strong>fetch()</strong> method that has only one mandatory argument, which is the URL of the resource that you want to fetch. <br>This is a very basic example below: fetch('https://example.com/data')<br>
+                .then( // code that handles the response )<br>
+                .catch( // code that runs if the server returns an error )<br><br>You can see that the <strong>fetch()</strong> method returns a promise resolves to the response returned from the URL which was provided as an argument.<br>The promise in the example above, will be resolved when a response is received from the URL 'https:example.com/data'. Because it is a promise, you can also use a <strong>catch</strong> statement at the end to deal with any errors that may occur.</li>
+            <li>The Fetch API has the Response interface that deals with the object that is then returned when the promise is fulfilled. <strong>Response objects</strong> also have a number of methods and properties that allow you to process the response effectively.</li>
+            <li>Each response has a response object called a <strong>ok</strong> property, which checks to see if the response is successful.<br>It is based on the <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank" rel="noreferrer">HTTP status code</a> which can be accessed using the status property.<br>It will usually be <strong>200</strong> if the response was successful, <strong>201</strong> if a resource was created, or <strong>204</strong> when the request is successful but there is no content that is returned.</li>
+            <li>The <strong>ok</strong> property will return true if the <strong>status</strong> property is between 200 and 299.<br>We have to manually check if this happens because the promise will only be rejected in the case of a network error, rather than something like a '404 page not found error', but is still considered a successful request in terms of the promise.<br><br>Which means we can use an if block to check if the request successful, and throw an error if not: <br><br>const url = 'https:example.com/data';<br><br>
+
+                fetch(url)<br>
+                .then((response) => {<br>
+                    if(response.ok) {<br>
+                        return response;<br>
+                    }<br>
+                    throw Error(response.statusText);<br>
+                })<br>
+                .then( response => // do something with response )<br>
+                .catch( error => console.log('There was an error!') )<br><br>The error thrown refers to the <strong>statusText</strong> property of the response object and also specifies the status message that corresponds to the code returned, for example it could be 'Forbidden' for a status code of 403.</li>
+            <li>Other properties of the Response object are:<br><strong>headers</strong> – A Headers object (see later section) containing any headers associated with the response<br><strong>url</strong> – A string containing the URL of response<br><strong>redirected</strong> – A boolean value that specifies if the response is the result of a redirect<br><strong>type</strong> – A string value of 'basic', 'cors', 'error' or 'opaque'. A value of 'basic' is used for a response from the same domain. A value of 'cors' means the data was received from a valid cross-origin request from a different domain. A value of 'opaque' is used for a response received from 'no-cors' request from another domain, which means access to the data will be severely restricted. A value of 'error' is used when a network error occurs.</li>
+            <li>The <strong>redirect()</strong> method can be used to redirect to another URL if needed. It does create a new promise that resolves to the response from the redirected URL.<br>The example below shows how a redirect response promise would be resolved:<br><br>fetch(url)<br>
+                .then( response => response.redirect(newURL)); // redirects to another URL<br>
+                .then( // do something else )<br>
+                .catch( error => console.log('There was an error: ', error))<br>At this time though, there isn't any support for the <strong>redirect()</strong> method in any browser.</li>
+            <li><strong>JSON</strong>, another repsonse is probably the most common format for AJAX responses. The <strong>json()</strong> method is used to deal with these by transforming a stream of JSON data into a promise that then resolves to a JavaScript object.<br><br>The example below shows how JSON response promise would be resolved:<br><br>fetch(url)<br>
+                .then( response => response.json() ); // transforms the JSON data into a JavaScript object<br>
+                .then( data => console.log(Object.entries(data)) )<br>
+                .catch( error => console.log('There was an error: ', error))<br><br>This response returns some JSON data that is then resolved as a JavaScript object which means that you can manipulate the object using JavaScript. In the example above, the <strong>Object.entries()</strong> method is used to view the key and value pairs in the returned object.</li>
         </ul>
         <h2>Questions:</h2>
         <ul>
@@ -96,7 +112,8 @@
         </ul>
         <h2>Exercises</h2>
         <ul>
-            <li><a class="exercise_anchor" href="codeExercise/quiz/index.html">Form Quiz</a></li>
+            <li><a class="exercise_anchor" href="codeExercise/quiz/index.html">Ajax Quiz</a></li>
+            <li><a class="exercise_anchor" href="codeExercise/workbenchExercise/javaScriptExercise.html">JavaScript Workbench</a></li>
         </ul>
         <h2>Team Activity</h2>
         <ul>
