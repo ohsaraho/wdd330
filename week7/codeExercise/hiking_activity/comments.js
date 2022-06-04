@@ -5,8 +5,8 @@ class CommentModel {
     constructor(type) {
       this.type = type;
       // get the initial list of comments out of local storage if it exists
-    //   this.comments = readFromLS(this.type) || [];
-      this.comments = JSON.parse(window.localStorage.getItem(this.type)) || [];
+      this.comments = readFromLS(this.type) || [];
+    //   this.comments = JSON.parse(window.localStorage.getItem(this.type)) || [];
     }
     // I decided I could combine my getAllComments, and filterCommentsByName methods into one by passing in an optional query argument
     getComments(query = null) {
@@ -26,11 +26,11 @@ class CommentModel {
         date: new Date()
       };
       this.comments.push(newComment);
-    //   writeToLS(this.type, this.comments);
-      window.localStorage.setItem(this.type, this.comments);
+      writeToLS(this.type, this.comments);
+    //   window.localStorage.setItem(this.type, this.comments);
     }
   }
-/*
+
   function writeToLS(key, data) {
     // we can use JSON.stringify to convert our object to a string that can be stored in localStorage.
     window.localStorage.setItem(key, JSON.stringify(data));
@@ -40,7 +40,7 @@ class CommentModel {
     // the string we retrieve from localStorage needs to be converted back to an object with JSON.parse
     return JSON.parse(window.localStorage.getItem(key));
   } 
-*/
+
 
   // These methods create the HTML that is needed to output our list of comments to the screen.  Anything dealing with output to the browser is catagorized as view code.
   
@@ -60,7 +60,7 @@ class CommentModel {
     comments.forEach(el => {
       let item = document.createElement('li');
       item.innerHTML = `
-              ${el.name}: ${el.comment}
+              ${el.name}: ${el.content}
         `;
   
       element.appendChild(item);
@@ -78,7 +78,7 @@ class CommentModel {
   
     addSubmitListener(hikeName) {
       // use element.ontouchend to avoid more than one listener getting attached at a time to the button.
-      document.getElementById('commentSubmit').ontouchend = () => {
+      document.getElementById('commentSubmit').onclick = () => {
         // debugger;
         this.model.addComment(
           hikeName,
