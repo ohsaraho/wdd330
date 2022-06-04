@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 5 Notes</title>
+    <meta name="description" content="Week 5 Notes on the readings">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/copyright.js"></script>
+
+</head>
+<body class="week3">
+    <main>
+        <h1>Week 7</h1>
+        <h2>Notes</h2>
+        <h3>JavaScript: Novice to Ninja <br> Chapter 11: Further Functions</h3>
+        <ul>
+            <li>Functions are first-class objects which means they can have properties and mthods themselves.<br>For example: all functions have a length property that returns the number of parameters the function has.</li>
+            <li>For example: the square function that is in chapter 4 shows:<br> function square(x) { <br>return x*x; <br>}<br>When querying the length property, it shows that it accepts one parameter: <br>square.length <br>Output: 1</li>
+            <li>The <strong>call()</strong> method can be used to set the value of <strong>this</strong> inside a function to an object but that is provided as the first argument. <br> For example: in the <strong>sayHello()</strong> function it refers to an unspecific object called "this" that then has a property called "name": <br>function sayHello(){<br>
+                return `Hello, my name is ${ this.name }`;<br>
+            }</li>
+            <li>Then you can create some objects that have a "name" property, then use the <strong>call()</strong> method to invoke the <strong>sayHello()</strong> function providng each object as an argument which will then take the value of "this" in the function: <br>const clark = { name: 'Clark' };<br>
+                const bruce = { name: 'Bruce' };<br><Br>
+                
+                sayHello.call(clark);<br>
+                << 'Hello, my name is Clarke'<br><br>
+                
+                sayHello.call(bruce);<br>
+                << 'Hello, my name is Bruce'</li>
+            <li><strong> Immediately Invoked Function Expression – or IIFE – (pronounced 'iffy') </strong> is an anonymous function that, is invoked as soon as it's defined. <br>This is achieved by placing parentheses at the end of the function definition which we use parentheses to invoke a function.<br>Also, the function has to be made into an expression, which can be done by placing the whole declaration inside parentheses, as shown in the example below: <br>(function(){<br>
+                const temp = 'World';<br>
+                console.log(`Hello ${temp}`);<br>
+                })();<br><br>
+                << 'Hello World'
+                <br><br>This is a useful way of performing a task while keeping any variables wrapped up within the scope of the function. Which means the global namespace is not polluted with lots of variable names.</li>
+            <li>Variables can not be removed from a scope once it has been declared which if a variable is only required temporarily, it may cause some confusion if it is still available later in the code.<br>Or worse, the name of the variable could clash with another piece of code (for example, like an external JavaScript library) resulting in errors. <br> Which placing any code that uses temporary variable inside an IIFE will ensure it's only available while the IIFE is invoked, then it will disapear.</li>
+            <li>For example: in the example below it uses an IIFE to swap the value of two global variables, a and b. <br>This process does require using a temporary variable, called <strong>temp</strong> which will only exist while the IIFE is invoked: <br>let a = 1;<br>
+                let b = 2;<br>
+                
+                (()=>{<br>
+                    const temp = a;<br>
+                    a = b;<br>
+                    b = temp;<br>
+                })();<br><br>
+                
+                a;<br>
+                << 2<br><br>
+                
+                b;<br>
+                << 1<br><br>
+                
+                console.log(temp);<br>
+                << Error: "temp is not defined"<br>This shows the variable temp does not exist after the function has been invoked.</li>
+            <li>This technique is not needed to swap the values of two variables in ES^ version, as destructing can be used, as shown below: <br>let [a,b] = [1,2];<br>
+                [a,b] = [b,a];<br><br>
+                
+                a;<br>
+                << 2<br><br>
+                
+                b;<br>
+                << 1</li>
+            <li>Functions because of their dynamic nature are able to not only call itself, but define itself, or even redefine itself.This can be done by assigning an anonymous function to a variable that has the <strong>same name as the function</strong> For example: function party(){<br>
+                console.log('Wow this is amazing!');<br>
+                party = function(){<br>
+                    console.log('Been there, got the T-Shirt');<br>
+                }<br>
+            }<br><br>This logs a message in the console,then redefines itself to a log a different message in the console. <br>When the function has been called once, it will as if it were defined like the example below: <br> function party() {<br>
+                console.log('Been there, got the T-Shirt');<br>
+            }<br><br>Every time the funciton is called after the first time, it will log the message 'Been there, got the T-Shirt':<br>party();<br>
+            << 'Wow this is amazing!'<br><br>
+            
+            party();<br>
+            << 'Been there, got the T-Shirt'<br><br>
+            
+            party();<br>
+            << 'Been there, got the T-Shirt'</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            
+        </ul>
+        <h2>Questions:</h2>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+        <h2>Exercises</h2>
+        <ul>
+            <li><a class="exercise_anchor" href="codeExercise/quiz/index.html">Form Quiz</a></li>
+        </ul>
+        <h2>Team Activity</h2>
+        <ul>
+            <li><a class="exercise_anchor" href="codeExercise/hiking_activity/index.html">Great Hikes</a></li>
+        </ul>
+
+        
+    </main>
+    <footer>
+        &copy; <span id="copyrightyear"></span> | Sarah Osguthorpe | Utah | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a>
+        <!-- <div class="note_footer_div">
+            <p>&copy; <span id="copyrightyear"></span> Sarah Osguthorpe | Utah | <a class="footer_anchor" href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
+        </div> -->
+    </footer>
+</body>
+</html>
