@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 8 Notes</title>
+    <meta name="description" content="Week 8 Notes on the readings">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/copyright.js"></script>
+
+</head>
+<body class="week3">
+    <main>
+        <h1>Week 8</h1>
+        <h2>Notes</h2>
+        <h3>JavaScript: Novice to Ninja <br> Chapter 8: CSS3 Transforms and Transitions</h3>
+        <ul>
+            <li><strong>Transform</strong> properties in CSS3 let you translate, rotate, scale and/or skew any element on the page.<br>You can manipulate an element's appearance using transform functions. The transform property value is one or more transform functions that are separated by spaces which will be applied in the order they'r provided.</li>
+            <li><strong>Translation</strong> functions allows you to move elements left, right, up or down. These functions behave similarly to the "position: relative;" when declaring top and left, moving elements up and down or left and right along the x and y axes.<br>When a translation function is employed, you're are moving elements without impacting the flow of the document. <br>While "position: relative" allows you to position an element either against its current position or against a parent or other ancestor, translated elements can only be moved relative to its current positon.</li>
+            <li>The <strong>translate(x,y)</strong> function moves an element x from the left, and y from the top: <br>transform: translate(45px, -45px);</li>
+            <li>Example for the ad, they want the word "dukes" to move over to the right when the user hovers over it...the HTML is <br><h1>Put your <span>dukes</span> up, sire</h1><br>CSS is:<br>.ad-ad2 h1:hover span {<br>
+                color: #484848;  <br>
+                transform: translateX(40px);<br>
+            }<br>But this doesn't work because "transforms" don't work on inline elements.But we can fix that by just adding "display: inline-block;"<br>.ad-ad2 h1:hover span {<br>
+                color: #484848;  <br>
+                transform: translateX(40px);<br>
+                display: inline-block;<br>
+            }</li>
+            <li>The <strong>scale(x,y)</strong> function can scale an element by the defined factors, first horizontally then vertically. If there is only one value provided, it will be used fo both the "x" and "y" values, growing or shrinking your element or pseudo-element while maintaining the original aspect ratio. <br>For example, <strong>scale(1)</strong> would leave the element the same size, <strong>scale(2)</strong> would double its proportions, and <strong>scale(0.5)</strong> would halve the size, and so on.<br>Providing different values will distort the element, as you'd expect:<br>transform: scale(1.5, 0.25);</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h2>Questions:</h2>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+        <h2>Exercises</h2>
+        <ul>
+            <li><a class="exercise_anchor" href="codeExercise/quiz/index.html">Ajax Quiz</a></li>
+            <li><a class="exercise_anchor" href="codeExercise/workbenchExercise/javaScriptExercise.html">JavaScript Workbench</a></li>
+        </ul>
+        <h2>Team Activity</h2>
+        <ul>
+            <li><a class="exercise_anchor" href="codeExercise/hiking_activity/index.html">Great Hikes</a></li>
+        </ul>
+
+        
+    </main>
+    <footer>
+        &copy; <span id="copyrightyear"></span> | Sarah Osguthorpe | Utah | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a>
+        <!-- <div class="note_footer_div">
+            <p>&copy; <span id="copyrightyear"></span> Sarah Osguthorpe | Utah | <a class="footer_anchor" href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
+        </div> -->
+    </footer>
+</body>
+</html>
