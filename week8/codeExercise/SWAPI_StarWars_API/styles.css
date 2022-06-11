@@ -1,0 +1,58 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.tableDiv {
+    max-width: 1080px;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    border-spacing: 0.5em;
+    padding: 1em;
+    /* vertical-align: middle; */
+}
+
+th {
+    background-color: rgb(40, 114, 167);
+    color: white;
+    padding: 1em;
+    font-family: "Rubik", serif;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(219, 219, 219);
+}
+
+
+td {
+    padding: 1em;
+    font-family: "Comfortaa", Lato, sans-serif;
+    border: 1px solid black;
+}
+
+a {
+    color: black;
+    font-size: 2em;
+    font-family: "Rubik", serif;
+}
+
+a:hover {
+    color: rgb(41, 89, 151);
+}
+
+.pageDiv {
+    padding: 1em;
+    text-align: center;
+}
+
+#next {
+    padding: 0.5em;
+}
+#prev {
+    padding: 0.5em;
+}

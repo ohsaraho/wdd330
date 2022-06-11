@@ -19,7 +19,7 @@
             <li><strong>Transform</strong> properties in CSS3 let you translate, rotate, scale and/or skew any element on the page.<br>You can manipulate an element's appearance using transform functions. The transform property value is one or more transform functions that are separated by spaces which will be applied in the order they'r provided.</li>
             <li><strong>Translation</strong> functions allows you to move elements left, right, up or down. These functions behave similarly to the "position: relative;" when declaring top and left, moving elements up and down or left and right along the x and y axes.<br>When a translation function is employed, you're are moving elements without impacting the flow of the document. <br>While "position: relative" allows you to position an element either against its current position or against a parent or other ancestor, translated elements can only be moved relative to its current positon.</li>
             <li>The <strong>translate(x,y)</strong> function moves an element x from the left, and y from the top: <br>transform: translate(45px, -45px);</li>
-            <li>Example for the ad, they want the word "dukes" to move over to the right when the user hovers over it...the HTML is <br><h1>Put your <span>dukes</span> up, sire</h1><br>CSS is:<br>.ad-ad2 h1:hover span {<br>
+            <li>Example for the ad, they want the word "dukes" to move over to the right when the user hovers over it...the HTML is <br><br>&lt;h1&gt;Put your &lt;span>dukes&lt;/span&gt; up, sire&lt;/h1&gt;<br><br>CSS is:<br>.ad-ad2 h1:hover span {<br>
                 color: #484848;  <br>
                 transform: translateX(40px);<br>
             }<br>But this doesn't work because "transforms" don't work on inline elements.But we can fix that by just adding "display: inline-block;"<br>.ad-ad2 h1:hover span {<br>
@@ -28,18 +28,18 @@
                 display: inline-block;<br>
             }</li>
             <li>The <strong>scale(x,y)</strong> function can scale an element by the defined factors, first horizontally then vertically. If there is only one value provided, it will be used fo both the "x" and "y" values, growing or shrinking your element or pseudo-element while maintaining the original aspect ratio. <br>For example, <strong>scale(1)</strong> would leave the element the same size, <strong>scale(2)</strong> would double its proportions, and <strong>scale(0.5)</strong> would halve the size, and so on.<br>Providing different values will distort the element, as you'd expect:<br>transform: scale(1.5, 0.25);</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>But <strong>scale</strong> has no impact on the document flow which means if you were to scale inline-block elements, text that is around it will fail to accommodate it with reflowing (not allowing space between, kind of overlapping the text)<br>Because of this if need be you could try adjusting the elements height, width, or font-size instead of using a scale() transform.</li>
+            <li>The <strong>rotate()</strong>function rotates an element around the point of origin by a specified angle value given. Same as scale, the default point of origin is element's center. <br>Usually, angles are declared in degrees, positive degrees moving clockwise and negative moving counterclockwise.<br>In addition to degrees, valeus can also be provided in grads, radians, or turns.<br>Rotate example below:<br><br>.ad-ad2 h1:hover span {<br>
+                color: #484848;<br>
+                transform: rotate(10deg) translateX(40px) scale(1.5);<br>
+            }<br><br>This rotates the span by ten degrees clockwise.<br>The rotate is declared before the transalte so that is applied first because transforms are applied in the order provided so what you want done first you put first.<br>The span will be rotated 10 degrees, then moved 40px along the rotated x axis.</li>
+            <li>To animate an element in CSS, you hav to first create a named animation, then attach it to an element in that element's property declaration block. <br>Animations themseleves don't do anything which in order to animate an element, you have to associate the animation with that element.</li>
+            <li>In order to create an animation, you use the <strong>@keyframes</strong> rule. Include <strong>@-webkit-keyframes</strong> for all WebKit implementations followed by a name that you choose, which serves as the identifier for the animation. Then, you can specify your keyframes.<br>For example, an animation called "myAnimation", the <strong>@keyframes</strong> rule would look like this:<br><br>@-webkit-keyframes myAnimation { <br>
+                /* put animation keyframes here */<br>
+            }<br>
+            @keyframes myAnimation { <br>
+                /* put animation keyframes here */<br>
+            }<br>Don't quote the animation name.</li>
             <li></li>
             <li></li>
             <li></li>
@@ -56,12 +56,11 @@
         </ul>
         <h2>Exercises</h2>
         <ul>
-            <li><a class="exercise_anchor" href="codeExercise/quiz/index.html">Ajax Quiz</a></li>
-            <li><a class="exercise_anchor" href="codeExercise/workbenchExercise/javaScriptExercise.html">JavaScript Workbench</a></li>
+            <li><a class="exercise_anchor" href="codeExercise/testExamples/index.html">Translation</a></li>
         </ul>
         <h2>Team Activity</h2>
         <ul>
-            <li><a class="exercise_anchor" href="codeExercise/hiking_activity/index.html">Great Hikes</a></li>
+            <li><a class="exercise_anchor" href="codeExercise/SWAPI_StarWars_API/swapi.html">Star Wars API</a></li>
         </ul>
 
         
