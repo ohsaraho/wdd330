@@ -1,42 +1,17 @@
-// function getURL(event) {
-//   fetch("https://swapi.dev/api/starships/")
-//     .then((response) => response.json())
-//     .then((data) => {
-      
-//       // const results = data.results;
-//       console.log(data.results);
-//     });
-// }
-
 function getAPI(url = "https://swapi.dev/api/starships/") {
   console.log(url);
     return fetch(url)
       .then(function (response) {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        } else {
           return response.json();
+        }
       })
-      // .then((data) => {
-      //   const results = data.results;
-
-      //   results.forEach(element => {
-      //     let table = document.createElement('table');
-      //     let tr = document.createElement('tr');
-      //     let starshipName = document.createElement('td');
-      //     starshipName.innerText = element.name;
-      //     let starshipModel = document.createElement('td');
-      //     starshipModel.innerText = element.model;
-          
-
-      //     tr.appendChild(starshipName);
-      //     tr.appendChild(starshipModel);
-      //     table.appendChild(tr);
-
-      //     return table;
-          
-      //   })
-      //   console.log(results);
-      //   console.log(data);
-      // })
-  }
+      .catch(function (error) {
+        console.log(error);
+      });
+}
 
 function renderShipArray(ships) {
   const array = document.querySelector('.tbody');
@@ -75,24 +50,6 @@ function showShips(url) {
           showShips(data.previous);
         };
       }
-    
-
-    // results.forEach(element => {
-    //   let table = document.createElement('table');
-    //   let tr = document.createElement('tr');
-    //   let starshipName = document.createElement('td');
-    //   starshipName.innerText = element.name;
-    //   let starshipModel = document.createElement('td');
-    //   starshipModel.innerText = element.model;
-      
-
-    //   tr.appendChild(starshipName);
-    //   tr.appendChild(starshipModel);
-    //   table.appendChild(tr);
-
-    //   return table;
-      
-    // })
     
   })
 }

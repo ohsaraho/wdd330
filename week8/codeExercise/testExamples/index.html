@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <meta name="description" content="">
+    <title>Transforms & Keyframes</title>
+    <meta name="description" content="Coding exercise on transforms and keyframes">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-    <main class="ad-ad2">
-      <div class="divContainer">
+    <main class="mainContainer">
+      <div class="ad-ad2">
         <h1>Transforms</h1>
         <div>
           <h2>Transform: translate</h2>
@@ -22,10 +22,53 @@
           <h3><p>Put your</p><span class="test2">dukes</span><p>up, sire</p></h3>
         </div>
         <div>
-          <h2>Transform: All</h2>
+          <h2>Transform: rotate</h2>
+          <h3><p>Put your</p><span class="test3">dukes</span><p>up, sire</p></h3>
+        </div>
+        <div>
+          <h2>Transform: skew</h2>
+          <h3><p>Put your</p><span class="test4">dukes</span><p>up, sire</p></h3>
+        </div>
+        <div class="testAllDiv">
+          <h2>All Transforms</h2>
           <h3><p>Put your</p><span class="testAll">dukes</span><p>up, sire</p></h3>
         </div>
       </div>
+      <div class="ad-ad3">
+        <h1>Animations & Keyframes</h1>
+        <div class="sprite_div">
+          <h2>Animations, transforms, & Keyframes</h2>
+          <div class="sprite_container">
+            <div class="sprite_image"></div>
+          </div>
+        </div>
+      </div>
+      <div class="canvasShapes">
+        <h1>Canvas Element</h1>
+        <div>
+          <canvas id="myCanvas1" class="myCanvas1" width="200" height="200">
+            Sorry! Your browser doesn’t support Canvas.
+          </canvas>
+        </div>
+        <div>
+          <canvas id="myCanvas2" class="myCanvas2" width="200" height="200">
+            Sorry! Your browser doesn’t support Canvas.
+          </canvas>
+        </div>
+      </div>
     </main>
+    <script>
+
+      var canvas = document.getElementById("myCanvas2"); 
+      var context = canvas.getContext("2d");
+      context.scale(1.5,1.5);
+      context.strokeStyle = "black";
+      var gradient = context.createLinearGradient(0, 0, 0, 200);
+      gradient.addColorStop(0, "turquoise"); 
+      gradient.addColorStop(1, "green"); 
+      context.fillStyle = gradient; 
+      context.fillRect(10, 10, 100, 100); 
+      context.strokeRect(10, 10, 100, 100);
+    </script>
 </body>
 </html>
