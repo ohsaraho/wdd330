@@ -56,3 +56,39 @@ a:hover {
 #prev {
     padding: 0.5em;
 }
+
+.hidden {
+    display: none;
+}
+
+div#detailsBox {
+    flex: 1 0 15em;
+    padding: 1em;
+    border: 2px solid;
+    
+    font-family: "Comfortaa", Lato, sans-serif;
+  }
+
+#detailsBox div {
+    text-align: center;
+}
+
+#detailsBox dl {
+    border: 1px solid;
+    text-align: left;
+}
+
+#detailsBox dt {
+    font-weight: bold;
+    font-family: "Rubik", serif;
+}
+
+#detailBox dd {
+    font-family: "Comfortaa", Lato, sans-serif;
+}
+
+.detail {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
