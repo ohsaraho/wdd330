@@ -41,11 +41,13 @@
                 
                 Number.isNaN(4.2);
                 << false<br></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>The three functions mentioned in chapter 1 that produce dialogs in the browser such as: <strong>alert()</strong>, <strong>confirm()</strong> and <strong>prompt()</strong>; are not part of the ECMAScript standard, even though the major browsers support them as methods of the window object.</li>
+            <li>The <strong>window.alert()</strong> method pauses the execution of the program and display a message in a dialog box. The message is the argument to the method, and undefined is always returnd:<br><br> window.alert('Hello');
+                << undefined<br></li>
+            <li>The <strong>window.confirm()</strong> method stop the execution of the program and display a confirmation in a dialog box which shows the message provided as the argument and gives the options of OK or Cancel. It returns the boolean values of true, if the user clicks OK and false if the user clicks Cancel:<br><br>window.confirm('Do you wish to continue?');<
+                << undefined<br><li>
+            <li>The <strong>window.prompt()</strong> method will stop the execution of the program. It displays a dialog that shows a message that is provided as an argument, as well as an input field that lets the user to enter text. The text is returned as a string when the user clicks OK but if the user clicks Cancel, null is returned: <br><br>window.prompt('Please enter your name:');<br></li>
+            <li>These methods will stop the execution of a program in its track which means that everything will stop processing when the method is called, until the user clicks OK or Cancel.</li>
             <li></li>
             <li></li>
             <li></li>

@@ -59,7 +59,7 @@ function getAPI(url = "https://swapi.dev/api/starships/") {
 
 
     renderShipArray(results);
-    renderShipDetails(results);
+    // renderShipDetails(results);
 
     if (data.next) {
       const next = document.getElementById("next");
