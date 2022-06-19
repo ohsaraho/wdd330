@@ -48,20 +48,38 @@
                 << undefined<br><li>
             <li>The <strong>window.prompt()</strong> method will stop the execution of the program. It displays a dialog that shows a message that is provided as an argument, as well as an input field that lets the user to enter text. The text is returned as a string when the user clicks OK but if the user clicks Cancel, null is returned: <br><br>window.prompt('Please enter your name:');<br></li>
             <li>These methods will stop the execution of a program in its track which means that everything will stop processing when the method is called, until the user clicks OK or Cancel.</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        </ul>
+        <h3>JavaScript: Novice to Ninja <br> Chapter 14: HTML5 APIs</h3>
+        <ul>
+            <li>The <strong>data-</strong> attribute is a way of embedding data in a web page while using custom attributes that are ignored by the browser. Also, they are private to page which means they are not intended to be used by an external service - their sole purpose is to be used by a JavaScript program.<br>This makes them perfect for adding data that can be used as a hook, that the program then utilizes to access information about a particular element on the page.</li>
+            <li>The developer can decide the names of these attributes but they must use the following format: <br>Start with <strong>data-</strong><br>Only able to contain lowercase letters, numbers, hyphens, dots, colons, or underscores.<br>Include an optional string value.<br>Some examples are:<br><br>data-powers = 'flight superSpeed'<br>
+                data-rating = '5'<br> 
+                data-dropdown<br> 
+                data-user = 'DAZ'<br> 
+                data-max-length = '32'<br><br></li>
+            <li>The information that is contained in the attributes can be used to identify particular elements. <br>For example, all the elements with an attribute of <strong>data-dropdown</strong> could be identified as a dropdown menu.<br>The values of the attributes can be used to filter different elements as well.<br>For example, you could find all the elements that have a <strong>data-rating</strong> value of 3 or more.</li>
+            <li>Each element has a <strong>dataset</strong> property that can be used to access any <strong>data-</strong> attributes it contains. For exmaple:<br><br>&lt;div id='hero' data-powers='flight superSpeed'&gt;<br>
+                Superman<br>
+                &lt;/div&gt;<br><br>The <strong>data-powers</strong> attribute can be accessed using the following code:<br><br>const superman = document.getElementById('hero');<br>
+                const powers = superman.dataset.powers;<br>
+                << 'flight superSpeed'<br><br>If you take a look at it, you will see that the <strong>data-</strong> prefix is dropped. To access the attribute, <strong>powers</strong> is used as if it is a property of the dataset object. If a <strong>data-</strong> attribute's name contains hyphens, they will be replaced by camel-case notation, so <strong>data-max-length</strong> would be accessed using <strong>dataset.maxLength</strong>.</li>
+            <li>Modern browsers are generally good with supporting <strong>data-</strong> attribute. Internet Explorer 8 even has partial support for it but some other older browsers are unable to understand the <strong>dataset</strong> property, however, any <strong>data-</strong> attribute can be found using the standard <strong>getAttribute</strong> method. So the previous code, could be replaced with the following if you still need to support older browsers: <br><br>const powers = superman.getAttribute('data-powers');<br></li>
+            <li>The restriction of only using a string value can be overcome by encoding any JavaScript object or value as a JSON string, then having to perform type-conversion later, as required. For example, the value of <strong>data-max-length</strong> will return a string, but it an easily be converted into a number, like shown below:<br><br>const maxLength = Number(element.dataset.maxLength);<br><br>Using data attriubtes provides a convenient way of adding data directly into the HTML markup, which gives a richer user experience.</li>
+            <li>Before HTML5, it was difficult to display audio and video in browsers, and plugins such as Flash had to be used. HTML5 introduced the <strong>&lt;audio&gt;</strong> and <strong>&lt;video&gt;</strong> tags, that are used to insert audio and video clips into a web page. Also, it introduceda Media API for controlling the playback of the clips using JavaScript.</li>
+            <li>An audio clip can be inserted into a page with the <strong>&lt;audio&gt;</strong> tag, using the <strong>src</strong> attribute which points to the audio file: <br><br>&lt;audio src='/song.mp3' controls&gt;<br>
+                Your browser does not support the audio element.<br>
+                &lt;/audio&gt;<br><br>A video clip can be inserted with the <strong>&lt;video&gt;</strong>, using the <strong>src</strong> attribute which points to the movie file: <br><br>&lt;video src='http://movie.mp4' controls&gt;<br>
+                    Your browser does not support the video element.<br>
+                    &lt;/video&gt;<br><br></li>
+            <li>Any content that is insed the <strong>&lt;audio&gt;</strong> or <strong>&lt;video&gt;</strong> tags will only display if the browser does not support them; meaning, it can be used to display a message to users of older browsers without support for these features.<br> The <strong>controls</strong> attribute can be added (without any value) and will display the browser's native controls, like play, pause, and volume control.</li>
+            <li>The audio or video element can be referenced by a variable using one of the DOM methods shown in Chapter 6: <br><br>const video = document.getElementsByTagName('video')[0];<br><br></li>
+            <li>Both <strong>audio</strong> and <strong>video</strong> elements have a number of properties and methods to control the playback of the clip.<br><br> The <strong>play()</strong> method will start playing the clip starting from its current position: <br>video.play();<br><br>The <strong>pause()</strong> method will pause the clip at its current position: <br>video.pause();<br><br>The <strong>volume</strong> property is a number that can be used to set the audio volume:<br>video.volume = 0.9;<br><br>The <strong>muted</strong> property is a boolean value, that can be used to mute the audio:<br>
+                video.muted = true;<br><br>The <strong>currentTime</strong> property is a number value that can be used to jump to another part somewhere in the clip:<br>video.currentTime += 10; // jumps forward 10 seconds<br><br> The <strong>playbackRate</strong> property is used to fast-forward or rewind the clip by changing its value. A value of <strong>1</strong> is a normal playback speed:<br>video.playbackRate = 8; // fast-forward at 8 times as fast<br><br>The <strong>loop</strong> property is a boolean value that can be set to <strong>true</strong> to make the clip repeat in a loop: <br>video.loop = true;<br><br>The duration property can be used to see how long the clip lasts: <br>video.duration;<br>
+                << 52.209<br></li>
+            <li>Some of the properties are only available once the browser has recieved all the metadata associated with the video which means that, in order to make sure a value is returned, you should use an <strong>event listener</strong> that fires once the metadata has loaded, like following example:<br><br>video.addEventListener('loadedmetadata', () => { console.log(video.duration); });<br></li>
+            <li>Audio and video clips also have a number of events that will fire when they occur, including: <br><br>The <strong>play</strong> event, which fires when the clip starts and when it resumes after a pause.<br><br>The  <strong>pause</strong> event, which fires when the clip is paused. <br><br>The <strong>volumechange</strong> event, which fires when the volume is changed.<br><br>The <strong>loadedmetadata</strong> event, which we saw in the note above, and which fires when all the video's metadata has loaded.<br><br>These events allow you to respond to any ineractions the user has with the video. For example, the event listener shown below can be added to check whether the user has paused the video:<br><br>video.addEventListener('pause', () => {<br>
+                console.log('The video has been paused'); }, false)<br><br></li>
+            <li>The audio and video elements bring native support for multimedia into the browser, and the API gives developers full control over the playback of audio tracks and video clips.</li>
         </ul>
         <h2>Questions:</h2>
         <ul>
