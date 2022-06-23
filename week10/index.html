@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 10 Notes</title>
+    <meta name="description" content="Week 9 Notes on the readings">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/copyright.js"></script>
+
+</head>
+<body class="week3">
+    <main>
+        <h1>Week 10</h1>
+        <h2>Notes</h2>
+        <h3>MDN: Client-side form validation</h3>
+        <ul>
+            <li>Before you submit data to the server, it is important to make sure that all required form controls are filled out in the correct format. This is called <strong>client-side form validation</strong>, which helps make sure data submitted matches the requirements set forth in the various form contorls.</li>
+            <li>Client-side validation is an initial check and important for good user experience; having the the invalid data be caught on the client-side, is much quicker and a straight fix since they can fix it straight away.<br>If it is checked on the server side and is rejected, there is a delay that is noticeable to the user because it has to go through the server side and then back to the client-side to tell the user to fix their data.</li>
+            <li>Although, client-side validation takes less time to fix it should not be considered a full-scale security measure.<br>The apps that you create should always perform security checks on any form-submitted data, not just on the server-side but the client-side as well, this is because client-side validation is too easy to bypass, malicious users can still easily send bad data through to your server.</li>
+            <li><strong>Form validation</strong> is when you enter data and the browser and/or the web server will check to see if the data is in the correct format specified and within the constraints set by the application.<br>Validation that is done in the browser is called <strong>client-side</strong> validation and validation done on the erver is called <strong>server-side</strong> validation.</li>
+            <li>If the information is correctly formatted in the form, the application allows the data to be submitted to the server and can (usually) saved in a database; if the information isn't correctly formatted, it gives the user an error message, explaining what needs to be fixed and lets the user try again.</li>
+            <li>Three main reasons to validate forms:<br><br><strong>You want to make sure you get the right data, in the right format.</strong> The applications won't work properly if our user's data is stored in the wrong format, or incorrect or even is omitted altogether.<br><br><strong>You want to protect your user's data.</strong> Making your users to enter secure passwords makes it easier to protect their account information.<br><br><strong>You want to protect yourselve.</strong> There are many wasys that malicious users could misuse unprotected forms to damage the application.<br><br><strong>Warning:</strong>Never trust data that is passed to your server from the client. Even if your form is validating correctly and preventing malformed input on the client-side, a malicious user could still alter the network request.</li>
+            <li><strong>Built-in form validation</strong> (HTML5 form validation features) which doesn't require a lot of JavaScript and has better performance than JavaScript.<br><strong>required</strong>: Specifies whether a form field needs to be filled out before the form can be submitted.<br><strong>minlength and maxlength</strong>: Specifies the minimum and maximum length of textual data, meaning strings.<br><strong>min and max</strong>: Specifies the minimum and maximum values of numerical input types.<br><strong>type</strong>: Specifies whether the data needs to be number, an email address, telephone, or some other specific preset type. <br><strong>pattern</strong>: Specifies a <strong>regular expression</strong> that defines a pattern the entered data needs to follow.</li>
+            <li>If the data entered is valid, the following things are true:<br><br>The element matches the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:valid" rel="noreferrer" target="_blank">:valid</a> CSS pseudo-class, which lets you apply a certain style to valid elements.<br><br>If the user tries to send the data, the browser will then submit the form, as long as there is nothing else stopping it from sending it (e.g., JavaScript).<br><br>If the data entered is invalid, the following things are true:<br><br>The element matches the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid" rel="noreferrer" target="_blank">:invalid</a> CSS pseudo-class, and sometimes other UI pseudo-classes like <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range" rel="noreferrer" target="_blank">:out-of-range</a> depending on the error, which lets you apply a certain style to invalid elements.<br><br>If the user tries to send the data, the browser will then block the form from sending and display an error message.<br><br>There are several errors  that will prevent the form from being submited, shown in <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation" rel="noreferrer" target="_blank">Form Validation</a></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h3>MDN: Using the Fetch API</h3>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h2>Questions:</h2>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+        <h2>Exercises</h2>
+        <ul>
+            <li></li>
+        </ul>
+        <h2>Team Activity</h2>
+        <ul>
+            <li><a class="exercise_anchor" href="codeExercise/">/a></li>
+        </ul>
+    </main>
+    <footer>
+        &copy; <span id="copyrightyear"></span> | Sarah Osguthorpe | Utah | <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a>
+        <!-- <div class="note_footer_div">
+            <p>&copy; <span id="copyrightyear"></span> Sarah Osguthorpe | Utah | <a class="footer_anchor" href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a></p>
+        </div> -->
+    </footer>
+</body>
+</html>
