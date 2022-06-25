@@ -1,0 +1,164 @@
+{ "dogData": [
+    {
+        "dogBreed": "Bernese Mountain Dog",
+        "lifeSpan": "6-8 years",
+        "origin": "Switzerland",
+        "color": "Black tricolor",
+        "temperament": "intelligent, Affectionate, Loyal, Faithful",
+        "maleHeight": "male: 25-28 inches (64-70 cm)",
+        "femaleHeight": "female: 23-26 inches (58-66 cm)",
+        "maleWeight": "male: 84-110 lbs (38-50kg)",
+        "femaleWeight": "female: 79-110 lbs (36-48 kg)",
+        "image": [ {
+            "image1": "bernese-mountain-dog.jpg",
+            "image2": "bernese-mountain-dog-puppy.jpg"
+            }    
+        ]
+    },
+    {
+        "dogBreed": "Golden Retriever",
+        "lifeSpan": "10-12 years",
+        "origin": "Scotland",
+        "color": "dark golden, light golden, cream, golden",
+        "temperament": "Friendly, Intelligent, Reliable, Kind, Trustworthy, Confident",
+        "maleHeight": "male: 22-24 inches (56-61 cm)",
+        "femaleHeight": "female: 20-22 inches (51-56 cm)",
+        "maleWeight": "male: 65-75 lbs (30-34 kg)",
+        "femaleWeight": "female: 55-71 lbs (25-32 kg)",
+        "image": [ {
+            "image1": "golden-retriever.jpg",
+            "image2": "golden-retriever-puppy.jpg"
+            }    
+        ]
+    },
+    {
+        "dogBreed": "",
+        "lifeSpan": "",
+        "origin": "",
+        "color": "",
+        "temperament": "",
+        "maleHeight": "male:",
+        "femaleHeight": "",
+        "maleWeight": "male:",
+        "femaleWeight": "female:",
+        "image": [ {
+            "image1": "",
+            "image2": ""
+            }    
+        ]
+    },
+    {
+        "dogBreed": "",
+        "lifeSpan": "",
+        "origin": "",
+        "color": "",
+        "temperament": "",
+        "maleHeight": "male:",
+        "femaleHeight": "",
+        "maleWeight": "male:",
+        "femaleWeight": "female:",
+        "image": [ {
+            "image1": "",
+            "image2": ""
+            }    
+        ]
+    },
+    {
+        "dogBreed": "",
+        "lifeSpan": "",
+        "origin": "",
+        "color": "",
+        "temperament": "",
+        "maleHeight": "male:",
+        "femaleHeight": "",
+        "maleWeight": "male:",
+        "femaleWeight": "female:",
+        "image": [ {
+            "image1": "",
+            "image2": ""
+            }    
+        ]
+    },
+    {
+        "dogBreed": "",
+        "lifeSpan": "",
+        "origin": "",
+        "color": "",
+        "temperament": "",
+        "maleHeight": "male:",
+        "femaleHeight": "",
+        "maleWeight": "male:",
+        "femaleWeight": "female:",
+        "image": [ {
+            "image1": "",
+            "image2": ""
+            }    
+        ]
+    },
+    {
+        "dogBreed": "",
+        "lifeSpan": "",
+        "origin": "",
+        "color": "",
+        "temperament": "",
+        "maleHeight": "male:",
+        "femaleHeight": "",
+        "maleWeight": "male:",
+        "femaleWeight": "female:",
+        "image": [ {
+            "image1": "",
+            "image2": ""
+            }    
+        ]
+    },
+    {
+        "dogBreed": "",
+        "lifeSpan": "",
+        "origin": "",
+        "color": "",
+        "temperament": "",
+        "maleHeight": "male:",
+        "femaleHeight": "",
+        "maleWeight": "male:",
+        "femaleWeight": "female:",
+        "image": [ {
+            "image1": "",
+            "image2": ""
+            }    
+        ]
+    },
+    {
+        "dogBreed": "",
+        "lifeSpan": "",
+        "origin": "",
+        "color": "",
+        "temperament": "",
+        "maleHeight": "male:",
+        "femaleHeight": "",
+        "maleWeight": "male:",
+        "femaleWeight": "female:",
+        "image": [ {
+            "image1": "",
+            "image2": ""
+            }    
+        ]
+    },
+    {
+        "dogBreed": "",
+        "lifeSpan": "",
+        "origin": "",
+        "color": "",
+        "temperament": "",
+        "maleHeight": "male:",
+        "femaleHeight": "",
+        "maleWeight": "male:",
+        "femaleWeight": "female:",
+        "image": [ {
+            "image1": "",
+            "image2": ""
+            }    
+        ]
+    }
+]
+
+}

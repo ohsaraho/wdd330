@@ -1,0 +1,33 @@
+/* font-family: 'Luckiest Guy', cursive;
+font-family: 'Short Stack', cursive; */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.bodyContainer {
+    background-color: #62ddf8;
+}
+
+.mainContainer {
+    max-width: 1200px;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.finalFooter {
+    font-family: 'Luckiest Guy', cursive;
+    background-color: #0b8345;
+    padding: 1em;
+    border-radius: 5px;
+    color: white;
+}
+
+.finalFooter a {
+    color: white;
+}
+
+.finalFooter a:hover {
+    color: black;
+}
