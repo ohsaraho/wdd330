@@ -4,7 +4,7 @@
         "lifeSpan": "6-8 years",
         "origin": "Switzerland",
         "color": "Black tricolor",
-        "temperament": "intelligent, Affectionate, Loyal, Faithful",
+        "temperament": "Intelligent, Affectionate, Loyal, Faithful",
         "maleHeight": "male: 25-28 inches (64-70 cm)",
         "femaleHeight": "female: 23-26 inches (58-66 cm)",
         "maleWeight": "male: 84-110 lbs (38-50kg)",
@@ -19,7 +19,7 @@
         "dogBreed": "Golden Retriever",
         "lifeSpan": "10-12 years",
         "origin": "Scotland",
-        "color": "dark golden, light golden, cream, golden",
+        "color": "Dark golden, Light golden, Cream, Golden",
         "temperament": "Friendly, Intelligent, Reliable, Kind, Trustworthy, Confident",
         "maleHeight": "male: 22-24 inches (56-61 cm)",
         "femaleHeight": "female: 20-22 inches (51-56 cm)",
@@ -32,13 +32,61 @@
         ]
     },
     {
+        "dogBreed": "Pomeranian",
+        "lifeSpan": "12-16 years",
+        "origin": "Pomerania split between Poland and Germany",
+        "color": "White, Black, Red, Blue, Cream, Grey-shaded, Tan, Orange, Brown",
+        "temperament": "Playful, Extroverted, Friendly, Sociable, Intelligent, Active",
+        "maleHeight": "male: 7-12 inches (18-30 cm)",
+        "femaleHeight": "female: 7-12 inches (18-30 cm)",
+        "maleWeight": "male: 6.1-11.4 lbs (2.8-5.2kg)",
+        "femaleWeight": "female: 4.6-7.3 lbs (2.1-3.3kg)",
+        "image": [ {
+            "image1": "pomeranian-dog.jpg",
+            "image2": "pomeranian-puppy.jpg"
+            }    
+        ]
+    },
+    {
+        "dogBreed": "German Shepherd",
+        "lifeSpan": "9-13 years",
+        "origin": "Germany",
+        "color": "Black, Black & Tan, Sable, Red & Black, Grey, Black & Silver",
+        "temperament": " Stubborn, Intelligent, Curious, Alert, Loyal, Confident, Obedient, Protective, Courageous, Watchful",
+        "maleHeight": "male: 24-26 inches (60-65 cm)",
+        "femaleHeight": "female: 22-24 inches (55-60 cm)",
+        "maleWeight": "male: 66-88 lbs (30-40 kg)",
+        "femaleWeight": "female: 49-71 lbs (22-32 kg)",
+        "image": [ {
+            "image1": "german-shepherd-dog.jpg",
+            "image2": "german-shepherd-puppy.jpg"
+            }    
+        ]
+    },
+    {
+        "dogBreed": "Shih Tzu",
+        "lifeSpan": "10-16 years",
+        "origin": "China, Tibet",
+        "color": "Black, White, Brindle, Liver & White, Liver, Light Brown, Dark Brown, Black & White, Blue, Gold",
+        "temperament": "Playful, Clever, Outgoing, Friendly, Lively, Intelligent, Independent, Spunky, Loyal",
+        "maleHeight": "male: 7.9-11 inches (20.1-27.9 cm)",
+        "femaleHeight": "female: 7.9-11 inches (20.1-27.9 cm)",
+        "maleWeight": "male: 8.8-16 lbs (3.9-7.26 kg)",
+        "femaleWeight": "female: 8.8-16 lbs (3.9-7.26 kg)",
+        "image": [ {
+            "image1": "shih-tzu-dog.jpg",
+            "image2": "shih-tzu-puppy.jpg"
+            }    
+        ]
+    },
+    {
         "dogBreed": "",
         "lifeSpan": "",
         "origin": "",
         "color": "",
         "temperament": "",
         "maleHeight": "male:",
-        "femaleHeight": "",
+        "femaleHeight": "female:",
         "maleWeight": "male:",
         "femaleWeight": "female:",
         "image": [ {
@@ -54,7 +102,7 @@
         "color": "",
         "temperament": "",
         "maleHeight": "male:",
-        "femaleHeight": "",
+        "femaleHeight": "female:",
         "maleWeight": "male:",
         "femaleWeight": "female:",
         "image": [ {
@@ -70,7 +118,7 @@
         "color": "",
         "temperament": "",
         "maleHeight": "male:",
-        "femaleHeight": "",
+        "femaleHeight": "female:",
         "maleWeight": "male:",
         "femaleWeight": "female:",
         "image": [ {
@@ -86,7 +134,7 @@
         "color": "",
         "temperament": "",
         "maleHeight": "male:",
-        "femaleHeight": "",
+        "femaleHeight": "female:",
         "maleWeight": "male:",
         "femaleWeight": "female:",
         "image": [ {
@@ -102,55 +150,7 @@
         "color": "",
         "temperament": "",
         "maleHeight": "male:",
-        "femaleHeight": "",
-        "maleWeight": "male:",
-        "femaleWeight": "female:",
-        "image": [ {
-            "image1": "",
-            "image2": ""
-            }    
-        ]
-    },
-    {
-        "dogBreed": "",
-        "lifeSpan": "",
-        "origin": "",
-        "color": "",
-        "temperament": "",
-        "maleHeight": "male:",
-        "femaleHeight": "",
-        "maleWeight": "male:",
-        "femaleWeight": "female:",
-        "image": [ {
-            "image1": "",
-            "image2": ""
-            }    
-        ]
-    },
-    {
-        "dogBreed": "",
-        "lifeSpan": "",
-        "origin": "",
-        "color": "",
-        "temperament": "",
-        "maleHeight": "male:",
-        "femaleHeight": "",
-        "maleWeight": "male:",
-        "femaleWeight": "female:",
-        "image": [ {
-            "image1": "",
-            "image2": ""
-            }    
-        ]
-    },
-    {
-        "dogBreed": "",
-        "lifeSpan": "",
-        "origin": "",
-        "color": "",
-        "temperament": "",
-        "maleHeight": "male:",
-        "femaleHeight": "",
+        "femaleHeight": "female:",
         "maleWeight": "male:",
         "femaleWeight": "female:",
         "image": [ {

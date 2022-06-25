@@ -3,7 +3,15 @@ font-family: 'Short Stack', cursive; */
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
+
+.mainContainer h1 {
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    font-size: 2.5em;
+}
+
 
 .bodyContainer {
     background-color: #62ddf8;
@@ -14,6 +22,20 @@ font-family: 'Short Stack', cursive; */
     padding: 1em;
     margin-left: auto;
     margin-right: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: .70em;
+}
+
+.cards img {
+    /* margin-left: auto;
+    margin-right: auto; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .finalFooter {
