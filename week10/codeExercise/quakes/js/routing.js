@@ -5,12 +5,12 @@ const routes = [
     controller: new QuakesController('#quakeList'),
     file: 'views/quakeList.html',
     label: 'Local Quakes'
-  },
-  {
-    controller: new QuakesController('#quakeList'),
-    file: 'views/quakeList.html',
-    label: 'Yellowstone Quakes'
   }
+  // {
+  //   controller: new QuakesController('#quakeList'),
+  //   file: 'views/quakeList.html',
+  //   label: 'Yellowstone Quakes'
+  // }
 ];
 
 // function to create a navigation for the items found in routes.
