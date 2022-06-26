@@ -80,82 +80,82 @@
         ]
     },
     {
-        "dogBreed": "",
-        "lifeSpan": "",
-        "origin": "",
-        "color": "",
-        "temperament": "",
-        "maleHeight": "male:",
-        "femaleHeight": "female:",
-        "maleWeight": "male:",
-        "femaleWeight": "female:",
+        "dogBreed": "Labrador Retriever",
+        "lifeSpan": "10-12 years",
+        "origin": "Newfoundland",
+        "color": "Black, Chocolate, Yellow",
+        "temperament": "Outgoing, Even Tempered, Intelligent, Kind, Agile, Trusting, Gentle",
+        "maleHeight": "male: 22-24 inches (57-62 cm)",
+        "femaleHeight": "female: 22-24 inches (55-60 cm)",
+        "maleWeight": "male: 64-79 lbs (29-36 kg)",
+        "femaleWeight": "female: 55-71 lbs (25-32 kg)",
         "image": [ {
-            "image1": "",
-            "image2": ""
+            "image1": "labrador-retriever-dog.jpg",
+            "image2": "labrador-retriever-puppy.jpg"
             }    
         ]
     },
     {
-        "dogBreed": "",
-        "lifeSpan": "",
-        "origin": "",
-        "color": "",
-        "temperament": "",
-        "maleHeight": "male:",
-        "femaleHeight": "female:",
-        "maleWeight": "male:",
-        "femaleWeight": "female:",
+        "dogBreed": "Great Dane",
+        "lifeSpan": "8-10 years",
+        "origin": "Germany",
+        "color": "Black, Brindle, Fawn, Harlequin, Mantle, Blue",
+        "temperament": "Friendly, Devoted, Reserved, Confident, Loving, Gentle",
+        "maleHeight": "male: 30-34 inches (76-86 cm)",
+        "femaleHeight": "female: 28-32 inches (71-81 cm)",
+        "maleWeight": "male: 120-200 lbs (54-90 kg)",
+        "femaleWeight": "female: 99-130 lbs (45-59 kg)",
         "image": [ {
-            "image1": "",
-            "image2": ""
+            "image1": "great-dane-dog.jpg",
+            "image2": "great-dane-puppy.jpg"
             }    
         ]
     },
     {
-        "dogBreed": "",
-        "lifeSpan": "",
-        "origin": "",
+        "dogBreed": "Pug",
+        "lifeSpan": "12-15 years",
+        "origin": "China originally, then to Japan and later in Europe.",
         "color": "",
-        "temperament": "",
-        "maleHeight": "male:",
-        "femaleHeight": "female:",
-        "maleWeight": "male:",
-        "femaleWeight": "female:",
+        "temperament": "Charming, Clever, Mischievous, Docile, Stubborn, Sociable, Affectionate, Attentive, Playful, Loving, Quiet, Calm",
+        "maleHeight": "male: 12-14 inches (30.5-35.6 cm)",
+        "femaleHeight": "female: 10-12 inches (25.4-30.5 cm)",
+        "maleWeight": "male: 14-18 lbs (6-8 kg)",
+        "femaleWeight": "female: 14-18 lbs (6-8 kg)",
         "image": [ {
-            "image1": "",
-            "image2": ""
+            "image1": "pug-dog.jpg",
+            "image2": "pug-puppy.jpg"
             }    
         ]
     },
     {
-        "dogBreed": "",
-        "lifeSpan": "",
-        "origin": "",
-        "color": "",
-        "temperament": "",
-        "maleHeight": "male:",
-        "femaleHeight": "female:",
-        "maleWeight": "male:",
-        "femaleWeight": "female:",
+        "dogBreed": "Pembroke Welsh Corgi",
+        "lifeSpan": "12-15 years",
+        "origin": "Pembrokeshire, Wales",
+        "color": "Fawn, Black & Tan, Sable, Black & White, Red",
+        "temperament": "Outgoing, Tenacious, Friendly, Bold, Playful, Protective",
+        "maleHeight": "male: 10-12 inches (25-30 cm)",
+        "femaleHeight": "female: 10-12 inches (25-30 cm)",
+        "maleWeight": "male: 22-31 lbs (10-14 kg)",
+        "femaleWeight": "female: 22-29 lbs (10-13 kg)",
         "image": [ {
-            "image1": "",
-            "image2": ""
+            "image1": "corgi-dog.jpg",
+            "image2": "corgi-puppy.jpg"
             }    
         ]
     },
     {
-        "dogBreed": "",
-        "lifeSpan": "",
-        "origin": "",
-        "color": "",
-        "temperament": "",
-        "maleHeight": "male:",
-        "femaleHeight": "female:",
-        "maleWeight": "male:",
-        "femaleWeight": "female:",
+        "dogBreed": "Siberian Husky",
+        "lifeSpan": "12-15 years",
+        "origin": "Siberia",
+        "color": "White, Black, Black & Tan, Gray & White, Silver-gray, Black & White, Sable & White, Grey, Red & White",
+        "temperament": "Outgoing, Friendly, Intelligent, Alert, Gentle",
+        "maleHeight": "male: 21-24 inches (53-60 cm)",
+        "femaleHeight": "female: 20-22 inches (51-56 cm)",
+        "maleWeight": "male: 44-60 lbs (20-27 kg)",
+        "femaleWeight": "female: 35-51 lbs (16-23 kg)",
         "image": [ {
-            "image1": "",
-            "image2": ""
+            "image1": "husky-dog.jpg",
+            "image2": "husky-puppy.jpg"
             }    
         ]
     }
