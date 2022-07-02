@@ -9,13 +9,10 @@
         "femaleHeight": "female: 23-26 inches (58-66 cm)",
         "maleWeight": "male: 84-110 lbs (38-50kg)",
         "femaleWeight": "female: 79-110 lbs (36-48 kg)",
-        "images": [ {
-                "imageName": "berneseMountainDog",
-                "image": "bernese-mountain-dog.jpg"
-            }, {
-                "imageName": "berneseMountainPup",
-                "image": "bernese-mountain-dog-puppy.jpg"
-            }    
+        "image": [ {
+                "image1": "bernese-mountain-dog.jpg",
+                "image2": "bernese-mountain-dog-puppy.jpg"
+            }   
         ]
     },
     {
@@ -28,12 +25,9 @@
         "femaleHeight": "female: 20-22 inches (51-56 cm)",
         "maleWeight": "male: 65-75 lbs (30-34 kg)",
         "femaleWeight": "female: 55-71 lbs (25-32 kg)",
-        "images": [ {
-                "imageName": "goldenRetrieverDog",
-                "image": "golden-retriever.jpg"
-            }, {
-                "imageName": "goldenRetrieverPup",
-                "image": "golden-retriever-puppy.jpg"
+        "image": [ {
+            "image1": "golden-retriever.jpg",
+            "image2": "golden-retriever-puppy.jpg"
             }    
         ]
     },
@@ -47,13 +41,10 @@
         "femaleHeight": "female: 7-12 inches (18-30 cm)",
         "maleWeight": "male: 6.1-11.4 lbs (2.8-5.2kg)",
         "femaleWeight": "female: 4.6-7.3 lbs (2.1-3.3kg)",
-        "images": [ {
-                "imageName": "pomeranianDog",
-                "image": "pomeranian-dog.jpg"
-            }, {
-                "imageName": "pomeranianPup",
-                "image": "pomeranian-puppy.jpg"
-            }     
+        "image": [ {
+            "image1": "pomeranian-dog.jpg",
+            "image2": "pomeranian-puppy.jpg"
+            }    
         ]
     },
     {
@@ -66,13 +57,10 @@
         "femaleHeight": "female: 22-24 inches (55-60 cm)",
         "maleWeight": "male: 66-88 lbs (30-40 kg)",
         "femaleWeight": "female: 49-71 lbs (22-32 kg)",
-        "images": [ {
-                "imageName": "germanSheperdDog",
-                "image": "german-shepherd-dog.jpg"
-            }, {
-                "imageName": "germanSheperdPup",
-                "image": "german-shepherd-puppy.jpg"
-            }         
+        "image": [ {
+            "image1": "german-shepherd-dog.jpg",
+            "image2": "german-shepherd-puppy.jpg"
+            }    
         ]
     },
     {
@@ -85,13 +73,10 @@
         "femaleHeight": "female: 7.9-11 inches (20.1-27.9 cm)",
         "maleWeight": "male: 8.8-16 lbs (3.9-7.26 kg)",
         "femaleWeight": "female: 8.8-16 lbs (3.9-7.26 kg)",
-        "images": [ {
-                "imageName": "shihTzuDog",
-                "image": "shih-tzu-dog.jpg"
-            }, {
-                "imageName": "shihTzuPup",
-                "image": "shih-tzu-puppy.jpg"
-            }         
+        "image": [ {
+            "image1": "shih-tzu-dog.jpg",
+            "image2": "shih-tzu-puppy.jpg"
+            }    
         ]
     },
     {
@@ -104,13 +89,10 @@
         "femaleHeight": "female: 22-24 inches (55-60 cm)",
         "maleWeight": "male: 64-79 lbs (29-36 kg)",
         "femaleWeight": "female: 55-71 lbs (25-32 kg)",
-        "images": [ {
-                "imageName": "labradorRetrieverDog",
-                "image": "labrador-retriever-dog.jpg"
-            }, {
-                "imageName": "labradorRetrieverPup",
-                "image": "labrador-retriever-puppy.jpg"
-            }         
+        "image": [ {
+            "image1": "labrador-retriever-dog.jpg",
+            "image2": "labrador-retriever-puppy.jpg"
+            }    
         ]
     },
     {
@@ -123,13 +105,10 @@
         "femaleHeight": "female: 28-32 inches (71-81 cm)",
         "maleWeight": "male: 120-200 lbs (54-90 kg)",
         "femaleWeight": "female: 99-130 lbs (45-59 kg)",
-        "images": [ {
-                "imageName": "greatDaneDog",
-                "image": "great-dane-dog.jpg"
-            }, {
-                "imageName": "greatDanePup",
-                "image": "great-dane-puppy.jpg"
-            }         
+        "image": [ {
+            "image1": "great-dane-dog.jpg",
+            "image2": "great-dane-puppy.jpg"
+            }    
         ]
     },
     {
@@ -142,13 +121,10 @@
         "femaleHeight": "female: 10-12 inches (25.4-30.5 cm)",
         "maleWeight": "male: 14-18 lbs (6-8 kg)",
         "femaleWeight": "female: 14-18 lbs (6-8 kg)",
-        "images": [ {
-                "imageName": "pugDog",
-                "image": "pug-dog.jpg"
-            }, {
-                "imageName": "pugPup",
-                "image": "pug-puppy.jpg"
-            }         
+        "image": [ {
+            "image1": "pug-dog.jpg",
+            "image2": "pug-puppy.jpg"
+            }    
         ]
     },
     {
@@ -161,13 +137,10 @@
         "femaleHeight": "female: 10-12 inches (25-30 cm)",
         "maleWeight": "male: 22-31 lbs (10-14 kg)",
         "femaleWeight": "female: 22-29 lbs (10-13 kg)",
-        "images": [ {
-                "imageName": "pembrokeWelshCorgiDog",
-                "image": "corgi-dog.jpg"
-            }, {
-                "imageName": "pembrokeWelshCorgiPup",
-                "image": "corgi-puppy.jpg"
-            }         
+        "image": [ {
+            "image1": "corgi-dog.jpg",
+            "image2": "corgi-puppy.jpg"
+            }    
         ]
     },
     {
@@ -180,13 +153,10 @@
         "femaleHeight": "female: 20-22 inches (51-56 cm)",
         "maleWeight": "male: 44-60 lbs (20-27 kg)",
         "femaleWeight": "female: 35-51 lbs (16-23 kg)",
-        "images": [ {
-                "imageName": "siberianHuskyDog",
-                "image": "husky-dog.jpg"
-            }, {
-                "imageName": "siberianHuskyPup",
-                "image": "husky-puppy.jpg"
-            }         
+        "image": [ {
+            "image1": "husky-dog.jpg",
+            "image2": "husky-puppy.jpg"
+            }    
         ]
     }
 ]
