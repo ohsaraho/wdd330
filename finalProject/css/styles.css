@@ -17,25 +17,69 @@ font-family: 'Short Stack', cursive; */
     background-color: #62ddf8;
 }
 
-.mainContainer {
+/* .mainContainer {
+    max-width: 1200px;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.mainDiv {
     max-width: 1200px;
     padding: 1em;
     margin-left: auto;
     margin-right: auto;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: .70em;
+.memoryGameDiv {
+    /* max-width: 1280px; */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-auto-rows: 60px; */
+  grid-gap: 1em;
+  /* justify-content: space-evenly; */
+    transform-style: preserve-3d;
+    
+    perspective: 1000px;
 }
 
-.cards img {
+.memory-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card {
+    height: 199px;
+    width: 300px;
+}
+
+.memory-card img {
     /* margin-left: auto;
     margin-right: auto; */
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.memory-card {  
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.front-face, .back-face {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.memory-card.flip-card {
+    transform: rotateY(180deg);
 }
 
 .finalFooter {
@@ -53,3 +97,77 @@ font-family: 'Short Stack', cursive; */
 .finalFooter a:hover {
     color: black;
 }
+
+/*
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.mainContainer h1 {
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+
+.bodyContainer {
+    background-color: #62ddf8;
+}
+
+.mainContainer {
+    max-width: 1200px;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.memoryGameDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: .70em;
+    transform-style: preserve-3d;
+    
+    perspective: 1000px;
+}
+
+.memory-card {
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.front-face, .back-face {
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.memory-card.flip-card {
+    transform: rotateY(180deg);
+}
+
+.finalFooter {
+    font-family: 'Luckiest Guy', cursive;
+    background-color: #0b8345;
+    padding: 1em;
+    border-radius: 5px;
+    color: white;
+}
+
+.finalFooter a {
+    color: white;
+}
+
+.finalFooter a:hover {
+    color: black;
+}
+*/

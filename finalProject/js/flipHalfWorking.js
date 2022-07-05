@@ -1,6 +1,6 @@
 import { getJSON } from './fetchDogBreeds.js';
 
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 // function dogArray() {
 //     getJSON().then(function (jsonObject) {
 //         const dogData = jsonObject['dogData'];
@@ -247,14 +247,9 @@ getJSON().then((data) => {
     // cardArray.sort(() => 0.5 - Math.random());
     const cards = document.querySelector('.memoryGameDiv');
 
-    // let cardsSelected = [];
-    // let cardsSelectedId = [];
-    
-
-    let flippedCard = false;
-    let firstCard, secondCard;
-    let lockBoardGame = false;
-    
+    let cardsSelected = [];
+    let cardsSelectedId = [];
+    let cardsWon = [];
 
     // function createBoard() {
     //     var cardDiv = document.createElement('div');
@@ -276,143 +271,63 @@ getJSON().then((data) => {
     //         cards.appendChild(cardDiv);
     //     }
     // }
+
     function createBoard() {
-        cardArray.forEach((item) => {
-            const cardDiv = document.createElement('div');
-            const cardBackimg = document.createElement('img');
-            const cardFrontimg = document.createElement('img');
-            cardFrontimg.setAttribute('src', `${item.img}`);
-           cardBackimg.setAttribute('src', 'images/front.png');
-            cardDiv.dataset.name = item.name;
-           cardBackimg.addEventListener('click', flipSelectedCard);
+        for (let i=0; i < cardArray.length; i++) {
+            var cardDiv = document.createElement('div');
+            var cardimg = document.createElement('img');
+            cardimg.setAttribute('src', 'images/front.png');
+            cardimg.setAttribute('data-id', i);
+            cardimg.addEventListener('click', flipSelectedCard);
             cardDiv.classList.add('memory-card');
-            cardFrontimg.classList.add('front-face');
-            cardBackimg.classList.add('back-face');
-            cardDiv.appendChild(cardFrontimg);
-            cardDiv.appendChild(cardBackimg);
+            cardimg.classList.add('back-face');
+            cardDiv.appendChild(cardimg);
             cards.appendChild(cardDiv);
-        })
-    }
-    // function createBoard() {
-    //     for (let i=0; i < cardArray.length; i++) {
-    //         var cardDiv = document.createElement('div');
-    //         var cardimg = document.createElement('img');
-    //         cardimg.setAttribute('src', 'images/front.png');
-    //         cardimg.setAttribute('data-id', i);
-    //         cardimg.addEventListener('click', flipSelectedCard);
-    //         cardDiv.classList.add('memory-card');
-    //         cardimg.classList.add('back-face');
-    //         cardDiv.appendChild(cardimg);
-    //         cards.appendChild(cardDiv);
-    //     }
-    // }
-
-    // function checkForCardMatch() {
-    //     const cards = document.querySelectorAll('img');
-    //     const selectedCard1Id = cardsSelectedId[0];
-    //     const selectedCard2Id = cardsSelectedId[1];
-
-    //     if (cardsSelected[0] == cardsSelected[1]) {
-    //         const wonMessage = document.createElement('h2');
-    //         wonMessage.innerHTML = 'You found a match';
-    //         cards[selectedCard1Id].setAttribute('src', 'images/blank.jpg');
-    //         cards[selectedCard2Id].setAttribute('src', 'images/blank.jpg');
-    //         cardsWon.push(cardsSelected);
-    //     } else {
-    //         cards[selectedCard1Id].setAttribute('src', 'images/front.png');
-    //         cards[selectedCard2Id].setAttribute('src', 'images/front.png');
-    //         const lossMessage = document.createElement('h2');
-    //         lossMessage.innerHTML = 'Sorry no match. Try again!';
-    //     }
-    //     cardsSelected = []
-    //     cardsSelectedId = []
-    // }
-    const cardsdiv = document.querySelectorAll('.memory-card');
-    // function flipSelectedCard() {
-    //     const cardId = this.getAttribute('data-id');
-    //     cardsSelected.push(cardArray[cardId].name);
-    //     cardsSelectedId.push(cardId);
-    //     this.setAttribute('src', cardArray[cardId].img);
-    //     if (cardsSelected.length == 2) {
-    //         setTimeout(checkForCardMatch, 500);
-    //     }
-        
-    //     this.classList.add('front-face');
-    //     this.parentElement.classList.toggle('flip-card');
-    //     console.log('I was clicked');
-    //     console.log(this.parentElement);
-    // }
-    function flipSelectedCard() {
-        // this.classList.add('front-face');
-        if (lockBoardGame) return;
-
-        if (this == firstCard) return;
-
-        this.parentElement.classList.toggle('flip-card');
-
-        if (!flippedCard) {
-            flippedCard = true;
-            firstCard = this;
-        } else {
-            flippedCard = false;
-            secondCard = this;
-            checkForCardMatch();
         }
-        // var element = document.querySelector('.memory-card');
-        // var dataAttribute = element.getAttribute('data-name');
-        // console.log(dataAttribute);
-        
-        
     }
 
     function checkForCardMatch() {
-        if (firstCard.parentNode.dataset.name === secondCard.parentNode.dataset.name) {
-            disableCards();
-            // console.log('function was executed!')
-        
+        const cards = document.querySelectorAll('img');
+        const selectedCard1Id = cardsSelectedId[0];
+        const selectedCard2Id = cardsSelectedId[1];
+
+        if (cardsSelected[0] == cardsSelected[1]) {
+            const wonMessage = document.createElement('h2');
+            wonMessage.innerHTML = 'You found a match';
+            cards[selectedCard1Id].setAttribute('src', 'images/blank.jpg');
+            cards[selectedCard2Id].setAttribute('src', 'images/blank.jpg');
+            cardsWon.push(cardsSelected);
         } else {
-            cardsUnflipped();
-            
-            console.log(firstCard.parentNode.dataset.name);
-            console.log(secondCard.parentNode.dataset.name);
+            cards[selectedCard1Id].setAttribute('src', 'images/front.png');
+            cards[selectedCard2Id].setAttribute('src', 'images/front.png');
+            const lossMessage = document.createElement('h2');
+            lossMessage.innerHTML = 'Sorry no match. Try again!';
         }
+        cardsSelected = []
+        cardsSelectedId = []
     }
-
-    function disableCards() {
-        firstCard.removeEventListener('click', flipSelectedCard);
-        secondCard.removeEventListener('click', flipSelectedCard);
-
-        resetBoard();
-    }
-
-    function cardsUnflipped() {
-        lockBoardGame = true;
-        setTimeout(() => {
-            firstCard.parentNode.classList.remove('flip-card');
-        secondCard.parentNode.classList.remove('flip-card');
-
-        resetBoard();
-        }, 1500);
-    }
-
-    function resetBoard() {
-        flippedCard = false;
-        lockBoardGame = false;
-
-        firstCard = null;
-        secondCard = null;
-    }
-
-    function shuffle() {
+    const cardsdiv = document.querySelectorAll('.memory-card');
+    function flipSelectedCard() {
+        const cardId = this.getAttribute('data-id');
+        cardsSelected.push(cardArray[cardId].name);
+        cardsSelectedId.push(cardId);
+        this.setAttribute('src', cardArray[cardId].img);
+        if (cardsSelected.length == 2) {
+            setTimeout(checkForCardMatch, 500);
+        }
+        
+        this.classList.add('front-face');
+        this.parentElement.classList.toggle('flip-card');
+        console.log('I was clicked');
+        console.log(this.parentElement);
         // cardsdiv.forEach(card => {
-        //   let randomPos = Math.floor(Math.random() * 12);
-        //   card.style.order = randomPos;
+        //     card.parentElement.classList.toggle('flip-card');
         // });
-        cardArray.sort(() => 0.5 - Math.random());
     }
-    shuffle();
+
+
     createBoard();
     cardsdiv.forEach(card => card.addEventListener('click', flipSelectedCard));
 // })
 })
-// })
+})
