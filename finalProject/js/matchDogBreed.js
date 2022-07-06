@@ -221,6 +221,207 @@ getJSON().then((data) => {
                             img: `images/${data.dogData[9].images[1].image}`
                         }
                     ];
+                    // const cardArray = [
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[0].images[0].imageName}`,
+                    //             img: `images/${data.dogData[0].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[0].images[0].imageName}`,
+                    //             img: `images/${data.dogData[0].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[0].images[1].imageName}`,
+                    //             img: `images/${data.dogData[0].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[0].images[1].imageName}`,
+                    //             img: `images/${data.dogData[0].images[1].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[1].images[0].imageName}`,
+                    //             img: `images/${data.dogData[1].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[1].images[0].imageName}`,
+                    //             img: `images/${data.dogData[1].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[1].images[1].imageName}`,
+                    //             img: `images/${data.dogData[1].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[1].images[1].imageName}`,
+                    //             img: `images/${data.dogData[1].images[1].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[2].images[0].imageName}`,
+                    //             img: `images/${data.dogData[2].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[2].images[0].imageName}`,
+                    //             img: `images/${data.dogData[2].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[2].images[1].imageName}`,
+                    //             img: `images/${data.dogData[2].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[2].images[1].imageName}`,
+                    //             img: `images/${data.dogData[2].images[1].image}`
+                    //         }
+                    //     ],
+                    //     [    
+                    //         {
+                    //             name: `${data.dogData[3].images[0].imageName}`,
+                    //             img: `images/${data.dogData[3].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[3].images[0].imageName}`,
+                    //             img: `images/${data.dogData[3].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[3].images[1].imageName}`,
+                    //             img: `images/${data.dogData[3].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[3].images[1].imageName}`,
+                    //             img: `images/${data.dogData[3].images[1].image}`
+                    //         }
+                    //     ],
+                    //     [    
+                    //         {
+                    //             name: `${data.dogData[4].images[0].imageName}`,
+                    //             img: `images/${data.dogData[4].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[4].images[0].imageName}`,
+                    //             img: `images/${data.dogData[4].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[4].images[1].imageName}`,
+                    //             img: `images/${data.dogData[4].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[4].images[1].imageName}`,
+                    //             img: `images/${data.dogData[4].images[1].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[5].images[0].imageName}`,
+                    //             img: `images/${data.dogData[5].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[5].images[0].imageName}`,
+                    //             img: `images/${data.dogData[5].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[5].images[1].imageName}`,
+                    //             img: `images/${data.dogData[5].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[5].images[1].imageName}`,
+                    //             img: `images/${data.dogData[5].images[1].image}`
+                    //         }
+                    //     ],
+                    //     [                
+                    //         {
+                    //             name: `${data.dogData[6].images[0].imageName}`,
+                    //             img: `images/${data.dogData[6].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[6].images[0].imageName}`,
+                    //             img: `images/${data.dogData[6].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[6].images[1].imageName}`,
+                    //             img: `images/${data.dogData[6].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[6].images[1].imageName}`,
+                    //             img: `images/${data.dogData[6].images[1].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[7].images[0].imageName}`,
+                    //             img: `images/${data.dogData[7].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[7].images[0].imageName}`,
+                    //             img: `images/${data.dogData[7].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [                {
+                    //             name: `${data.dogData[7].images[1].imageName}`,
+                    //             img: `images/${data.dogData[7].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[7].images[1].imageName}`,
+                    //             img: `images/${data.dogData[7].images[1].image}`
+                    //         }
+                    //     ],
+                    //     [    
+                    //         {
+                    //             name: `${data.dogData[8].images[0].imageName}`,
+                    //             img: `images/${data.dogData[8].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[8].images[0].imageName}`,
+                    //             img: `images/${data.dogData[8].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[8].images[1].imageName}`,
+                    //             img: `images/${data.dogData[8].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[8].images[1].imageName}`,
+                    //             img: `images/${data.dogData[8].images[1].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[9].images[0].imageName}`,
+                    //             img: `images/${data.dogData[9].images[0].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[9].images[0].imageName}`,
+                    //             img: `images/${data.dogData[9].images[0].image}`
+                    //         }
+                    //     ],
+                    //     [
+                    //         {
+                    //             name: `${data.dogData[9].images[1].imageName}`,
+                    //             img: `images/${data.dogData[9].images[1].image}`
+                    //         },
+                    //         {
+                    //             name: `${data.dogData[9].images[1].imageName}`,
+                    //             img: `images/${data.dogData[9].images[1].image}`
+                    //         }
+                    //     ]
+                    // ];
         console.log(cardArray);
                 
 // dogArray();
@@ -246,7 +447,22 @@ getJSON().then((data) => {
 
     // cardArray.sort(() => 0.5 - Math.random());
     const cards = document.querySelector('.memoryGameDiv');
-
+    const score = document.querySelector('.score');
+    const startGame = document.querySelector('.startGame');
+    const startGameBtn = document.createElement('button');
+    startGameBtn.classList.add('.startGame');
+    const startGameBtnAgain = document.createElement('button');
+    startGameBtnAgain.classList.add('.playGameAgain');
+    const startMemoryGame = startGameBtn.addEventListener('click', showCards);
+    const startMemoryGameAgain = startGameBtnAgain.addEventListener('click', showCards);
+    const displayResult = document.querySelector('.displayResult');
+    
+    startGameBtn.addEventListener("click", () => {
+        alert('Start button was clicked');
+    });
+    startGameBtnAgain.addEventListener("click", () => {
+        alert('Play again button was clicked');
+    });
     // let cardsSelected = [];
     // let cardsSelectedId = [];
     
@@ -254,6 +470,8 @@ getJSON().then((data) => {
     let flippedCard = false;
     let firstCard, secondCard;
     let lockBoardGame = false;
+    let cardsWon = [];
+    let countCardsWon = cardsWon.length/2;
     
 
     // function createBoard() {
@@ -276,22 +494,58 @@ getJSON().then((data) => {
     //         cards.appendChild(cardDiv);
     //     }
     // }
+    function startGameView() {
+        const gameInfo = document.createElement('p');
+        const clickPlay = document.createElement('h3');
+        startGameBtn.innerHTML = 'Play';
+        clickPlay.innerHTML = 'Click play to start!';
+        gameInfo.innerHTML = 'Match the dog to the correct match';
+
+        startGame.appendChild(gameInfo);
+        startGame.appendChild(clickPlay);
+        startGame.appendChild(startGameBtn);
+
+    }
+
     function createBoard() {
-        cardArray.forEach((item) => {
-            const cardDiv = document.createElement('div');
-            const cardBackimg = document.createElement('img');
-            const cardFrontimg = document.createElement('img');
-            cardFrontimg.setAttribute('src', `${item.img}`);
-           cardBackimg.setAttribute('src', 'images/front.png');
-            cardDiv.dataset.name = item.name;
-           cardBackimg.addEventListener('click', flipSelectedCard);
-            cardDiv.classList.add('memory-card');
-            cardFrontimg.classList.add('front-face');
-            cardBackimg.classList.add('back-face');
-            cardDiv.appendChild(cardFrontimg);
-            cardDiv.appendChild(cardBackimg);
-            cards.appendChild(cardDiv);
-        })
+        cards.innerHTML = '';
+        cards.classList.remove('hidden');
+        
+        // for (let i=0; i < cardArray.length; i++) {
+        //     for (let j=0; j < cardArray[i].length; j++) {
+        //         console.log(cardArray[i][j].img);
+
+        //         const cardDiv = document.createElement('div');
+        //                 const cardBackimg = document.createElement('img');
+        //                 const cardFrontimg = document.createElement('img');
+        //                 cardFrontimg.setAttribute('src', `${cardArray[i][j].img}`);
+        //             cardBackimg.setAttribute('src', 'images/front.png');
+        //                 cardDiv.dataset.name = cardArray[i][j].name;
+        //             cardBackimg.addEventListener('click', flipSelectedCard);
+        //                 cardDiv.classList.add('memory-card');
+        //                 cardFrontimg.classList.add('front-face');
+        //                 cardBackimg.classList.add('back-face');
+        //                 cardDiv.appendChild(cardFrontimg);
+        //                 cardDiv.appendChild(cardBackimg);
+        //                 cards.appendChild(cardDiv);
+        //     }
+        // }
+    
+                cardArray.forEach((item) => {
+                    const cardDiv = document.createElement('div');
+                    const cardBackimg = document.createElement('img');
+                    const cardFrontimg = document.createElement('img');
+                    cardFrontimg.setAttribute('src', `${item.img}`);
+                cardBackimg.setAttribute('src', 'images/front.png');
+                    cardDiv.dataset.name = item.name;
+                cardBackimg.addEventListener('click', flipSelectedCard);
+                    cardDiv.classList.add('memory-card');
+                    cardFrontimg.classList.add('front-face');
+                    cardBackimg.classList.add('back-face');
+                    cardDiv.appendChild(cardFrontimg);
+                    cardDiv.appendChild(cardBackimg);
+                    cards.appendChild(cardDiv);
+                })
     }
     // function createBoard() {
     //     for (let i=0; i < cardArray.length; i++) {
@@ -366,16 +620,43 @@ getJSON().then((data) => {
     }
 
     function checkForCardMatch() {
-        if (firstCard.parentNode.dataset.name === secondCard.parentNode.dataset.name) {
+        let firstcard = firstCard.parentNode.dataset.name;
+        let secondcard = secondCard.parentNode.dataset.name;
+
+        if (firstcard === secondcard) {
             disableCards();
             // console.log('function was executed!')
+            cardsWon.push(firstcard, secondcard);
+            // console.log(cardsWon);
+            
+            
+            console.log(cardsWon.length/2);
         
         } else {
             cardsUnflipped();
             
-            console.log(firstCard.parentNode.dataset.name);
-            console.log(secondCard.parentNode.dataset.name);
+            // console.log(firstCard.parentNode.dataset.name);
+            // console.log(secondCard.parentNode.dataset.name);
         }
+
+        displayResults();
+            // setTimeout(() => {
+                score.innerHTML = `Score: ${cardsWon.length/2}`;
+            // }, 1500);
+        
+        // if (!startMemoryGameAgain) {
+        //     displayResults();
+        //     setTimeout(() => {
+        //         score.innerHTML = `Score: ${cardsWon.length/2}`;
+        //     }, 1500);
+            
+        // }
+        // else if (startMemoryGameAgain) {
+        //     displayResult.innerHTML = '';
+        //     createBoard();
+            
+        // }
+        
     }
 
     function disableCards() {
@@ -403,15 +684,83 @@ getJSON().then((data) => {
         secondCard = null;
     }
 
-    function shuffle() {
-        // cardsdiv.forEach(card => {
-        //   let randomPos = Math.floor(Math.random() * 12);
-        //   card.style.order = randomPos;
-        // });
-        cardArray.sort(() => 0.5 - Math.random());
+    // function shuffle(cardArray, num) {
+    //     cardsdiv.forEach(card => {
+    //       let randomPos = Math.floor(Math.random() * 12);
+    //       card.style.order = randomPos;
+    //     });
+    //     const shuffled = cardArray.sort(() => 0.5 - Math.random());
+    //     return shuffled.slice(0, num);
+    // }
+
+    function displayResults() {
+        displayResult.innerHTML = '';
+        displayResult.classList.remove('hidden');
+        if (cardsWon.length === cardArray.length && !startMemoryGameAgain) {
+            cards.innerHTML = '';
+            const congratsh2 = document.createElement('h2');
+            // const score = document.querySelector('h3');
+
+            congratsh2.innerHTML = 'Congrats! You found all the matches!!';
+            startGameBtnAgain.innerHTML = 'Play Again!';
+            // score.innerHTML = `Score: ${countCardsWon}`;
+            // displayResult.innerHTML = `<h2>Congrats! You found all the matches!!</h2><h3>Score: ${cardsWon.length/2}</h3>`;
+
+
+            displayResult.appendChild(congratsh2);
+            displayResult.appendChild(score);
+            displayResult.appendChild(startGameBtnAgain);
+            
+            // displayResult.appendChild(score);
+            console.log(cardsWon.length/2);
+        } else if (cardsWon.length === cardArray.length && startMemoryGameAgain) {
+            displayResult.innerHTML = '';
+            // createBoard();
+        }
+
+        // displayResult.innerHTML = '';
+        // displayResult.classList.remove('hidden');
+        // if (cardsWon.length/2 === cardArray.length && !startMemoryGameAgain) {
+        //     cards.innerHTML = '';
+        //     const congratsh2 = document.createElement('h2');
+
+        //     congratsh2.innerHTML = 'Congrats! You found all the matches!!';
+        //     startGameBtnAgain.innerHTML = 'Play Again!';
+
+
+        //     displayResult.appendChild(congratsh2);
+        //     displayResult.appendChild(score);
+        //     displayResult.appendChild(startGameBtnAgain);
+            
+        //     console.log(cardsWon.length/2);
+        // } else if (cardsWon.length/2 === cardArray.length && startMemoryGameAgain) {
+        //     displayResult.innerHTML = '';
+        //     createBoard();
+        // }
     }
-    shuffle();
-    createBoard();
+
+    function showCards() {
+        
+        
+        if (!startMemoryGame) {
+            startGame.innerHTML = '';
+            // displayResult.innerHTML = '';
+            // displayResult.innerHTML = '';
+            createBoard();
+        } 
+        else if (!startMemoryGameAgain) {
+            displayResult.innerHTML = '';
+            createBoard();
+        }
+        
+    }
+
+    startGameView();
+    // showCards();
+    
+    // shuffle(cardArray, 8);
+    // console.log(shuffle(cardArray, 8));
+    
     cardsdiv.forEach(card => card.addEventListener('click', flipSelectedCard));
 // })
 })

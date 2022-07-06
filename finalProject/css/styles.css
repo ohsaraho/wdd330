@@ -6,15 +6,35 @@ font-family: 'Short Stack', cursive; */
     box-sizing: border-box;
 }
 
+.mainContainer {
+    text-align: center;
+}
+
 .mainContainer h1 {
     font-family: 'Luckiest Guy', cursive;
     text-align: center;
     font-size: 2.5em;
 }
 
+.displayResult .hidden {
+    display: none;
+}
 
 .bodyContainer {
     background-color: #62ddf8;
+}
+
+.startGame h3, .startGame p {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.startGame button, .displayResult button {
+    font-family: 'Short Stack', cursive;
+    font-size: 2em;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 /* .mainContainer {
@@ -29,6 +49,10 @@ font-family: 'Short Stack', cursive; */
     padding: 1em;
     margin-left: auto;
     margin-right: auto;
+}
+
+.memoryGameDiv {
+    display: none;
 }
 
 .memoryGameDiv {
