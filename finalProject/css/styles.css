@@ -16,6 +16,8 @@ font-family: 'Short Stack', cursive; */
     font-size: 2.5em;
 }
 
+
+
 .displayResult .hidden {
     display: none;
 }
@@ -68,6 +70,10 @@ font-family: 'Short Stack', cursive; */
     perspective: 1000px;
 }
 
+.countDownSpan {
+    grid-column: 1/4;
+}
+
 .memory-card {
     position: relative;
     transform-style: preserve-3d;
@@ -102,7 +108,7 @@ font-family: 'Short Stack', cursive; */
     transform: rotateY(180deg);
 }
 
-.memory-card.flip-card {
+.flipCard {
     transform: rotateY(180deg);
 }
 

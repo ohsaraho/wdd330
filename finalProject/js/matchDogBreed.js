@@ -450,19 +450,15 @@ getJSON().then((data) => {
     const score = document.querySelector('.score');
     const startGame = document.querySelector('.startGame');
     const startGameBtn = document.createElement('button');
-    startGameBtn.classList.add('.startGame');
+    startGameBtn.classList.add('.startGameBtn');
     const startGameBtnAgain = document.createElement('button');
-    startGameBtnAgain.classList.add('.playGameAgain');
+    startGameBtnAgain.classList.add('.playGameBtnAgain');
     const startMemoryGame = startGameBtn.addEventListener('click', showCards);
     const startMemoryGameAgain = startGameBtnAgain.addEventListener('click', showCards);
     const displayResult = document.querySelector('.displayResult');
     
-    startGameBtn.addEventListener("click", () => {
-        alert('Start button was clicked');
-    });
-    startGameBtnAgain.addEventListener("click", () => {
-        alert('Play again button was clicked');
-    });
+    
+    
     // let cardsSelected = [];
     // let cardsSelectedId = [];
     
@@ -473,7 +469,55 @@ getJSON().then((data) => {
     let cardsWon = [];
     let countCardsWon = cardsWon.length/2;
     
+    // let timeSpan = document.querySelector('span');
+    let timeSpan = document.createElement('span');
+    timeSpan.classList.add('countDownSpan');
+    
+    let timeSecond = 20;
+    
+    startGameBtn.addEventListener("click", () => {
+        // alert('Start button was clicked');
+        countDownTimer();
+    });
+    
+    function countDownTimer() {
+        let countDown = setInterval (() => {
+            timeSecond--;
+            displayTime(timeSecond);
+            console.log(displayTime(timeSecond));
+    
+            if(timeSecond <= 0 || timeSecond<1) {
+                cards.innerHTML = '';
+                displayResults();
+                // score.innerHTML = `Score: ${cardsWon.length/2}`;
+                clearInterval(countDown);
+            }
+            console.log(countDown);
+            console.log(timeSecond);
+        }, 1000)
+    }
 
+    // const countDown = setInterval (() => {
+    //     timeSecond--;
+    //     displayTime(timeSecond);
+
+    //     if(timeSecond <= 0 || timeSecond<1) {
+    //         cards.innerHTML = '';
+    //         displayResults();
+    //         clearInterval(countDown);
+    //     }
+    // }, 1000)
+
+    function displayTime(second) {
+        const min = Math.floor(second/60);
+        const sec = Math.floor(second%60);
+
+        timeSpan.innerHTML = `${min<10 ? '0': ''}${min}:${sec<10 ? '0': ''}${sec}`;
+    }
+
+    // function endCountDown() {
+    //     timeSpan.innerHTML = 'time out';
+    // }
     // function createBoard() {
     //     var cardDiv = document.createElement('div');
     //     var cardimgBack = document.createElement('img');
@@ -511,6 +555,7 @@ getJSON().then((data) => {
         cards.innerHTML = '';
         cards.classList.remove('hidden');
         
+        cards.appendChild(timeSpan);
         // for (let i=0; i < cardArray.length; i++) {
         //     for (let j=0; j < cardArray[i].length; j++) {
         //         console.log(cardArray[i][j].img);
@@ -592,7 +637,7 @@ getJSON().then((data) => {
     //     }
         
     //     this.classList.add('front-face');
-    //     this.parentElement.classList.toggle('flip-card');
+    //     this.parentElement.classList.toggle('flipCard');
     //     console.log('I was clicked');
     //     console.log(this.parentElement);
     // }
@@ -602,7 +647,7 @@ getJSON().then((data) => {
 
         if (this == firstCard) return;
 
-        this.parentElement.classList.toggle('flip-card');
+        this.parentElement.classList.toggle('flipCard');
 
         if (!flippedCard) {
             flippedCard = true;
@@ -626,11 +671,20 @@ getJSON().then((data) => {
         if (firstcard === secondcard) {
             disableCards();
             // console.log('function was executed!')
+            // if(startMemoryGameAgain) {
+            //     cardsWon = [];
+            //     cardsWon.push(firstcard, secondcard);
+            // } else if (startGameBtn) {
+            //     cardsWon.push(firstcard, secondcard);
+            // }
             cardsWon.push(firstcard, secondcard);
+            
             // console.log(cardsWon);
             
             
             console.log(cardsWon.length/2);
+            console.log(firstcard, secondcard);
+            console.log(firstcard.length, secondcard.length);
         
         } else {
             cardsUnflipped();
@@ -639,10 +693,23 @@ getJSON().then((data) => {
             // console.log(secondCard.parentNode.dataset.name);
         }
 
-        displayResults();
-            // setTimeout(() => {
-                score.innerHTML = `Score: ${cardsWon.length/2}`;
-            // }, 1500);
+        if (cardsWon.length === cardArray.length) { 
+            
+            setTimeout(() => {
+                displayResults();
+                
+            }, 1500);
+        } 
+        
+        // else if (cardsWon.length/2 === cardArray.length && !startMemoryGameAgain) { 
+            
+        //     setTimeout(() => {
+        //         displayResults();
+        //         score.innerHTML = `Score: ${cardsWon.length/2}`;
+        //     }, 1500);
+        // }
+
+        
         
         // if (!startMemoryGameAgain) {
         //     displayResults();
@@ -669,8 +736,8 @@ getJSON().then((data) => {
     function cardsUnflipped() {
         lockBoardGame = true;
         setTimeout(() => {
-            firstCard.parentNode.classList.remove('flip-card');
-        secondCard.parentNode.classList.remove('flip-card');
+            firstCard.parentNode.classList.remove('flipCard');
+        secondCard.parentNode.classList.remove('flipCard');
 
         resetBoard();
         }, 1500);
@@ -684,6 +751,12 @@ getJSON().then((data) => {
         secondCard = null;
     }
 
+    // function resetCount() {
+    //     if (startMemoryGameAgain) {
+    //         cardsWon = '';
+    //     }
+    // }
+
     // function shuffle(cardArray, num) {
     //     cardsdiv.forEach(card => {
     //       let randomPos = Math.floor(Math.random() * 12);
@@ -696,12 +769,21 @@ getJSON().then((data) => {
     function displayResults() {
         displayResult.innerHTML = '';
         displayResult.classList.remove('hidden');
-        if (cardsWon.length === cardArray.length && !startMemoryGameAgain) {
+        
             cards.innerHTML = '';
             const congratsh2 = document.createElement('h2');
             // const score = document.querySelector('h3');
-
-            congratsh2.innerHTML = 'Congrats! You found all the matches!!';
+            if (cardsWon.length == cardArray.length) {
+                congratsh2.innerHTML = `Congrats! You found all ${cardsWon.length/2} matches!!`;
+                score.innerHTML = `Score: ${cardsWon.length/2}`;
+            } else if (cardsWon.length >= 1) {
+                congratsh2.innerHTML = `Congrats! You found ${cardsWon.length/2} matches!!`;
+                score.innerHTML = `Score: ${cardsWon.length/2}`;
+            } else if (cardsWon.length == 0) {
+                congratsh2.innerHTML = 'Oops, you found 0 matches. Try Again!!';
+                score.innerHTML = `Score: ${cardsWon.length/2}`;
+            }
+            
             startGameBtnAgain.innerHTML = 'Play Again!';
             // score.innerHTML = `Score: ${countCardsWon}`;
             // displayResult.innerHTML = `<h2>Congrats! You found all the matches!!</h2><h3>Score: ${cardsWon.length/2}</h3>`;
@@ -713,10 +795,11 @@ getJSON().then((data) => {
             
             // displayResult.appendChild(score);
             console.log(cardsWon.length/2);
-        } else if (cardsWon.length === cardArray.length && startMemoryGameAgain) {
-            displayResult.innerHTML = '';
-            // createBoard();
-        }
+
+        //  else if (cardsWon.length === cardArray.length && startMemoryGameAgain) {
+        //     displayResult.innerHTML = '';
+        //     createBoard();
+        // }
 
         // displayResult.innerHTML = '';
         // displayResult.classList.remove('hidden');
@@ -744,16 +827,37 @@ getJSON().then((data) => {
         
         if (!startMemoryGame) {
             startGame.innerHTML = '';
+            displayResult.innerHTML = '';
             // displayResult.innerHTML = '';
-            // displayResult.innerHTML = '';
+            // displayTime(timeSecond);
             createBoard();
         } 
-        else if (!startMemoryGameAgain) {
-            displayResult.innerHTML = '';
-            createBoard();
-        }
+        // else if (startMemoryGameAgain) {
+        //     displayResult.innerHTML = '';
+        //     cardsWon = [];
+        //     createBoard();
+        // }
         
     }
+    startGameBtnAgain.addEventListener("click", () => {
+        // alert('Play again button was clicked');
+        cardsWon = [];
+        timeSecond = 20;
+        // countDown;
+        // displayTime(timeSecond);
+        let countDown = setInterval (() => {
+            timeSecond--;
+            displayTime(timeSecond);
+            console.log(displayTime(timeSecond));
+    
+            if(timeSecond <= 0 || timeSecond<1) {
+                cards.innerHTML = '';
+                displayResults();
+                // score.innerHTML = `Score: ${cardsWon.length/2}`;
+                clearInterval(countDown);
+            }
+        }, 1000)
+    });
 
     startGameView();
     // showCards();
