@@ -1,10 +1,149 @@
 /* font-family: 'Luckiest Guy', cursive;
 font-family: 'Short Stack', cursive; */
 * {
-    margin: 0px;
-    padding: 0px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+  }
+  
+  /* body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #060AB2;
+  }
+  
+  .memoryGameDiv {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
+  
+  .memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  }
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  
+  .memory-card.flipCard {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #1C7CCC;
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  } */
+
+
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.mainContainer h1 {
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.countDownSpan {
+    grid-column: 1/5;
+}
+
+.displayResult .hidden {
+    display: none;
+}
+
+.bodyContainer {
+    background-color: #62ddf8;
+}
+
+.startGame h3, .startGame p {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.startGame button, .displayResult button {
+    font-family: 'Short Stack', cursive;
+    font-size: 2em;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.memoryGameDiv {
+    display: grid;
+    grid-template-columns: repeat(5, 8rem);
+    grid-template-rows: repeat(10, 8rem);
+    grid-gap: 1rem;
+    perspective: 800px;
+}
+
+.memory-card {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+}
+
+.countDownSpan {
+    grid-column: 1/4;
+}
+
+.back-face {
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.flipCard {
+    transform: rotateY(180deg);
+    
+} */
+
 
 .mainContainer {
     text-align: center;
@@ -39,13 +178,6 @@ font-family: 'Short Stack', cursive; */
     cursor: pointer;
 }
 
-/* .mainContainer {
-    max-width: 1200px;
-    padding: 1em;
-    margin-left: auto;
-    margin-right: auto;
-} */
-
 .mainDiv {
     max-width: 1200px;
     padding: 1em;
@@ -58,20 +190,18 @@ font-family: 'Short Stack', cursive; */
 }
 
 .memoryGameDiv {
-    /* max-width: 1280px; */
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* grid-auto-rows: 60px; */
+
   grid-gap: 1em;
-  /* justify-content: space-evenly; */
-    transform-style: preserve-3d;
+  transform-style: preserve-3d;
     
     perspective: 1000px;
 }
 
 .countDownSpan {
-    grid-column: 1/4;
+    grid-column: 1/5;
 }
 
 .memory-card {
@@ -86,8 +216,6 @@ font-family: 'Short Stack', cursive; */
 }
 
 .memory-card img {
-    /* margin-left: auto;
-    margin-right: auto; */
     display: flex;
     justify-content: center;
     width: 100%;
@@ -110,6 +238,10 @@ font-family: 'Short Stack', cursive; */
 
 .flipCard {
     transform: rotateY(180deg);
+}
+
+.back-face {
+    cursor: pointer;
 }
 
 .finalFooter {

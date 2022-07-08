@@ -473,7 +473,7 @@ getJSON().then((data) => {
     let timeSpan = document.createElement('span');
     timeSpan.classList.add('countDownSpan');
     
-    let timeSecond = 20;
+    let timeSecond = 500;
     
     startGameBtn.addEventListener("click", () => {
         // alert('Start button was clicked');
@@ -842,7 +842,7 @@ getJSON().then((data) => {
     startGameBtnAgain.addEventListener("click", () => {
         // alert('Play again button was clicked');
         cardsWon = [];
-        timeSecond = 20;
+        timeSecond = 500;
         // countDown;
         // displayTime(timeSecond);
         let countDown = setInterval (() => {
