@@ -469,9 +469,12 @@ getJSON().then((data) => {
     let cardsWon = [];
     let countCardsWon = cardsWon.length/2;
     
-    // let timeSpan = document.querySelector('span');
-    let timeSpan = document.createElement('span');
-    timeSpan.classList.add('countDownSpan');
+    const timeSpanH3 = document.querySelector('.timeh3');
+    const timeSpan = document.querySelector('.countDownSpan');
+    
+    // let timeSpan = document.createElement('span');
+    // timeSpan.classList.add('countDownSpan');
+    timeSpanH3.appendChild(timeSpan);
     
     let timeSecond = 500;
     
@@ -488,6 +491,7 @@ getJSON().then((data) => {
     
             if(timeSecond <= 0 || timeSecond<1) {
                 cards.innerHTML = '';
+                timeSpanH3.innerHTML = '';
                 displayResults();
                 // score.innerHTML = `Score: ${cardsWon.length/2}`;
                 clearInterval(countDown);
@@ -512,7 +516,7 @@ getJSON().then((data) => {
         const min = Math.floor(second/60);
         const sec = Math.floor(second%60);
 
-        timeSpan.innerHTML = `${min<10 ? '0': ''}${min}:${sec<10 ? '0': ''}${sec}`;
+        timeSpanH3.innerHTML = `${min<10 ? '0': ''}${min}:${sec<10 ? '0': ''}${sec}`;
     }
 
     // function endCountDown() {
@@ -552,10 +556,10 @@ getJSON().then((data) => {
     }
 
     function createBoard() {
-        cards.innerHTML = '';
+        
         cards.classList.remove('hidden');
         
-        cards.appendChild(timeSpan);
+        // cards.appendChild(timeSpanH3);
         // for (let i=0; i < cardArray.length; i++) {
         //     for (let j=0; j < cardArray[i].length; j++) {
         //         console.log(cardArray[i][j].img);
@@ -581,9 +585,9 @@ getJSON().then((data) => {
                     const cardBackimg = document.createElement('img');
                     const cardFrontimg = document.createElement('img');
                     cardFrontimg.setAttribute('src', `${item.img}`);
-                cardBackimg.setAttribute('src', 'images/front.png');
+                    cardBackimg.setAttribute('src', 'images/front.png');
                     cardDiv.dataset.name = item.name;
-                cardBackimg.addEventListener('click', flipSelectedCard);
+                    cardBackimg.addEventListener('click', flipSelectedCard);
                     cardDiv.classList.add('memory-card');
                     cardFrontimg.classList.add('front-face');
                     cardBackimg.classList.add('back-face');
@@ -696,6 +700,8 @@ getJSON().then((data) => {
         if (cardsWon.length === cardArray.length) { 
             
             setTimeout(() => {
+                timeSpanH3.innerHTML = '';
+                cards.innerHTML = '';
                 displayResults();
                 
             }, 1500);
@@ -757,14 +763,15 @@ getJSON().then((data) => {
     //     }
     // }
 
-    // function shuffle(cardArray, num) {
-    //     cardsdiv.forEach(card => {
-    //       let randomPos = Math.floor(Math.random() * 12);
-    //       card.style.order = randomPos;
-    //     });
-    //     const shuffled = cardArray.sort(() => 0.5 - Math.random());
-    //     return shuffled.slice(0, num);
-    // }
+    function shuffle() {
+        // cardsdiv.forEach(card => {
+        //   let randomPos = Math.floor(Math.random() * 12);
+        //   card.style.order = randomPos;
+        // });
+        cardArray.sort(() => 0.5 - Math.random());
+        // const shuffled = cardArray.sort(() => 0.5 - Math.random());
+        // return shuffled.slice(0, num);
+    }
 
     function displayResults() {
         displayResult.innerHTML = '';
@@ -852,6 +859,7 @@ getJSON().then((data) => {
     
             if(timeSecond <= 0 || timeSecond<1) {
                 cards.innerHTML = '';
+                timeSpanH3.innerHTML = '';
                 displayResults();
                 // score.innerHTML = `Score: ${cardsWon.length/2}`;
                 clearInterval(countDown);
@@ -861,7 +869,7 @@ getJSON().then((data) => {
 
     startGameView();
     // showCards();
-    
+    shuffle();
     // shuffle(cardArray, 8);
     // console.log(shuffle(cardArray, 8));
     

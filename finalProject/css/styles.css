@@ -76,8 +76,9 @@ font-family: 'Short Stack', cursive; */
     font-size: 2.5em;
 }
 
-.countDownSpan {
-    grid-column: 1/5;
+
+.timeh3 {
+    text-align: center;
 }
 
 .displayResult .hidden {
@@ -104,8 +105,8 @@ font-family: 'Short Stack', cursive; */
 
 .memoryGameDiv {
     display: grid;
-    grid-template-columns: repeat(5, 8rem);
-    grid-template-rows: repeat(10, 8rem);
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(4, 199px);
     grid-gap: 1rem;
     perspective: 800px;
 }
@@ -126,10 +127,6 @@ font-family: 'Short Stack', cursive; */
     position: absolute;
 }
 
-.countDownSpan {
-    grid-column: 1/4;
-}
-
 .back-face {
     backface-visibility: hidden;
     cursor: pointer;
@@ -145,7 +142,7 @@ font-family: 'Short Stack', cursive; */
 } */
 
 
-.mainContainer {
+/* .mainContainer {
     text-align: center;
 }
 
@@ -192,7 +189,7 @@ font-family: 'Short Stack', cursive; */
 .memoryGameDiv {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
   grid-gap: 1em;
   transform-style: preserve-3d;
@@ -258,14 +255,16 @@ font-family: 'Short Stack', cursive; */
 
 .finalFooter a:hover {
     color: black;
-}
+} */
 
-/*
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
+body {
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #060AB2;
+  }
 
 .mainContainer h1 {
     font-family: 'Luckiest Guy', cursive;
@@ -276,45 +275,106 @@ font-family: 'Short Stack', cursive; */
 
 .bodyContainer {
     background-color: #62ddf8;
+    
 }
 
-.mainContainer {
+/* .mainContainer {
     max-width: 1200px;
     padding: 1em;
     margin-left: auto;
     margin-right: auto;
-}
+} */
+
+/* .divWrapper {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+} */
 
 .memoryGameDiv {
+    max-width: 1280px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: .70em;
     transform-style: preserve-3d;
-    
+    margin: 1em;
     perspective: 1000px;
 }
 
+
+/* .memory-card {  
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+} */
 .memory-card {
     transform-style: preserve-3d;
     transition: transform .5s;
 }
 
-.memory-card img {
-    display: flex;
-    justify-content: center;
+.memory-card {
+    max-height: 199px;
+    max-width: 300px;
+}
+
+img.front-face, img.back-face {
     width: 100%;
+    max-width: 300px;
+    height: auto;
+    /* display: block;
+    justify-content: center;
+    width: 100%; */
+}
+
+.timeh3 {
+    text-align: center;
+    font-family: 'Short Stack', cursive;
 }
 
 .front-face, .back-face {
+    position: absolute;
     backface-visibility: hidden;
 }
+
 
 .front-face {
     transform: rotateY(180deg);
 }
 
-.memory-card.flip-card {
+.flipCard {
     transform: rotateY(180deg);
+}
+
+.back-face {
+    cursor: pointer;
+}
+
+.startGame{
+    text-align: center;
+    padding: 2em;
+}
+
+.displayResult {
+    text-align: center;
+}
+
+.startGame h3, .startGame p {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.5em;
+}
+
+.startGame button, .displayResult button {
+    font-family: 'Short Stack', cursive;
+    font-size: 2em;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.displayResult h2, .displayResult h3 {
+    font-family: 'Short Stack', cursive;
+    padding: .2em;
 }
 
 .finalFooter {
@@ -332,4 +392,47 @@ font-family: 'Short Stack', cursive; */
 .finalFooter a:hover {
     color: black;
 }
-*/
+
+
+@media only screen and (max-width: 800px) {
+    .memoryGameDiv {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        perspective: 800px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .memoryGameDiv {
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+        perspective: 800px;
+    }
+
+    
+}
+
+
+/* @media only screen and (max-width: 800px) {
+    .memoryGameDiv {
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(10, 199px);
+        grid-gap: 1rem;
+        perspective: 800px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .memoryGameDiv {
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: repeat(10, 199px);
+        grid-gap: 1rem;
+        perspective: 800px;
+    }
+
+    
+} */
