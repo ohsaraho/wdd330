@@ -489,9 +489,10 @@ getJSON().then((data) => {
             displayTime(timeSecond);
             console.log(displayTime(timeSecond));
     
-            if(timeSecond <= 0 || timeSecond<1) {
+            if(timeSecond <= 0 || timeSecond<1 || (cardsWon.length == cardArray.length)) {
                 cards.innerHTML = '';
                 timeSpanH3.innerHTML = '';
+                startGame.innerHTML = '';
                 displayResults();
                 // score.innerHTML = `Score: ${cardsWon.length/2}`;
                 clearInterval(countDown);
@@ -852,19 +853,20 @@ getJSON().then((data) => {
         timeSecond = 500;
         // countDown;
         // displayTime(timeSecond);
-        let countDown = setInterval (() => {
-            timeSecond--;
-            displayTime(timeSecond);
-            console.log(displayTime(timeSecond));
+        countDownTimer();
+        // let countDown = setInterval (() => {
+        //     timeSecond--;
+        //     displayTime(timeSecond);
+        //     console.log(displayTime(timeSecond));
     
-            if(timeSecond <= 0 || timeSecond<1) {
-                cards.innerHTML = '';
-                timeSpanH3.innerHTML = '';
-                displayResults();
-                // score.innerHTML = `Score: ${cardsWon.length/2}`;
-                clearInterval(countDown);
-            }
-        }, 1000)
+        //     if(timeSecond <= 0 || timeSecond<1 || (cardsWon.length == cardArray.length)) {
+        //         cards.innerHTML = '';
+        //         timeSpanH3.innerHTML = '';
+        //         displayResults();
+        //      // score.innerHTML = `Score: ${cardsWon.length/2}`;
+        //         clearInterval(countDown);
+        //     }
+        // }, 1000)
     });
 
     startGameView();

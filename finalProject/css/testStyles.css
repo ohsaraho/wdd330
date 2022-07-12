@@ -292,13 +292,18 @@ body {
 } */
 
 .memoryGameDiv {
-    max-width: 1280px;
+    /* max-width: 1280px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: .70em;
     transform-style: preserve-3d;
     margin: 1em;
-    perspective: 1000px;
+    perspective: 1000px; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-gap: 15px;
+    display: grid;
 }
 
 
@@ -308,14 +313,11 @@ body {
     width: 80%;
 } */
 .memory-card {
-    position: relative;
     transform-style: preserve-3d;
     transition: transform .5s;
 }
 
 .memory-card {
-    /* height: 199px;
-    width: 300px; */
     max-width: 300px;
 }
 
