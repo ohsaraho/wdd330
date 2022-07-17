@@ -1,5 +1,60 @@
 import { getJSON } from './fetchDogBreeds.js';
 
+// document.addEventListener('DOMContentLoaded', () => {
+// function dogArray() {
+//     getJSON().then(function (jsonObject) {
+//         const dogData = jsonObject['dogData'];
+//         console.table(dogData);
+//         dogData.forEach(data => { 
+//             let card = document.createElement('div');
+//             // let p = document.createElement('p');
+//             let image1 = document.createElement('img');
+//             let image2 = document.createElement('img');
+    
+//         // p.textContent = data.lifeSpan;    
+//         image1.setAttribute('src', `images/${data.image[0].image1}`);
+//         image2.setAttribute('src', `images/${data.image[0].image2}`);
+//         image1.setAttribute('alt', data.dogBreed);
+//         image2.setAttribute('alt', data.dogBreed);
+    
+//         // card.appendChild(p);
+//         card.appendChild(image1);
+//         card.appendChild(image2);
+        
+    
+    
+//         document.querySelector('.cards').appendChild(card);
+//     })
+//     })
+//     const array = [];
+
+//     getJSON().then(function (jsonObject) {
+//         const dogData = jsonObject['dogData'];
+//         console.log(dogData);
+//         dogData.forEach(data => {
+//             const cardArray = [
+//                 {
+//                     name: 'berneseDog',
+//                     img: `images/${data.image[0].image1}`
+//                 },
+//                 {
+//                     name: 'berneseDog',
+//                     img: `images/${data.image[0].image1}`
+//                 },
+//                 {
+//                     name: 'bernesePup',
+//                     img: `images/${data.image[0].image2}`
+//                 },
+//                 {
+//                     name: 'bernesePup',
+//                     img: `images/${data.image[0].image2}`
+//                 }
+//             ];
+//             return cardArray;
+//         })
+//     })
+// }
+
 getJSON().then((data) => {
     // const dogData = jsonObject['dogData'];
     console.log(data);
@@ -368,7 +423,29 @@ getJSON().then((data) => {
                         ]
                     ];
         console.log(allCardsArray);
+                
+// dogArray();
+// getJSON();
+// const cardArray = [
+//     {
+//         name: 'berneseDog',
+//         img: 'images/bernese-mountain-dog.jpg'
+//     },
+//     {
+//         name: 'berneseDog',
+//         img: 'images/bernese-mountain-dog.jpg'
+//     },
+//     {
+//         name: 'bernesePup',
+//         img: 'images/bernese-mountain-puppy.jpg'
+//     },
+//     {
+//         name: 'bernesePup',
+//         img: 'images/bernese-mountain-puppy.jpg'
+//     }
+// ];
 
+    // cardArray.sort(() => 0.5 - Math.random());
     const cards = document.querySelector('.memoryGameDiv');
     const score = document.querySelector('.score');
     const startGame = document.querySelector('.startGame');
@@ -391,6 +468,9 @@ getJSON().then((data) => {
     let cardArray2 = [];
     
     console.log(cardArray2);
+    
+    // let cardsSelected = [];
+    // let cardsSelectedId = [];
     
 
     let flippedCard = false;
@@ -486,6 +566,25 @@ getJSON().then((data) => {
 
     }
 
+    // program to get a random item from an array
+
+function getRandomItem(arr) {
+
+    // get random index value
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    console.log(randomIndex);
+    // get random item
+    const item = arr[randomIndex];
+
+    return item;
+}
+
+// const array = [1, 'hello', 5, 8];
+
+// const result = getRandomItem(array);
+// console.log(result);
+
+
     function randomizeCardsArray() {
         for (let i=0; i<allCardsArray.length; i++) {
             let randomIndex = Math.floor(Math.random() * allCardsArray.length);
@@ -493,8 +592,7 @@ getJSON().then((data) => {
             console.log(allCardsArray[randomIndex]);
             cardArray1.push(allCardsArray[randomIndex])
             console.log(allCardsArray.indexOf(allCardsArray[randomIndex]));
-            // console.log(i);
-            
+            console.log(i);
             
         }
 
@@ -517,36 +615,8 @@ getJSON().then((data) => {
     randomizeCardsArray();
 
     function filterRandomizedArray() {
-        let filteredArray = cardArray1.filter((element, index) => {
-            return cardArray1.indexOf(element) === index;
-            })
-
-            cardArray2.push(filteredArray);
-            console.log(filteredArray);
-
-
-            for (let i=0; i < 8; i++) {
-                for (let j=0; j < filteredArray[i].length; j++) {
-                    // console.log(cardArray1[i][j]);
-    
-                    cardArray.push(filteredArray[i][j]);
-                }
-            }
-        // for (let i=0; i < cardArray1.length; i++) {
-        //     for (let j=0; j < cardArray1[i].length; j++) {
-
-                // let new_array = cardArray1.filter((element, index) => {
-                //     return cardArray1.indexOf(element) === index;
-                //     })
-                //     console.log(new_array);
-
-                // let json_array = cardArray1.map(JSON.stringify);
-                // let set = new Set(json_array);
-                // let new_array = Array.from(set);
-                // console.log(json_array);
-                // console.log(set);
-                // console.log(new_array);
-
+        for (let i=0; i < cardArray1.length; i++) {
+            for (let j=0; j < cardArray1[i].length; j++) {
                 // const unique = cardArray1.filter(element => {
                 //     const isDuplicate = cardArray1.includes(element.cardArray1[i][j].name);
                 //     console.log(cardArray1[i][j]);
@@ -560,40 +630,58 @@ getJSON().then((data) => {
                 //     return false;
                 // })
                 // console.log(unique);
-                // console.log(cardArray1[i][j].name);
-                // if (cardArray1[i][j].name > 2) {
-                //     cardArray2.push(cardArray1[i][j]);
-                // }
-                
-        //     }
-        // }
+                console.log(cardArray1[i][j].name);
+                if (cardArray1[i][j].name > 2) {
+                    cardArray2.push(cardArray1[i][j]);
+                }
+            }
+        }
     }
 
-    // function uniqByKeepLast(data, key) {
-    //     return [
-    //         ...new Map(
-    //             data.map(x => [key(x), x])
-    //         ).values()
-    //     ]
-    // }
-    // console.log(uniqByKeepLast(cardArray1, it => it.name));
-    // console.log(JSON.stringify(uniqByKeepLast(cardArray1, it => it.name)));
+    // filterRandomizedArray();
 
-    filterRandomizedArray();
+    function getCardsArray() {
+        for (let i=0; i < 8; i++) {
+            for (let j=0; j < cardArray1[i].length; j++) {
+                // console.log(cardArray1[i][j]);
 
-    // function getCardsArray() {
-    //     for (let i=0; i < 8; i++) {
-    //         for (let j=0; j < cardArray1[i].length; j++) {
-    //             console.log(cardArray1[i][j]);
-
-    //             cardArray.push(cardArray1[i][j]);
-    //         }
-    //     }
+                cardArray.push(cardArray1[i][j]);
+            }
+        }
         
         
-        
-    // }
-    // getCardsArray();
+        for (let i=0; i < allCardsArray.length; i++) {
+            let arrays = allCardsArray[i];
+            // console.log(arrays);
+            // let random = allCardsArray[Math.floor(Math.random()*allCardsArray.length)];
+            // let random = (Math.random()*allCardsArray.length[i]);
+            // let randomIndex = Math.floor(Math.random() * allCardsArray.length);
+            // console.log(randomIndex);
+            //     console.log(allCardsArray[randomIndex]);
+            for (let j=0; j < allCardsArray[i].length; j++) {
+                // console.log(allCardsArray[i][j]);
+                let array = allCardsArray.length;
+                // console.log(array);
+                let random = allCardsArray.sort(() => 0.5 - Math.random());
+
+                // console.log(random[i][j]);
+                // const cardDiv = document.createElement('div');
+                //         const cardBackimg = document.createElement('img');
+                //         const cardFrontimg = document.createElement('img');
+                //         cardFrontimg.setAttribute('src', `${allCardsArray[i][j].img}`);
+                //     cardBackimg.setAttribute('src', 'images/front.png');
+                //         cardDiv.dataset.name = allCardsArray[i][j].name;
+                //     cardBackimg.addEventListener('click', flipSelectedCard);
+                //         cardDiv.classList.add('memory-card');
+                //         cardFrontimg.classList.add('front-face');
+                //         cardBackimg.classList.add('back-face');
+                //         cardDiv.appendChild(cardFrontimg);
+                //         cardDiv.appendChild(cardBackimg);
+                //         cards.appendChild(cardDiv);
+            }
+        }
+    }
+    getCardsArray();
 
     function createBoard() {
         
@@ -636,7 +724,40 @@ getJSON().then((data) => {
                     cards.appendChild(cardDiv);
                 })
     }
+    // function createBoard() {
+    //     for (let i=0; i < cardArray.length; i++) {
+    //         var cardDiv = document.createElement('div');
+    //         var cardimg = document.createElement('img');
+    //         cardimg.setAttribute('src', 'images/front.png');
+    //         cardimg.setAttribute('data-id', i);
+    //         cardimg.addEventListener('click', flipSelectedCard);
+    //         cardDiv.classList.add('memory-card');
+    //         cardimg.classList.add('back-face');
+    //         cardDiv.appendChild(cardimg);
+    //         cards.appendChild(cardDiv);
+    //     }
+    // }
 
+    // function checkForCardMatch() {
+    //     const cards = document.querySelectorAll('img');
+    //     const selectedCard1Id = cardsSelectedId[0];
+    //     const selectedCard2Id = cardsSelectedId[1];
+
+    //     if (cardsSelected[0] == cardsSelected[1]) {
+    //         const wonMessage = document.createElement('h2');
+    //         wonMessage.innerHTML = 'You found a match';
+    //         cards[selectedCard1Id].setAttribute('src', 'images/blank.jpg');
+    //         cards[selectedCard2Id].setAttribute('src', 'images/blank.jpg');
+    //         cardsWon.push(cardsSelected);
+    //     } else {
+    //         cards[selectedCard1Id].setAttribute('src', 'images/front.png');
+    //         cards[selectedCard2Id].setAttribute('src', 'images/front.png');
+    //         const lossMessage = document.createElement('h2');
+    //         lossMessage.innerHTML = 'Sorry no match. Try again!';
+    //     }
+    //     cardsSelected = []
+    //     cardsSelectedId = []
+    // }
     const cardsdiv = document.querySelectorAll('.memory-card');
     // function flipSelectedCard() {
     //     const cardId = this.getAttribute('data-id');
@@ -763,6 +884,13 @@ getJSON().then((data) => {
         firstCard = null;
         secondCard = null;
     }
+
+    // function resetCount() {
+    //     if (startMemoryGameAgain) {
+    //         cardsWon = '';
+    //     }
+    // }
+
     function shuffle() {
         // cardsdiv.forEach(card => {
         //   let randomPos = Math.floor(Math.random() * 12);
@@ -852,7 +980,22 @@ getJSON().then((data) => {
         // alert('Play again button was clicked');
         cardsWon = [];
         timeSecond = 500;
+        // countDown;
+        // displayTime(timeSecond);
         countDownTimer();
+        // let countDown = setInterval (() => {
+        //     timeSecond--;
+        //     displayTime(timeSecond);
+        //     console.log(displayTime(timeSecond));
+    
+        //     if(timeSecond <= 0 || timeSecond<1 || (cardsWon.length == cardArray.length)) {
+        //         cards.innerHTML = '';
+        //         timeSpanH3.innerHTML = '';
+        //         displayResults();
+        //      // score.innerHTML = `Score: ${cardsWon.length/2}`;
+        //         clearInterval(countDown);
+        //     }
+        // }, 1000)
     });
 
     startGameView();
