@@ -368,10 +368,11 @@ getJSON().then((data) => {
                         ]
                     ];
         console.log(allCardsArray);
-
+    const mainDiv = document.querySelector('.mainDiv');
     const cards = document.querySelector('.memoryGameDiv');
     const score = document.querySelector('.score');
     const startGame = document.querySelector('.startGame');
+    const startCenter = document.querySelector('.centerDivStart');
     const startGameBtn = document.createElement('button');
     startGameBtn.classList.add('.startGameBtn');
     const startGameBtnAgain = document.createElement('button');
@@ -379,6 +380,13 @@ getJSON().then((data) => {
     const startMemoryGame = startGameBtn.addEventListener('click', showCards);
     const startMemoryGameAgain = startGameBtnAgain.addEventListener('click', showCards);
     const displayResult = document.querySelector('.displayResult');
+    const displayCenter = document.querySelector('.centerDivResults');
+    const background = document.querySelector('.bodyContainer');
+
+    const startGameViewTitle = document.querySelector('.startGameViewTitle');
+    const gameTitle = document.querySelector('.gameViewTitle');
+    const displayResultViewTitle = document.querySelector('.displayResultViewTitle');
+    const title = document.createElement('h1');
 
     let cardArray = [];
     
@@ -388,9 +396,9 @@ getJSON().then((data) => {
     
     console.log(cardArray1);
 
-    let cardArray2 = [];
+    // let cardArray2 = [];
     
-    console.log(cardArray2);
+    // console.log(cardArray2);
     
 
     let flippedCard = false;
@@ -406,29 +414,27 @@ getJSON().then((data) => {
     // timeSpan.classList.add('countDownSpan');
     timeSpanH3.appendChild(timeSpan);
     
-    let timeSecond = 500;
+    let timeSecond = 150;
     
-    startGameBtn.addEventListener("click", () => {
-        // alert('Start button was clicked');
-        countDownTimer();
-    });
     
     function countDownTimer() {
         let countDown = setInterval (() => {
             timeSecond--;
             displayTime(timeSecond);
-            console.log(displayTime(timeSecond));
+            // console.log(displayTime(timeSecond));
     
             if(timeSecond <= 0 || timeSecond<1 || (cardsWon.length == cardArray.length)) {
-                cards.innerHTML = '';
+                gameTitle.innerHTML = '';
+                // cards.innerHTML ='';
                 timeSpanH3.innerHTML = '';
                 startGame.innerHTML = '';
+                // displayResultViewTitle.innerHTML = 'Match the Dog';
                 displayResults();
                 // score.innerHTML = `Score: ${cardsWon.length/2}`;
                 clearInterval(countDown);
             }
-            console.log(countDown);
-            console.log(timeSecond);
+            // console.log(countDown);
+            // console.log(timeSecond);
         }, 1000)
     }
 
@@ -474,12 +480,15 @@ getJSON().then((data) => {
     //     }
     // }
     function startGameView() {
+        startGameViewTitle.innerHTML = 'Match the Dog';
         const gameInfo = document.createElement('p');
         const clickPlay = document.createElement('h3');
         startGameBtn.innerHTML = 'Play';
         clickPlay.innerHTML = 'Click play to start!';
         gameInfo.innerHTML = 'Match the dog to the correct match';
+        background.classList.add('backgroundImage');
 
+        // startGame.appendChild(title);
         startGame.appendChild(gameInfo);
         startGame.appendChild(clickPlay);
         startGame.appendChild(startGameBtn);
@@ -489,10 +498,10 @@ getJSON().then((data) => {
     function randomizeCardsArray() {
         for (let i=0; i<allCardsArray.length; i++) {
             let randomIndex = Math.floor(Math.random() * allCardsArray.length);
-        console.log(randomIndex);
-            console.log(allCardsArray[randomIndex]);
+        // console.log(randomIndex);
+            // console.log(allCardsArray[randomIndex]);
             cardArray1.push(allCardsArray[randomIndex])
-            console.log(allCardsArray.indexOf(allCardsArray[randomIndex]));
+            // console.log(allCardsArray.indexOf(allCardsArray[randomIndex]));
             // console.log(i);
             
             
@@ -521,7 +530,7 @@ getJSON().then((data) => {
             return cardArray1.indexOf(element) === index;
             })
 
-            cardArray2.push(filteredArray);
+            // cardArray2.push(filteredArray);
             console.log(filteredArray);
 
 
@@ -569,6 +578,8 @@ getJSON().then((data) => {
         // }
     }
 
+    filterRandomizedArray();
+
     // function uniqByKeepLast(data, key) {
     //     return [
     //         ...new Map(
@@ -579,7 +590,7 @@ getJSON().then((data) => {
     // console.log(uniqByKeepLast(cardArray1, it => it.name));
     // console.log(JSON.stringify(uniqByKeepLast(cardArray1, it => it.name)));
 
-    filterRandomizedArray();
+    // filterRandomizedArray();
 
     // function getCardsArray() {
     //     for (let i=0; i < 8; i++) {
@@ -596,8 +607,14 @@ getJSON().then((data) => {
     // getCardsArray();
 
     function createBoard() {
+        background.classList.remove('backgroundImage');
+        background.classList.add('backgroundColor');
         
-        cards.classList.remove('hidden');
+        mainDiv.classList.remove('hidden');
+        startCenter.classList.add('hidden');
+        
+        gameTitle.innerHTML = 'Match the Dog';
+        // mainDiv.appendChild(gameTitle);
         
         // cards.appendChild(timeSpanH3);
         // for (let i=0; i < cardArray.length; i++) {
@@ -693,7 +710,7 @@ getJSON().then((data) => {
             // console.log(cardsWon);
             
             
-            console.log(cardsWon.length/2);
+            // console.log(cardsWon.length/2);
             console.log(firstcard, secondcard);
             console.log(firstcard.length, secondcard.length);
         
@@ -704,15 +721,15 @@ getJSON().then((data) => {
             // console.log(secondCard.parentNode.dataset.name);
         }
 
-        if (cardsWon.length === cardArray.length) { 
+        // if (cardsWon.length === cardArray.length) { 
             
-            setTimeout(() => {
-                timeSpanH3.innerHTML = '';
-                cards.innerHTML = '';
-                displayResults();
+        //     setTimeout(() => {
+        //         timeSpanH3.innerHTML = '';
+        //         cards.innerHTML = '';
+        //         displayResults();
                 
-            }, 1500);
-        } 
+        //     }, 1500);
+        // } 
         
         // else if (cardsWon.length/2 === cardArray.length && !startMemoryGameAgain) { 
             
@@ -776,19 +793,25 @@ getJSON().then((data) => {
     }
 
     function displayResults() {
+        background.classList.add('backgroundImage');
         displayResult.innerHTML = '';
-        displayResult.classList.remove('hidden');
+        displayCenter.classList.remove('hidden');
+
         
+            title.innerHTML = 'Match the Dog';
             cards.innerHTML = '';
             const congratsh2 = document.createElement('h2');
             // const score = document.querySelector('h3');
             if (cardsWon.length == cardArray.length) {
+                // alert('all cards found')
                 congratsh2.innerHTML = `Congrats! You found all ${cardsWon.length/2} matches!!`;
                 score.innerHTML = `Score: ${cardsWon.length/2}`;
             } else if (cardsWon.length >= 1) {
+                // alert('More than 1')
                 congratsh2.innerHTML = `Congrats! You found ${cardsWon.length/2} matches!!`;
                 score.innerHTML = `Score: ${cardsWon.length/2}`;
             } else if (cardsWon.length == 0) {
+                // alert('error')
                 congratsh2.innerHTML = 'Oops, you found 0 matches. Try Again!!';
                 score.innerHTML = `Score: ${cardsWon.length/2}`;
             }
@@ -797,12 +820,13 @@ getJSON().then((data) => {
             // score.innerHTML = `Score: ${countCardsWon}`;
             // displayResult.innerHTML = `<h2>Congrats! You found all the matches!!</h2><h3>Score: ${cardsWon.length/2}</h3>`;
 
-
+            displayResult.appendChild(title);
             displayResult.appendChild(congratsh2);
             displayResult.appendChild(score);
             displayResult.appendChild(startGameBtnAgain);
             
             // displayResult.appendChild(score);
+            // debugger
             console.log(cardsWon.length/2);
 
         //  else if (cardsWon.length === cardArray.length && startMemoryGameAgain) {
@@ -839,6 +863,7 @@ getJSON().then((data) => {
             displayResult.innerHTML = '';
             // displayResult.innerHTML = '';
             // displayTime(timeSecond);
+            background.classList.remove('backgroundImage');
             createBoard();
         } 
         // else if (startMemoryGameAgain) {
@@ -848,11 +873,33 @@ getJSON().then((data) => {
         // }
         
     }
-    startGameBtnAgain.addEventListener("click", () => {
-        // alert('Play again button was clicked');
-        cardsWon = [];
-        timeSecond = 500;
+    startGameBtn.addEventListener("click", () => {
+        // alert('Start button was clicked');
+        
         countDownTimer();
+        // randomizeCardsArray();
+        // filterRandomizedArray();
+        // shuffle();
+    });
+    
+
+    startGameBtnAgain.addEventListener("click", () => {
+        // alert('has been clicked')
+        // alert('Play again button was clicked');
+        // startGame.innerHTML = '';
+        displayCenter.classList.add('hidden');
+        cardArray1 = [];
+        console.log(cardArray1)
+        cardArray = [];
+        console.log(cardArray)
+        randomizeCardsArray();
+        filterRandomizedArray();
+        shuffle();
+        
+        cardsWon = [];
+        timeSecond = 150;
+        countDownTimer();
+        
     });
 
     startGameView();

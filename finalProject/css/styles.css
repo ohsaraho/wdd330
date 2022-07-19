@@ -263,20 +263,57 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #060AB2;
   }
 
 .mainContainer h1 {
     font-family: 'Luckiest Guy', cursive;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 3.5em;
 }
 
+.bodyContainer.backgroundImage {
+    /* background-color: #62ddf8; */
+    background-image: url('../images/backgroundImage3.png');
+    /* background-size: cover;  */
+    /* background-repeat: no-repeat; */
+    /* background-position: center center; */
+    background-size: 100%;
+}
 
-.bodyContainer {
+.bodyContainer.backgroundColor {
     background-color: #62ddf8;
-    
 }
+
+.centerDivStart {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height:47.05em;
+  /* border: 3px solid green;  */
+}
+
+.centerDivResults {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height:43em;
+  /* border: 3px solid green;  */
+}
+
+.startGame, .displayResult  {
+    max-width: 800px;
+    padding: 1em;
+    background-color: #7070706e;
+    border-radius: 10px;
+}
+/* .startGame, .mainDiv, .displayResult {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
 
 /* .mainContainer {
     max-width: 1200px;
@@ -291,8 +328,12 @@ body {
     margin-right: auto;
 } */
 
+.hidden {
+    display: none;
+}
+
 .memoryGameDiv {
-    max-width: 1280px;
+    max-width: 1000px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: .70em;
@@ -323,12 +364,14 @@ img.front-face, img.back-face {
     width: 100%;
     max-width: 300px;
     height: auto;
+    border-radius: 8px;
     /* display: block;
     justify-content: center;
     width: 100%; */
 }
 
 .timeh3 {
+    padding: 5px 0px 0px 0px;
     text-align: center;
     font-family: 'Short Stack', cursive;
 }
@@ -368,17 +411,25 @@ img.front-face, img.back-face {
 }
 
 .startGame button, .displayResult button {
+    background-color: #0b8345;
     font-family: 'Short Stack', cursive;
-    font-size: 2em;
+    font-size: 2.5em;
     margin: 10px;
     padding: 10px 20px;
     border-radius: 10px;
+    /* border: 1px solid #0b8345; */
     cursor: pointer;
+    border: 3px solid #093e5d;
+}
+
+.startGame button:hover, .displayResult button:hover {
+    background-color: #0a984f;
 }
 
 .displayResult h2, .displayResult h3 {
     font-family: 'Short Stack', cursive;
     padding: .2em;
+    font-size: 2em;
 }
 
 .finalFooter {
@@ -399,20 +450,37 @@ img.front-face, img.back-face {
 
 
 @media only screen and (max-width: 800px) {
-    .memoryGameDiv {
+    /* .memoryGameDiv {
         grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
-        perspective: 800px;
+    } */
+    .mainContainer h1 {
+        font-size: 3.5em;
     }
 
+    .displayResult h2, .displayResult h3 {
+        font-size: 1.5em;
+    }
+    .startGame button, .displayResult button {
+        font-size: 2em;
+    }
     
 }
 
 @media only screen and (max-width: 400px) {
-    .memoryGameDiv {
+    /* .memoryGameDiv {
         grid-template-columns: 1fr;
-        grid-gap: 1rem;
-        perspective: 800px;
+    } */
+    .memoryGameDiv {
+        grid-template-columns: 1fr 1fr;
+    }
+    .mainContainer h1 {
+        font-size: 2.5em;
+    }
+    .displayResult h2, .displayResult h3 {
+        font-size: 1em;
+    }
+    .startGame button, .displayResult button {
+        font-size: 1.5em;
     }
 
     
