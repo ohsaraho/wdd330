@@ -247,7 +247,8 @@ getJSON().then((data) => {
 
   timeSpanH3.appendChild(timeSpan);
 
-  let timeSecond = 60;
+  // 2/24 Changed the time in seconds to 300 instead of 60 seconds so it gives Jayden 5 minutes to complete the matches
+  let timeSecond = 180;
 
   // Counts down the time in seconds
   function countDownTimer() {
@@ -261,21 +262,24 @@ getJSON().then((data) => {
         timeSecond < 1 ||
         cardsWon.length == cardArray.length
       ) {
-        gameTitle.innerHTML = "";
-        timeSpanH3.innerHTML = "";
-        startGame.innerHTML = "";
+        // Commented out these four lines so that it gives you more time to look at your matches after you match all your cards or the time is up
+        // gameTitle.innerHTML = "";
+        // timeSpanH3.innerHTML = "";
+        // startGame.innerHTML = "";
 
-        displayResults();
+        // displayResults();
 
+        // This freezes the time that you did your last match on
         clearInterval(countDown);
-        // setTimeout(() => {
-        //     gameTitle.innerHTML = "";
-        //     timeSpanH3.innerHTML = "";
-        //     startGame.innerHTML = "";
+        // Uncommented this function so that it gives you more time to look at all your matches when the time is up or you have matched all the matches
+        setTimeout(() => {
+          gameTitle.innerHTML = "";
+          timeSpanH3.innerHTML = "";
+          startGame.innerHTML = "";
 
-        //     displayResults();
-        //     clearInterval(countDown);
-        //   }, 5000);
+          displayResults();
+          // clearInterval(countDown);
+        }, 10000);
       }
       // console.log(countDown);
       // console.log(timeSecond);
@@ -501,7 +505,7 @@ getJSON().then((data) => {
     createBoard();
 
     cardsWon = [];
-    timeSecond = 60;
+    timeSecond = 180;
     countDownTimer();
   });
 
